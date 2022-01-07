@@ -25,7 +25,8 @@ Notes are written for my own understanding and not for others
     - we can put semicolon at the end of line 6 (before curely braces) in main.go file but lexer will remove that semicolon because we've installed intellisence from go language.
 - types
   - case insensitive - almost everything in go language
+  - Everything is type in golang.
   - first initial letter of type gives idea about whether the type is public or private. for example, Println function.
   - This Println function was written in a way that it can be used publically. Some other functions that help to this Println are not exposed publically.
-  - Similar to other languages, go also has types for example, string, bool, integr, complex
+  - Similar to other languages, go also has types for example, string, bool, integr, float, complex
   - some advance types: array, slices, maps, structs, pointers
