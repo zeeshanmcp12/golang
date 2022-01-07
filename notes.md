@@ -27,6 +27,7 @@ Notes are written for my own understanding and not for others
   - case insensitive - almost everything in go language
   - Everything is type in golang.
   - first initial letter of type gives idea about whether the type is public or private. for example, Println function.
+  - const LoginName string -> this capital 'L' in variable (LoginName) declares that it is public and available across the files and program.
   - This Println function was written in a way that it can be used publically. Some other functions that help to this Println are not exposed publically.
   - Similar to other languages, go also has types for example, string, bool, integr, float, complex
   - some advance types: array, slices, maps, structs, pointers
