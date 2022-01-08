@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+const anotherVariable = "anotherVariable"
+
 func main() {
 	var username string = "zeeshanmcp12"
 	fmt.Println(username)
@@ -12,5 +14,8 @@ func main() {
 
 	var isLoggedin = true
 	fmt.Printf("Type of var isLoggedin %T \n", isLoggedin)
+
+	fmt.Println(anotherVariable)
+	fmt.Printf("Type of const anotherVariable is %T \n", anotherVariable)
 
 }
