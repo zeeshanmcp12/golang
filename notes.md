@@ -38,7 +38,7 @@ Notes are written for my own understanding and not for others
     - reader := bufio.NewReader(os.Stdin)
       - reader -> variable
       - := -> operator for assignment and declaration
-      - bufio -> go package
+      - bufio -> go package (buffer) which can read from input/output so we can read from keyboard, from printers and other resources.
       - NewReader -> method of bufio package -> public because of first letter is capital
       - os -> go package
       - Stdin -> method of os package.
