@@ -1,21 +1,28 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
-const anotherVariable = "anotherVariable"
+// const anotherVariable = "anotherVariable"
 
 func main() {
-	var username string = "zeeshanmcp12"
-	fmt.Println(username)
-	fmt.Printf("Type of var username is %T \n", username)
+	// var username string = "zeeshanmcp12"
+	// fmt.Println(username)
+	// fmt.Printf("Type of var username is %T \n", username)
 
-	fullName := "Muhammad Zeeshan"
-	fmt.Println("My name is ", fullName)
+	// fullName := "Muhammad Zeeshan"
+	// fmt.Println("My name is ", fullName)
 
-	var isLoggedin = true
-	fmt.Printf("Type of var isLoggedin %T \n", isLoggedin)
+	// var isLoggedin = true
+	// fmt.Printf("Type of var isLoggedin %T \n", isLoggedin)
 
-	fmt.Println(anotherVariable)
-	fmt.Printf("Type of const anotherVariable is %T \n", anotherVariable)
-
+	// fmt.Println(anotherVariable)
+	// fmt.Printf("Type of const anotherVariable is %T \n", anotherVariable)
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Please enter your name: ")
+	input, _ := reader.ReadString('\n')
+	fmt.Println("Thank you for joining us,", input)
 }

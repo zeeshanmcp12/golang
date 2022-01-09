@@ -44,3 +44,11 @@ Notes are written for my own understanding and not for others
       - Stdin -> method of os package.
     - As soon as we save the file with above syntax, it will import both packages (bufio and os)
     - till above syntax, a process is going on to read the input (is syntax tak koi na koi process read kar raha hai.)
+  - comma ok syntax || err err
+  - syntax
+    - input, _ := reader.ReadString('\n')
+      - input -> whatever an input will be given
+      - _ -> (underscore) means, if any mistake/error occurs during input so this is something try catch.
+      - reader -> is a variable we declared above
+      - .ReadString -> is a method which will wait (or read) for string we gonna input.
+      - ('\n') -> represents new line so reader.ReadString will read for string till we press "Enter".
