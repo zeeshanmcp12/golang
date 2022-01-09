@@ -31,3 +31,15 @@ Notes are written for my own understanding and not for others
   - This Println function was written in a way that it can be used publically. Some other functions that help to this Println are not exposed publically.
   - Similar to other languages, go also has types for example, string, bool, integr, float, complex
   - some advance types: array, slices, maps, structs, pointers
+- User Input
+  - to take an input from user (or from keyboard), in golang we need to have some packages which are bufio and os.
+  - buffer i/o will help to buffer the i/o and os package will help to get the input from user (or from keyboard)
+  - syntax:
+    - reader := bufio.NewReader(os.Stdin)
+      - reader -> variable
+      - := -> operator for assignment and declaration
+      - bufio -> go package
+      - NewReader -> method of bufio package -> public because of first letter is capital
+      - os -> go package
+      - Stdin -> method of os package.
+    - As soon as we save the file with above syntax, it will import both packages (bufio and os)
