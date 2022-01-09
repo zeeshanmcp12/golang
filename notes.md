@@ -39,16 +39,24 @@ Notes are written for my own understanding and not for others
       - reader -> variable
       - := -> operator for assignment and declaration
       - bufio -> go package (buffer) which can read from input/output so we can read from keyboard, from printers and other resources.
-      - NewReader -> method of bufio package -> public because of first letter is capital
-      - os -> go package
+      - NewReader -> method of bufio package -> public because of first letter is capital.
+      - But, from where we should be reading up? to answer the question, we added os.Stdin.
+      - os -> go package (this is another library to interect with OS.)
       - Stdin -> method of os package.
-    - As soon as we save the file with above syntax, it will import both packages (bufio and os)
+    - As soon as we save the file with above syntax, it will import both libraries(packages) (bufio and os)
     - till above syntax, a process is going on to read the input (is syntax tak koi na koi process read kar raha hai.)
+    - whatever this (reader var) reads, we want to store it into a variable (called input (in line 51)) but here comes "comma ok || err ok" syntax into play.
   - comma ok syntax || err err
   - syntax
     - input, _ := reader.ReadString('\n')
       - input -> whatever an input will be given
       - _ -> (underscore) means, if any mistake/error occurs during input so this is something try catch.
+      - we can write "err" instead of "_(underscore)" but its fine.
       - reader -> is a variable we declared above
       - .ReadString -> is a method which will wait (or read) for string we gonna input.
       - ('\n') -> represents new line so reader.ReadString will read for string till we press "Enter".
+  - Why we put input, _?
+    - It is expected that, when reading something (from Stdin (standard input) for example) there might be chances of something might go wrong, and for that wrong thing there might be an error comes in. In that case, we can go and store just like this "input, err" (this might give an error because we may not be using it but this is how golang syntax works)
+    - So, this is something like "comma ok || err err" syntax.
+    - If everything goes right, it will give me input.
+    - If any wrong happens then it will through an error.
