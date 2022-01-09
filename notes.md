@@ -43,3 +43,4 @@ Notes are written for my own understanding and not for others
       - os -> go package
       - Stdin -> method of os package.
     - As soon as we save the file with above syntax, it will import both packages (bufio and os)
+    - till above syntax, a process is going on to read the input (is syntax tak koi na koi process read kar raha hai.)
