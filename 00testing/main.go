@@ -30,4 +30,5 @@ func main() {
 	fmt.Printf("Enter Your Name: ")
 	input, _ := reader.ReadString('\n')
 	fmt.Println("Hello and Welcome!", input)
+	fmt.Printf("Type of input variable is %T", input)
 }

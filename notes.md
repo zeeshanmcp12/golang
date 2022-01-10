@@ -60,3 +60,15 @@ Notes are written for my own understanding and not for others
     - So, this is something like "comma ok || err err" syntax.
     - If everything goes right, it will give me input.
     - If any wrong happens then it will through an error.
+- Conversion
+  - to convert the string into integer, we have strconv library in golang (as I know till the time of writing these notes)
+  - Syntax
+    - numRating, err := strconv.ParseFloat(strings.TrimSpace(input), 64)
+      - numRating -> new variable so we can see conversion in action.
+      - err -> the variable we discussed above in "comma ok || err err" syntax
+      - strconv.ParseFloat -> ParseFloat is a property of strconv function which takes two arguments, string and bit size (which is 64 in the case of Float)
+      - strings.TrimSpace()
+        - strings is also a powerfull library in golang which can do many things like TrimSpace etc
+        - TrimSpace() is a function which will trim spaces.
+        - strings.TrimSpace(input) -> this is an argument (s string) of ParseFloat function.
+      - 64 -> is a bit size and 2nd argument of ParseFloat.
