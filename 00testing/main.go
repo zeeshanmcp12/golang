@@ -21,8 +21,13 @@ func main() {
 
 	// fmt.Println(anotherVariable)
 	// fmt.Printf("Type of const anotherVariable is %T \n", anotherVariable)
+	// reader := bufio.NewReader(os.Stdin)
+	// fmt.Println("Please enter your name: ")
+	// input, _ := reader.ReadString('\n')
+	// fmt.Println("Thank you for joining us,", input)
+
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Please enter your name: ")
+	fmt.Printf("Enter Your Name: ")
 	input, _ := reader.ReadString('\n')
-	fmt.Println("Thank you for joining us,", input)
+	fmt.Println("Hello and Welcome!", input)
 }
