@@ -34,17 +34,31 @@ func main() {
 	// fmt.Println("Hello and Welcome!", input)
 	// fmt.Printf("Type of input variable is %T", input)
 
+	// reader := bufio.NewReader(os.Stdin)
+	// fmt.Printf("Please enter any number: ")
+	// input, _ := reader.ReadString('\n')
+	// fmt.Println("This number you entered:", input)
+
+	// convertInput, err := strconv.ParseFloat(strings.TrimSpace(input), 64)
+
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	fmt.Println("Conversion completed! ", convertInput+1)
+	// 	fmt.Printf("Type of convertInput var is %T", convertInput)
+	// }
+
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Please enter any number: ")
+	fmt.Printf("Please enter anything: ")
 	input, _ := reader.ReadString('\n')
-	fmt.Println("This number you entered:", input)
+	fmt.Printf(input)
+	fmt.Printf("Type of input var is %T", input)
+	fmt.Println()
 
-	convertInput, err := strconv.ParseFloat(strings.TrimSpace(input), 64)
-
+	converted, err := strconv.Atoi(strings.TrimSpace(input))
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println("Conversion completed! ", convertInput+1)
-		fmt.Printf("Type of convertInput var is %T", convertInput)
+		fmt.Printf("Type of input is now %T", converted)
 	}
 }
