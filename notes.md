@@ -70,5 +70,7 @@ Notes are written for my own understanding and not for others
       - strings.TrimSpace()
         - strings is also a powerfull library in golang which can do many things like TrimSpace etc
         - TrimSpace() is a function which will trim spaces.
+          - Remember we used '\n' in reader.ReadString('\n') to read the input till we press enter.
+          - So, TrimSpace() will trim this (\n) space and convert it into Float.
         - strings.TrimSpace(input) -> this is an argument (s string) of ParseFloat function.
       - 64 -> is a bit size and 2nd argument of ParseFloat.
