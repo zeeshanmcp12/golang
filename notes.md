@@ -68,9 +68,10 @@ Notes are written for my own understanding and not for others
       - err -> the variable we discussed above in "comma ok || err err" syntax
       - strconv.ParseFloat -> ParseFloat is a property of strconv function which takes two arguments, string and bit size (which is 64 in the case of Float)
       - strings.TrimSpace()
-        - strings is also a powerfull library in golang which can do many things like TrimSpace etc
+        - strings is also a powerfull package in golang which has so many features for example ToLower, Map, TrimSpace etc
         - TrimSpace() is a function which will trim spaces.
           - Remember we used '\n' in reader.ReadString('\n') to read the input till we press enter.
-          - So, TrimSpace() will trim this (\n) space and convert it into Float.
+          - so, when we type any number and press enter then this is not just a number but a trailing(\ character) as well which is being used here. so to remove the trailing or any space or any first character, we used this TrimSpace() function.
+          - So, TrimSpace() will trim this (\n) character and convert it into Float.
         - strings.TrimSpace(input) -> this is an argument (s string) of ParseFloat function.
       - 64 -> is a bit size and 2nd argument of ParseFloat.
