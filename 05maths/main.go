@@ -1,9 +1,10 @@
 package main
 
 import (
+	// "math/rand"
+	"crypto/rand"
 	"fmt"
-	"math/rand"
-	"time"
+	"math/big"
 )
 
 func main() {
@@ -32,7 +33,12 @@ func main() {
 	   		fmt.Printf("Type of convertToInt var is %T", convertToInt)
 	   	} */
 
-	// Generating random numbers using math/rand
-	rand.Seed(time.Now().UnixNano()) // since time is keep on changing so this time Seed will surely generate random numbers.
-	fmt.Println(rand.Intn(6))
+	/*
+		// Generating random numbers using math/rand
+		rand.Seed(time.Now().UnixNano()) // since time is keep on changing so this time Seed will surely generate random numbers.
+		fmt.Println(rand.Intn(6)) */
+
+	// Generating random numbers using crypto/rand
+	randomNumByCrypto, _ := rand.Int(rand.Reader, big.NewInt(5))
+	fmt.Println(randomNumByCrypto)
 }

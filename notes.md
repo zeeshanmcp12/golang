@@ -98,3 +98,9 @@ Notes are written for my own understanding and not for others
         - Syntax
           - rand.Seed(time.Now().UnixNano())
           - fmt.Println(rand.Intn(5))
+    - crypto/rand
+      - this packages gives us surety about randomness of number because it goverened by a cryptograpghy algorithm.
+      - We can use this package to generate secure information for example token etc.
+        - Syntax
+          - randomNum, _ := rand.Int(rand.Reader(), big.NewInt(5))
+          - fmt.Println(randomNum)
