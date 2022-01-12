@@ -75,3 +75,26 @@ Notes are written for my own understanding and not for others
           - So, TrimSpace() will trim this (\n) character and convert it into Float.
         - strings.TrimSpace(input) -> this is an argument (s string) of ParseFloat function.
       - 64 -> is a bit size and 2nd argument of ParseFloat.
+- Random Numbers
+  - there are two packages
+    - math/rand
+    - crypto/rand
+  - math/rand
+    - this package can generate random numbers but not guranteed as not governed by good algorithm for random numbers.
+    - sometimes it returns the same number unless you use Seed with rand package i.e. rand.Seed()
+    - It will keep generating same number unless you change number in Seed.
+    - The range we define in rand function is always exclusive. for example if we define range as '5' then the number will be generated from 0 to 4 and not 5.
+    - Syntax:
+      - fmt.Println(rand.Intn(5))
+      - above syntax will always return the same number between 1 and 4.
+        - Why?
+          - because in golang it considers that nothing is random in Computer hence everything is driven by algorithm.
+          - Some programs, some methods and some algorithm are written by somebody.
+          - Hence this algorithm is written by Seed (rand.Seed())
+          - We have to change the number in Seed so it will give us random number. But this is not something we want to achieve.
+        - How we can achive the random number using math/rand?
+          - The only thing which keep on changing is time (no matter what you do).
+          - Now, it is much guranteed that the Seed (rand.Seed()) is being initialized by a truely random number (every single time) and we are expected to get the random number.
+        - Syntax
+          - rand.Seed(time.Now().UnixNano())
+          - fmt.Println(rand.Intn(5))
