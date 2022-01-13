@@ -104,3 +104,18 @@ Notes are written for my own understanding and not for others
         - Syntax
           - randomNum, _ := rand.Int(rand.Reader(), big.NewInt(5))
           - fmt.Println(randomNum)
+- time
+  - we need to use time package to use and format time in golang
+  - time.Now()
+  - Syntax
+    - presentTime := time.Now()
+    - fmt.Println(presentTime)
+  - Formatting time:
+    - to format the time, we need to use 'Format' method.
+      - fmt.Println(presentTime.Format("2006-01-02 Monday"))
+      - 2006-01-02 Monday ->
+        - 2006 -> will always represent to current year (in output)
+        - 01 -> will represent to Month
+        - 02 -> will represent to Date
+        - Monday -> will represent to Current Day
+        - Output -> 2022-01-13 Thursday

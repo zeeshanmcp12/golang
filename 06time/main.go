@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	fmt.Println(time.Now())
 	presentTime := time.Now()
-	fmt.Println(presentTime.Format("02-01-2006 Monday"))
+	fmt.Println(presentTime)
+	fmt.Println(presentTime.Format("2006-01-02 Monday"))
 
 }

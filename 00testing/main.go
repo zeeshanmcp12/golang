@@ -1,9 +1,8 @@
 package main
 
 import (
-	"crypto/rand"
 	"fmt"
-	"math/big"
+	"time"
 )
 
 // const anotherVariable = "anotherVariable"
@@ -91,6 +90,10 @@ func main() {
 	// rand.Seed(time.Now().UnixNano())
 	// fmt.Println(rand.Intn(10))
 
-	randomNum, _ := rand.Int(rand.Reader, big.NewInt(10))
-	fmt.Println(randomNum)
+	// randomNum, _ := rand.Int(rand.Reader, big.NewInt(10))
+	// fmt.Println(randomNum)
+	presentTime := time.Now()
+	fmt.Println(presentTime)
+	fmt.Println(presentTime.Format("2006-01-02 Monday"))
+
 }
