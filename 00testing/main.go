@@ -1,12 +1,9 @@
 package main
 
 import (
-	"bufio"
+	"crypto/rand"
 	"fmt"
-	"math/rand"
-	"os"
-	"strconv"
-	"strings"
+	"math/big"
 )
 
 // const anotherVariable = "anotherVariable"
@@ -63,20 +60,37 @@ func main() {
 	// 	fmt.Printf("Type of input is now %T", converted)
 	// }
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter any number: ")
-	input, _ := reader.ReadString('\n')
-	// fmt.Printf(input)
+	// reader := bufio.NewReader(os.Stdin)
+	// fmt.Printf("Enter any number: ")
+	// input, _ := reader.ReadString('\n')
+	// // fmt.Printf(input)
 
-	convertedToInt, err := strconv.Atoi(strings.TrimSpace(input))
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		// fmt.Println("1 added in given input:", convertedToInt+1)
-		fmt.Printf("Type of convertedToInt is %T", convertedToInt)
-		fmt.Println()
-		rand.Seed(int64(convertedToInt))
-		fmt.Println(rand.Intn(10))
-	}
+	// convertedToInt, err := strconv.Atoi(strings.TrimSpace(input))
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	// fmt.Println("1 added in given input:", convertedToInt+1)
+	// 	fmt.Printf("Type of convertedToInt is %T", convertedToInt)
+	// 	fmt.Println()
+	// 	rand.Seed(int64(convertedToInt))
+	// 	fmt.Println(rand.Intn(10))
+	// }
 
+	// reader := bufio.NewReader(os.Stdin)
+	// fmt.Printf("Enter any number: ")
+	// input, _ := reader.ReadString('\n')
+	// fmt.Println("Thank you for your input: ", input)
+	// convertedtoInt, err := strconv.Atoi(strings.TrimSpace(input))
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	fmt.Println("String converted to Int and added a num:", convertedtoInt+1)
+	// }
+	// fmt.Printf("Type of input var is %T", convertedtoInt)
+
+	// rand.Seed(time.Now().UnixNano())
+	// fmt.Println(rand.Intn(10))
+
+	randomNum, _ := rand.Int(rand.Reader, big.NewInt(10))
+	fmt.Println(randomNum)
 }
