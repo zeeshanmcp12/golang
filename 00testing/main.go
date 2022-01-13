@@ -92,8 +92,13 @@ func main() {
 
 	// randomNum, _ := rand.Int(rand.Reader, big.NewInt(10))
 	// fmt.Println(randomNum)
-	presentTime := time.Now()
-	fmt.Println(presentTime)
-	fmt.Println(presentTime.Format("2006-01-02 Monday"))
+	// presentTime := time.Now()
+	// fmt.Println(presentTime)
+	// fmt.Println(presentTime.Format("2006-01-02 Monday"))
+
+	currentTime := time.Now()
+	fmt.Println(currentTime)
+	formattedTime := currentTime.Format("2006-01-02 Monday")
+	fmt.Println(formattedTime)
 
 }
