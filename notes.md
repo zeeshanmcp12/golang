@@ -112,10 +112,13 @@ Notes are written for my own understanding and not for others
     - fmt.Println(presentTime)
   - Formatting time:
     - to format the time, we need to use 'Format' method.
-      - fmt.Println(presentTime.Format("2006-01-02 Monday"))
-      - 2006-01-02 Monday ->
+      - fmt.Println(presentTime.Format("2006-01-02 15:04:05 Monday"))
+      - 2006-01-02 15:04:05 Monday ->
         - 2006 -> will always represent to current year (in output)
         - 01 -> will represent to Month
         - 02 -> will represent to Date
         - Monday -> will represent to Current Day
         - Output -> 2022-01-13 Thursday
+        - 15 -> current Hour
+        - 04 -> minute
+        - 05 -> second
