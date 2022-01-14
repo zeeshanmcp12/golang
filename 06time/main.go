@@ -33,9 +33,17 @@ func main() {
 	convertDay, _ := strconv.Atoi(strings.TrimSpace(day))
 
 	createdAt := time.Date(convertYear, time.Month(convertMonth), convertDay, 00, 00, 00, 00, time.Local)
-	fmt.Println(createdAt)
-	fmt.Println("-------------------- DOB --------------------")
-	fmt.Println(createdAt.Format("Here is your DOB: 02 Jan 2006"))
+
+	// fmt.Println(createdAt)
+	fmt.Println()
+	fmt.Println("-------------------- Date of Birth --------------------")
+	// fmt.Println()
+	fmt.Println(createdAt.Format("02 Jan 2006"))
+	fmt.Println()
 	fmt.Println("-------------- Day of your Birth ------------")
 	fmt.Println(createdAt.Format("It was: Monday. So, Happy Birthday on that day!"))
+	fmt.Println()
+	fmt.Printf("Press 'Enter' key to continue!")
+	pressedKey, _ := reader.ReadString('\n')
+	fmt.Println(pressedKey)
 }
