@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"time"
 )
 
@@ -96,9 +97,15 @@ func main() {
 	// fmt.Println(presentTime)
 	// fmt.Println(presentTime.Format("2006-01-02 Monday"))
 
-	currentTime := time.Now()
-	fmt.Println(currentTime)
-	formattedTime := currentTime.Format("2006-01-02 Monday")
-	fmt.Println(formattedTime)
+	// currentTime := time.Now()
+	// fmt.Println(currentTime)
+	// formattedTime := currentTime.Format("2006-01-02 Monday")
+	// fmt.Println(formattedTime)
 
+	currentTime := time.Now()
+	// fmt.Println(currentTime)
+	fmt.Println(currentTime.Format("2006-01-02 Monday"))
+
+	rand.Seed(time.Now().UnixNano())
+	fmt.Println(rand.Intn(10))
 }
