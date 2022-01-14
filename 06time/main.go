@@ -23,7 +23,7 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Printf("Enter Year of your Birth: ")
 	year, _ := reader.ReadString('\n')
-	fmt.Printf("Enter Month of your Birth: ")
+	fmt.Printf("Enter Month of your Birth (only number): ")
 	month, _ := reader.ReadString('\n')
 	fmt.Printf("Enter Date of your Birth: ")
 	day, _ := reader.ReadString('\n')
