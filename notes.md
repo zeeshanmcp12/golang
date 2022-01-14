@@ -122,3 +122,15 @@ Notes are written for my own understanding and not for others
         - 15 -> current Hour
         - 04 -> minute
         - 05 -> second
+    - How to create a Date with formatting:
+      - Syntax
+        - createdDate := time.Date(2021, time.December, 03, 07, 00, 00, 00, time.Local)
+        - time.Date() -> function to be used for creating Date in golang
+        - year -> is an integer
+        - month -> comes from time package and it has to be used only with time. for example time.December
+        - day -> int. for example 03
+        - hour -> int. 07
+        - minute -> int. 00
+        - second -> int. 00
+        - nano second -> int 00
+        - location -> time.Local (time.UTC) - different formats available.
