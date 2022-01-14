@@ -36,6 +36,6 @@ func main() {
 	fmt.Println(createdAt)
 	fmt.Println("-------------------- DOB --------------------")
 	fmt.Println(createdAt.Format("Here is your DOB: 02 Jan 2006"))
-	fmt.Println("-------------------- Day of your Birth --------------------")
+	fmt.Println("-------------- Day of your Birth ------------")
 	fmt.Println(createdAt.Format("It was: Monday. So, Happy Birthday on that day!"))
 }
