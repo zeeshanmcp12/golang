@@ -14,23 +14,28 @@ func main() {
 	// fmt.Println(presentTime)
 	// fmt.Println(presentTime.Format("2006-01-02 Monday"))
 
-	createdDate := time.Date(2021, time.December, 03, 07, 00, 00, 00, time.Local)
-	fmt.Println(createdDate)
-	fmt.Println("----------------------------------------------")
-	fmt.Println("CNIC Issue Date:", createdDate.Format("02-01-2006 15:04 Monday"))
-	fmt.Println("----------------------------------------------")
+	// createdDate := time.Date(2021, time.December, 03, 07, 00, 00, 00, time.Local)
+	// fmt.Println(createdDate)
+	// fmt.Println("----------------------------------------------")
+	// fmt.Println("CNIC Issue Date:", createdDate.Format("02-01-2006 15:04 Monday"))
+	// fmt.Println("----------------------------------------------")
 
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Please enter your DOB - YY,MM,DD Day:")
-	input, _ := reader.ReadString('\n')
-	fmt.Println("Thank you for your input: ", input)
-	convertInputToInt, err := strconv.Atoi(strings.TrimSpace(input))
+	fmt.Printf("Enter Year of your Birth: ")
+	year, _ := reader.ReadString('\n')
+	fmt.Printf("Enter Month of your Birth: ")
+	month, _ := reader.ReadString('\n')
+	fmt.Printf("Enter Date of your Birth: ")
+	day, _ := reader.ReadString('\n')
 
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		dateOfBirth := time.Date(convertInputToInt, 00, 00, 00, 00, time.Local)
-		fmt.Println(dateOfBirth.Format("02-01-2006 Monday"))
-	}
+	convertYear, _ := strconv.Atoi(strings.TrimSpace(year))
+	convertMonth, _ := strconv.Atoi(strings.TrimSpace(month))
+	convertDay, _ := strconv.Atoi(strings.TrimSpace(day))
 
+	createdAt := time.Date(convertYear, time.Month(convertMonth), convertDay, 00, 00, 00, 00, time.Local)
+	fmt.Println(createdAt)
+	fmt.Println("-------------------- DOB --------------------")
+	fmt.Println(createdAt.Format("Here is your DOB: 02 Jan 2006"))
+	fmt.Println("-------------------- Day of your Birth --------------------")
+	fmt.Println(createdAt.Format("It was: Monday. So, Happy Birthday on that day!"))
 }
