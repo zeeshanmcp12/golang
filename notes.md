@@ -145,6 +145,7 @@ Notes are written for my own understanding so these may be inappropriate for oth
 - GC - Garbage collection
   - ...
 - Pointers
+  - Pointer is a reference to the direct memory location, something like this 0xc0000b2008 etc
   - When we create any variable or constant, it gets stored in a location in memory and takes some space into memory.
   - When we call this variable/constant then sometimes it's reference passed on instead of actual value.
   - Why we need pointers:
@@ -160,4 +161,13 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - myNumber := 23
     - var ptr := &myNumber
       - & (amp sign) -> it means we are not just initializing a var but also referencing an initialized var.
-      - So whenever there is a talk about "reference" then we will use "& (sing)".
+      - So whenever there is a talk about "reference" then we will use "& (sign)".
+      - myNumber := 26 -> Initializing var and assigned value to it.
+      - var ptr = &myNumber -> Re-initializing var with already initialized variable. But this time referencing with & sign
+      - fmt.Println("Value of ptr is", ptr) -> It will print the direct location of memory (or memory address) of variable
+      - fmt.Println("Value of ptr is", *ptr) -> The value inside this //*ptr (pointer) will be 26.
+        - When I put *ptr, it means I want to see what's inside that pointer?
+        - How I was able to fill that?
+        - I was able to fill that by adding a reference to &myNumber.
+        - *ptr means it's not memory address. It's an actual value inside of it which is 26 in our case.
+  - Pointer gives us the gurantee that the operation will be performed on Actual value.
