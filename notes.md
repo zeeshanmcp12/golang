@@ -150,3 +150,14 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Why we need pointers:
     - Sometimes we have to be guranteed that actual value should be passed on and not the reference. It may comes up with some kind of irregularities in code.
     - So to avoid such kind of irregularities, we use __Pointers__.
+  - __In Simple words__
+    - A Pointer is nothing, it's just a direct reference to a memory address and since we are directly passing an address it makes 100% gurantee that actual value is being passed on.
+  - Syntax:
+    - var ptr *int
+      - var -> keyword
+      - ptr -> var name
+      - *int -> this integer is of type integer which means it will store integer value in this pointer.
+    - myNumber := 23
+    - var ptr := &myNumber
+      - & (amp sign) -> it means we are not just initializing a var but also referencing an initialized var.
+      - So whenever there is a talk about "reference" then we will use "& (sing)".
