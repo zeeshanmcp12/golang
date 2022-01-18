@@ -1,6 +1,6 @@
 # Notes
 
-Notes are written for my own understanding and not for others
+Notes are written for my own understanding so these may be inappropriate for others to understand. But I tried to write in a way so any begineer can understand.
 
 ## 01Into
 
@@ -142,5 +142,11 @@ Notes are written for my own understanding and not for others
   - new() cannot be initialized initially
   - make() accept storage
   - make() can be initiallized
-- Pointers
+- GC - Garbage collection
   - ...
+- Pointers
+  - When we create any variable or constant, it gets stored in a location in memory and takes some space into memory.
+  - When we call this variable/constant then sometimes it's reference passed on instead of actual value.
+  - Why we need pointers:
+    - Sometimes we have to be guranteed that actual value should be passed on and not the reference. It may comes up with some kind of irregularities in code.
+    - So to avoid such kind of irregularities, we use __Pointers__.
