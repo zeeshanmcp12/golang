@@ -1,9 +1,11 @@
 package main
 
 import (
-	"crypto/rand"
+	"bufio"
 	"fmt"
-	"math/big"
+	"os"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -103,13 +105,39 @@ func main() {
 	// formattedTime := currentTime.Format("2006-01-02 Monday")
 	// fmt.Println(formattedTime)
 
-	currentTime := time.Now()
+	// currentTime := time.Now()
 	// fmt.Println(currentTime)
-	fmt.Println(currentTime.Format("2006-01-02 15:04:05 Monday"))
+	// fmt.Println(currentTime.Format("2006-01-02 15:04:05 Monday"))
 
 	// rand.Seed(time.Now().UnixNano())
 	// fmt.Println(rand.Intn(10))
 
-	randomN, _ := rand.Int(rand.Reader, big.NewInt(10))
-	fmt.Println(randomN)
+	// randomN, _ := rand.Int(rand.Reader, big.NewInt(10))
+	// fmt.Println(randomN)
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter Year: ")
+	year, _ := reader.ReadString('\n')
+	// reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter Month: ")
+	month, _ := reader.ReadString('\n')
+	// reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter Date: ")
+	date, _ := reader.ReadString('\n')
+
+	Year, err := strconv.Atoi(strings.TrimSpace(year))
+	Month, err := strconv.Atoi(strings.TrimSpace(month))
+	Date, err := strconv.Atoi(strings.TrimSpace(date))
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("-------------- DOB ---------------")
+		dateOfBirth := time.Now()
+		fmt.Println(dateOfBirth.Format("Monday, 02 Jan 2006"))
+		// fmt.Println("-------- Day of Birth ----------")
+		fmt.Println("It was ", dateOfBirth.Format(Year, time.Month(Month), Date, 00, 00, 00, 00, time.Local))
+
+	}
+
 }
