@@ -134,3 +134,13 @@ Notes are written for my own understanding and not for others
         - second -> int. 00
         - nano second -> int 00
         - location -> time.Local (time.UTC) - different formats available.
+- Memory Management
+  - It handle automatically in golang.
+  - It has two functions new() and make()
+  - Both functions accepts data types such that pointer, array, slice etc
+  - new() works with zeroed storage which means it does not accept any value initially. In simple word, we cannot store anything initially in new() function.
+  - new() cannot be initialized initially
+  - make() accept storage
+  - make() can be initiallized
+- Pointers
+  - ...
