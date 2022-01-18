@@ -133,11 +133,13 @@ func main() {
 		fmt.Println(err)
 	} else {
 		fmt.Println("-------------- DOB ---------------")
-		dateOfBirth := time.Now()
-		fmt.Println(dateOfBirth.Format("Monday, 02 Jan 2006"))
-		// fmt.Println("-------- Day of Birth ----------")
-		fmt.Println("It was ", dateOfBirth.Format(Year, time.Month(Month), Date, 00, 00, 00, 00, time.Local))
-
+		dateOfBirth := time.Date(Year, time.Month(Month), Date, 00, 00, 00, 00, time.Local)
+		fmt.Println(dateOfBirth.Format("02 Jan 2006"))
+		fmt.Println("-------- Day of Birth ----------")
+		fmt.Println(dateOfBirth.Format("It was Monday!"))
 	}
+	fmt.Println("Press Enter to continue...")
+	pressedKey, _ := reader.ReadString('\n')
+	fmt.Printf(pressedKey)
 
 }
