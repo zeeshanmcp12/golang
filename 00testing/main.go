@@ -1,13 +1,6 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strconv"
-	"strings"
-	"time"
-)
+import "fmt"
 
 // const anotherVariable = "anotherVariable"
 
@@ -115,31 +108,42 @@ func main() {
 	// randomN, _ := rand.Int(rand.Reader, big.NewInt(10))
 	// fmt.Println(randomN)
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter Year: ")
-	year, _ := reader.ReadString('\n')
 	// reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter Month: ")
-	month, _ := reader.ReadString('\n')
-	// reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter Date: ")
-	date, _ := reader.ReadString('\n')
+	// fmt.Printf("Enter Year: ")
+	// year, _ := reader.ReadString('\n')
+	// // reader := bufio.NewReader(os.Stdin)
+	// fmt.Printf("Enter Month: ")
+	// month, _ := reader.ReadString('\n')
+	// // reader := bufio.NewReader(os.Stdin)
+	// fmt.Printf("Enter Date: ")
+	// date, _ := reader.ReadString('\n')
 
-	Year, err := strconv.Atoi(strings.TrimSpace(year))
-	Month, err := strconv.Atoi(strings.TrimSpace(month))
-	Date, err := strconv.Atoi(strings.TrimSpace(date))
+	// Year, err := strconv.Atoi(strings.TrimSpace(year))
+	// Month, err := strconv.Atoi(strings.TrimSpace(month))
+	// Date, err := strconv.Atoi(strings.TrimSpace(date))
 
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("-------------- DOB ---------------")
-		dateOfBirth := time.Date(Year, time.Month(Month), Date, 00, 00, 00, 00, time.Local)
-		fmt.Println(dateOfBirth.Format("02 Jan 2006"))
-		fmt.Println("-------- Day of Birth ----------")
-		fmt.Println(dateOfBirth.Format("It was Monday!"))
-	}
-	fmt.Println("Press Enter to continue...")
-	pressedKey, _ := reader.ReadString('\n')
-	fmt.Printf(pressedKey)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	fmt.Println("-------------- DOB ---------------")
+	// 	dateOfBirth := time.Date(Year, time.Month(Month), Date, 00, 00, 00, 00, time.Local)
+	// 	fmt.Println(dateOfBirth.Format("02 Jan 2006"))
+	// 	fmt.Println("-------- Day of Birth ----------")
+	// 	fmt.Println(dateOfBirth.Format("It was Monday!"))
+	// }
+	// fmt.Println("Press Enter to continue...")
+	// pressedKey, _ := reader.ReadString('\n')
+	// fmt.Printf(pressedKey)
+
+	// var ptr *int
+	// fmt.Println(ptr)
+
+	number := 12
+	var ptr = &number
+	fmt.Println("Value of ptr var is", ptr)
+	fmt.Println("Value of ptr var is", *ptr)
+
+	*ptr = *ptr + 2
+	fmt.Println(number)
 
 }
