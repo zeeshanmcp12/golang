@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // const anotherVariable = "anotherVariable"
 
@@ -138,12 +141,30 @@ func main() {
 	// var ptr *int
 	// fmt.Println(ptr)
 
-	number := 12
-	var ptr = &number
-	fmt.Println("Value of ptr var is", ptr)
-	fmt.Println("Value of ptr var is", *ptr)
+	// number := 12
+	// var ptr = &number
+	// fmt.Println("Value of ptr var is", ptr)
+	// fmt.Println("Value of ptr var is", *ptr)
 
-	*ptr = *ptr + 2
-	fmt.Println(number)
+	// *ptr = *ptr + 2
+	// fmt.Println(number)
 
+	// Practice
+	// fmt.Println("Hello World!")
+	/* 	reader := bufio.NewReader(os.Stdin)
+	   	fmt.Printf("Enter any number: ")
+	   	input, _ := reader.ReadString('\n')
+	   	fmt.Println(input)
+	   	convertedNum, err := strconv.Atoi(strings.TrimSpace(input))
+	   	if err != nil {
+	   		fmt.Println(err)
+	   	} else {
+	   		fmt.Println(convertedNum)
+	   		fmt.Printf("Type of convertedNum is %T", convertedNum)
+	   	} */
+	// rand.Seed(time.Now().Unix())
+	// fmt.Println(rand.Intn(10))
+
+	presentTime := time.Now()
+	fmt.Println(presentTime)
 }
