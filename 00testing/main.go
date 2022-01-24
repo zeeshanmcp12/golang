@@ -153,7 +153,7 @@ func main() {
 	// *ptr = *ptr + 2
 	// fmt.Println(number)
 
-	// Practice
+	// =================================== Practice ==============================================
 	// fmt.Println("Hello World!")
 	/* 	reader := bufio.NewReader(os.Stdin)
 	   	fmt.Printf("Enter any number: ")
@@ -168,6 +168,11 @@ func main() {
 	   	} */
 	// rand.Seed(time.Now().Unix())
 	// fmt.Println(rand.Intn(10))
+
+	// presentTime := time.Now()
+	// fmt.Println(presentTime.Format("Monday, 02 Jan 2006"))
+	// createdAt := time.Date(2006, time.January, 02, 00, 00, 00, 00, time.Local)
+	// fmt.Println(createdAt.Format())
 
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Printf("Enter Year of Birth: ")
@@ -186,14 +191,8 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		createdAt, _ := time.Date(yearConvtoInt, time.Month(monthConvtoInt), dateConvtoInt, 00, 00, 00, 00, time.Local)
-		// fmt.Println(time.Date(yearConvtoInt, time.Month(monthConvtoInt), dateConvtoInt, 00, 00, 00, 00, time.Local))
+		createdAt := time.Date(yearConvtoInt, time.Month(monthConvtoInt), dateConvtoInt, 00, 00, 00, 00, time.Local)
+		fmt.Println(createdAt)
 		fmt.Println(createdAt.Format("Monday, 02 Jan 2006"))
-
 	}
-
-	presentTime := time.Now()
-	fmt.Println(presentTime.Format("Monday, 02 Jan 2006"))
-	createdAt := time.Date(2006, time.January, 02, 00, 00, 00, 00, time.Local)
-	fmt.Println(createdAt.Format())
 }
