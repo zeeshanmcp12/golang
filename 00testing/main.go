@@ -1,7 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -165,6 +169,31 @@ func main() {
 	// rand.Seed(time.Now().Unix())
 	// fmt.Println(rand.Intn(10))
 
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter Year of Birth: ")
+	year, _ := reader.ReadString('\n')
+
+	fmt.Printf("Enter Month of Birth: ")
+	month, _ := reader.ReadString('\n')
+
+	fmt.Printf("Enter Date of Birth: ")
+	date, _ := reader.ReadString('\n')
+
+	yearConvtoInt, err := strconv.Atoi(strings.TrimSpace(year))
+	monthConvtoInt, err := strconv.Atoi(strings.TrimSpace(month))
+	dateConvtoInt, err := strconv.Atoi(strings.TrimSpace(date))
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		createdAt, _ := time.Date(yearConvtoInt, time.Month(monthConvtoInt), dateConvtoInt, 00, 00, 00, 00, time.Local)
+		// fmt.Println(time.Date(yearConvtoInt, time.Month(monthConvtoInt), dateConvtoInt, 00, 00, 00, 00, time.Local))
+		fmt.Println(createdAt.Format("Monday, 02 Jan 2006"))
+
+	}
+
 	presentTime := time.Now()
-	fmt.Println(presentTime)
+	fmt.Println(presentTime.Format("Monday, 02 Jan 2006"))
+	createdAt := time.Date(2006, time.January, 02, 00, 00, 00, 00, time.Local)
+	fmt.Println(createdAt.Format())
 }
