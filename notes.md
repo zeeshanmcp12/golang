@@ -185,3 +185,5 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - In above case, it will print 3 values in sequence (FruitList is:  [Apple Peach  Mango]) notice the space between Peach and Mango. This is because of index 2 that we left to initialize and its keep printing the value of it.
       - We can only print those elements that we defined during variable declaration.
     - var vegeList = [3]string{"Potato","Mushrom","Tomato"}
+    - fmt.Println("Elements in vegeList", len(vegeList))
+    - fmt.Println(len(vegeList[0]))

@@ -15,8 +15,10 @@ func main() {
 	// fmt.Println("Vegetable List is: ", vegList)
 	// fmt.Println("Vegetable List is: ", len(vegList))
 	var todos = [4]string{"Recite Quran", "Workout", "Sprint Task"}
+	fmt.Println("My todos are: ", todos)
 	fmt.Println("My todos are: ", todos[0])
-	fmt.Println("My todos are: ", todos[3])
-	fmt.Println(len(todos[0]))
+	fmt.Println("My todos are: ", todos[2])
+	fmt.Println("Total elements defined in var:", len(todos))
+	fmt.Println("Length of first element in array: ", len(todos[0]))
 
 }
