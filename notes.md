@@ -171,3 +171,17 @@ Notes are written for my own understanding so these may be inappropriate for oth
         - I was able to fill that by adding a reference to &myNumber.
         - *ptr means it's not memory address. It's an actual value inside of it which is 26 in our case.
   - Pointer gives us the gurantee that the operation will be performed on Actual value.
+- Array
+  - Syntax
+    - var fruitList [4]string
+      - var -> keyword
+      - fruitList -> var name
+      - [4] -> Length of array, such that elements to be in Array.
+      - string -> data type
+      - var fruitList [4]string -> here, we just declared an array but not initialized.
+      - fruitList[0] = "Apple" -> here, we initialized the array with value.
+      - fruitList[1] = "Mango"
+      - fruitList[3] = "Orange"
+      - In above case, it will print 3 values in sequence (FruitList is:  [Apple Peach  Mango]) notice the space between Peach and Mango. This is because of index 2 that we left to initialize and its keep printing the value of it.
+      - We can only print those elements that we defined during variable declaration.
+    - var vegeList = [3]string{"Potato","Mushrom","Tomato"}
