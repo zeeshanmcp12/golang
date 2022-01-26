@@ -16,6 +16,7 @@ func main() {
 	// fmt.Println("Vegetable List is: ", len(vegList))
 	var todos = [4]string{"Recite Quran", "Workout", "Sprint Task"}
 	fmt.Println("My todos are: ", todos[0])
-	fmt.Println("My todos are: ", todos[2])
+	fmt.Println("My todos are: ", todos[3])
+	fmt.Println(len(todos[0]))
 
 }
