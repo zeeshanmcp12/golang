@@ -1,13 +1,6 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strconv"
-	"strings"
-	"time"
-)
+import "fmt"
 
 // const anotherVariable = "anotherVariable"
 
@@ -174,25 +167,34 @@ func main() {
 	// createdAt := time.Date(2006, time.January, 02, 00, 00, 00, 00, time.Local)
 	// fmt.Println(createdAt.Format())
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter Year of Birth: ")
-	year, _ := reader.ReadString('\n')
+	// reader := bufio.NewReader(os.Stdin)
+	// fmt.Printf("Enter Year of Birth: ")
+	// year, _ := reader.ReadString('\n')
 
-	fmt.Printf("Enter Month of Birth: ")
-	month, _ := reader.ReadString('\n')
+	// fmt.Printf("Enter Month of Birth: ")
+	// month, _ := reader.ReadString('\n')
 
-	fmt.Printf("Enter Date of Birth: ")
-	date, _ := reader.ReadString('\n')
+	// fmt.Printf("Enter Date of Birth: ")
+	// date, _ := reader.ReadString('\n')
 
-	yearConvtoInt, err := strconv.Atoi(strings.TrimSpace(year))
-	monthConvtoInt, err := strconv.Atoi(strings.TrimSpace(month))
-	dateConvtoInt, err := strconv.Atoi(strings.TrimSpace(date))
+	// yearConvtoInt, err := strconv.Atoi(strings.TrimSpace(year))
+	// monthConvtoInt, err := strconv.Atoi(strings.TrimSpace(month))
+	// dateConvtoInt, err := strconv.Atoi(strings.TrimSpace(date))
 
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		createdAt := time.Date(yearConvtoInt, time.Month(monthConvtoInt), dateConvtoInt, 00, 00, 00, 00, time.Local)
-		fmt.Println(createdAt)
-		fmt.Println(createdAt.Format("Monday, 02 Jan 2006"))
-	}
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	createdAt := time.Date(yearConvtoInt, time.Month(monthConvtoInt), dateConvtoInt, 00, 00, 00, 00, time.Local)
+	// 	fmt.Println(createdAt)
+	// 	fmt.Println(createdAt.Format("Monday, 02 Jan 2006"))
+	// }
+	fmt.Println("Practicing about Arrays!")
+	var list [4]string
+	list[0] = "Apple"
+	list[1] = "Mango"
+	list[2] = "Peach"
+	list[3] = "Orange"
+	fmt.Println("List contains these fruits:", list)
+	fmt.Println("Items in list:", len(list))
+	fmt.Println("Count of 1st item in array:", len(list[0]))
 }
