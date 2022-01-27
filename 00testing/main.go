@@ -197,4 +197,7 @@ func main() {
 	fmt.Println("List contains these fruits:", list)
 	fmt.Println("Items in list:", len(list))
 	fmt.Println("Count of 1st item in array:", len(list[0]))
+
+	var iniList = [3]string{"Potatoe", "Mushroom", "Lemon"}
+	fmt.Println(iniList)
 }
