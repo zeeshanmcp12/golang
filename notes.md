@@ -194,11 +194,21 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - var list = []string
       - If we are using this syntax then we must initialized it as well for example
         - var list = []string{"Apple", "Mango", "Banana"}
-  - Array was defined very precisly and we cannot assign value more than we defined in array.
-  - In Slices, we can define many values and it expands memory for us.
+  - Array was defined very precisely and we cannot assign value more than we defined in array.
+  - In Slices, we can add many values as we like and it keeps expand memory for us.
   - Syntax:
     - var sliceList = []string{"Apple", "Mango", "Banana"}
     - Notice the difference. We didn't elements in square braces above.
   - Slice will return following type:
     - []string
-  - 
+- How to append any element in existing array:
+  - In slices, we have append function which requires some arguments. for example:
+    - sliceList = append(sliceList, "Peach","Orange")
+- Slicing in slice (array)
+  - Range is always non-inclusive in golang which means it does not include in result.
+  - Syntax:
+    - sliceList = append(sliceList[1:])
+      - In result, it will start from the first elemnent which is Apple. But Apple is at the zeroed index of array.
+    - sliceList = append(sliceList[1:3])
+      - Array elements -> [Apple Mango Banana Peach Orange]
+      - It will start from Mango till peach but print only Mango and Banana.
