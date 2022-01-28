@@ -205,6 +205,7 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - In slices, we have append function which requires some arguments. for example:
     - sliceList = append(sliceList, "Peach","Orange")
 - Slicing in slice (array)
+  - colon (:) between two elements slice up the slice. In simple words, if you want to make a separate part of slice then use colon (:)
   - Range is always non-inclusive in golang which means it does not include in result.
   - Syntax:
     - sliceList = append(sliceList[1:])
