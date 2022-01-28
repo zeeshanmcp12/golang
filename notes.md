@@ -194,3 +194,11 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - var list = []string
       - If we are using this syntax then we must initialized it as well for example
         - var list = []string{"Apple", "Mango", "Banana"}
+  - Array was defined very precisly and we cannot assign value more than we defined in array.
+  - In Slices, we can define many values and it expands memory for us.
+  - Syntax:
+    - var sliceList = []string{"Apple", "Mango", "Banana"}
+    - Notice the difference. We didn't elements in square braces above.
+  - Slice will return following type:
+    - []string
+  - 

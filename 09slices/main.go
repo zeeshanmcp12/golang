@@ -5,7 +5,8 @@ import "fmt"
 func main() {
 	fmt.Println("Learning about Slices in golang!")
 
-	var sliceList = []string{}
-	fmt.Printf("Type of sliceList var is %T", sliceList)
+	var sliceList = []string{"Apple", "Mango", "Banana"}
+	fmt.Printf("Type of sliceList var is %T\n", sliceList)
+	fmt.Println(sliceList)
 
 }
