@@ -187,3 +187,10 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - var vegeList = [3]string{"Potato","Mushrom","Tomato"}
     - fmt.Println("Elements in vegeList", len(vegeList))
     - fmt.Println(len(vegeList[0]))
+- Slices in golang
+  - Main difference in between array and slices is if we are defining a value in sqaure braces then it means a simple array for example:
+    - var list = [4]string
+  - If we dont define values there then it means this is "slices". for example
+    - var list = []string
+      - If we are using this syntax then we must initialized it as well for example
+        - var list = []string{"Apple", "Mango", "Banana"}
