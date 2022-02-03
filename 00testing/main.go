@@ -1,6 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+)
 
 // const anotherVariable = "anotherVariable"
 
@@ -188,16 +195,49 @@ func main() {
 	// 	fmt.Println(createdAt)
 	// 	fmt.Println(createdAt.Format("Monday, 02 Jan 2006"))
 	// }
-	fmt.Println("Practicing about Arrays!")
-	var list [4]string
-	list[0] = "Apple"
-	list[1] = "Mango"
-	list[2] = "Peach"
-	list[3] = "Orange"
-	fmt.Println("List contains these fruits:", list)
-	fmt.Println("Items in list:", len(list))
-	fmt.Println("Count of 1st item in array:", len(list[0]))
+	// fmt.Println("Practicing about Arrays!")
+	// var list [4]string
+	// list[0] = "Apple"
+	// list[1] = "Mango"
+	// list[2] = "Peach"
+	// list[3] = "Orange"
+	// fmt.Println("List contains these fruits:", list)
+	// fmt.Println("Items in list:", len(list))
+	// fmt.Println("Count of 1st item in array:", len(list[0]))
 
-	var iniList = [3]string{"Potatoe", "Mushroom", "Lemon"}
-	fmt.Println(iniList)
+	// var iniList = [3]string{"Potatoe", "Mushroom", "Lemon"}
+	// fmt.Println(iniList)
+
+	fmt.Println("Starting again with golang")
+	// reader := bufio.NewReader(os.Stdin)
+	// fmt.Printf("Enter any number: ")
+	// input, _ := reader.ReadString('\n')
+	// fmt.Printf("Type of input is %T", input)
+	// fmt.Println("")
+	// converted, err := strconv.Atoi(strings.TrimSpace(input))
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// fmt.Printf("Type of input is %T", converted)
+	// fmt.Println("")
+
+	// rand.Seed(time.Now().UnixNano())
+	// fmt.Println(rand.Intn(5))
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter year of your Birth: ")
+	year, _ := reader.ReadString('\n')
+	fmt.Printf("Enter month of your Birth: ")
+	month, _ := reader.ReadString('\n')
+	fmt.Printf("Enter day of your Birth: ")
+	day, _ := reader.ReadString('\n')
+
+	convertYear, _ := strconv.Atoi(strings.TrimSpace(year))
+	convertMonth, _ := strconv.Atoi(strings.TrimSpace(month))
+	convertDay, _ := strconv.Atoi(strings.TrimSpace(day))
+
+	dob := time.Date(convertYear, time.Month(convertMonth), convertDay, 00, 00, 00, 00, time.Local)
+	convertedDate := dob.Format("Monday, 02-01-2006")
+	fmt.Println(convertedDate)
+
 }
