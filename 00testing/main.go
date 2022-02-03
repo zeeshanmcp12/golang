@@ -1,12 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
-	"time"
 )
 
 // const anotherVariable = "anotherVariable"
@@ -224,20 +219,35 @@ func main() {
 	// rand.Seed(time.Now().UnixNano())
 	// fmt.Println(rand.Intn(5))
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter year of your Birth: ")
-	year, _ := reader.ReadString('\n')
-	fmt.Printf("Enter month of your Birth: ")
-	month, _ := reader.ReadString('\n')
-	fmt.Printf("Enter day of your Birth: ")
-	day, _ := reader.ReadString('\n')
+	/* 	reader := bufio.NewReader(os.Stdin)
+	   	fmt.Printf("Enter year of your Birth: ")
+	   	year, _ := reader.ReadString('\n')
+	   	fmt.Printf("Enter month of your Birth: ")
+	   	month, _ := reader.ReadString('\n')
+	   	fmt.Printf("Enter day of your Birth: ")
+	   	day, _ := reader.ReadString('\n')
 
-	convertYear, _ := strconv.Atoi(strings.TrimSpace(year))
-	convertMonth, _ := strconv.Atoi(strings.TrimSpace(month))
-	convertDay, _ := strconv.Atoi(strings.TrimSpace(day))
+	   	convertYear, _ := strconv.Atoi(strings.TrimSpace(year))
+	   	convertMonth, _ := strconv.Atoi(strings.TrimSpace(month))
+	   	convertDay, _ := strconv.Atoi(strings.TrimSpace(day))
 
-	dob := time.Date(convertYear, time.Month(convertMonth), convertDay, 00, 00, 00, 00, time.Local)
-	convertedDate := dob.Format("Monday, 02-01-2006")
-	fmt.Println(convertedDate)
+	   	dob := time.Date(convertYear, time.Month(convertMonth), convertDay, 00, 00, 00, 00, time.Local)
+	   	convertedDate := dob.Format("Monday, 02-01-2006")
+	   	fmt.Println(convertedDate) */
+
+	var todos [4]string
+	todos[0] = "Recite Quran"
+	todos[1] = "Workout"
+	todos[2] = "Sprint Task"
+	todos[3] = "Learn something new!"
+	fmt.Println("Todos are: ", todos)
+	// fmt.Println("Total items in todos: ", len(todos))
+	// fmt.Println("Character in 1st element of array: ", len(todos[0]))
+
+	var items = []string{"PC", "Laptop", "Desktop"}
+	fmt.Println(len(items[2]))
+	fmt.Println("Total items in array 'items': ", items)
+	items = append(items, "IMAC", "MacBook")
+	fmt.Println("Total items in array 'items' now: ", items)
 
 }

@@ -20,5 +20,7 @@ func main() {
 	fmt.Println(sliceList)
 	sliceList = append(sliceList[1:3])
 	fmt.Println(sliceList)
+	sliceList = append(sliceList[1:4])
+	fmt.Println(sliceList)
 
 }
