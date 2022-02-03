@@ -198,7 +198,7 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - In Slices, we can add many values as we like and it keeps expand memory for us.
   - Syntax:
     - var sliceList = []string{"Apple", "Mango", "Banana"}
-    - Notice the difference. We didn't elements in square braces above.
+    - Notice the difference. We didn't add elements in square braces above.
   - Slice will return following type:
     - []string
 - How to append any element in existing array:
@@ -212,4 +212,6 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - In result, it will start from the first elemnent which is Apple. But Apple is at the zeroed index of array.
     - sliceList = append(sliceList[1:3])
       - Array elements -> [Apple Mango Banana Peach Orange]
-      - It will start from Mango till peach but print only Mango and Banana.
+      - It will start from Mango because 0 is not counted here...
+      - Second element is Banana
+      - Third element is Peach but it will not be printed because the last range is always non-inclusive, that's why Peach will not be printed.
