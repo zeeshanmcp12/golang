@@ -43,5 +43,6 @@ func main() {
 
 	// in above case, slice should not allow to add more values because we had defined 4 initially. But it allowed us and added more values into it.
 	// The reason behind this is "reallocating the memory" in golang. This time, it realloced the memory and accomodated more values in slice.
+	// When we use append method, it reallocates the memory that's why it added more values into it.
 
 }
