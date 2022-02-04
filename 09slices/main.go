@@ -47,9 +47,11 @@ func main() {
 	// in above case, slice should not allow to add more values because we had defined 4 initially. But it allowed us and added more values into it.
 	// The reason behind this is "reallocating the memory" in golang. This time, it realloced the memory and accomodated more values in slice.
 	// When we use append method, it reallocates the memory that's why it added more values into it.
+	// Initially we did great with memory allocation and defined only 4 elements but when append came, memory reallocation happend again. this comes up with lots of performance optimization benefits etc
 
-	sort.Ints(highScores)
+	sort.Ints(highScores) // sort is a package and Ints is a method of it. It sorts the value in slice.
+	// sort is only available in slices so not in array.
 	fmt.Println(highScores)
-	fmt.Println(sort.IntsAreSorted(highScores))
+	fmt.Println(sort.IntsAreSorted(highScores)) // This function returns if values in slice are sorted or not so it returns true or false.
 
 }
