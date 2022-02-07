@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
@@ -49,9 +48,16 @@ func main() {
 	// When we use append method, it reallocates the memory that's why it added more values into it.
 	// Initially we did great with memory allocation and defined only 4 elements but when append came, memory reallocation happend again. this comes up with lots of performance optimization benefits etc
 
-	sort.Ints(highScores) // sort is a package and Ints is a method of it. It sorts the value in slice.
+	// sort.Ints(highScores) // sort is a package and Ints is a method of it. It sorts the value in slice.
 	// sort is only available in slices so not in array.
-	fmt.Println(highScores)
-	fmt.Println(sort.IntsAreSorted(highScores)) // This function returns if values in slice are sorted or not so it returns true or false.
+	// fmt.Println(highScores)
+	// fmt.Println(sort.IntsAreSorted(highScores)) // This function returns if values in slice are sorted or not so it returns true or false.
+	var cources = []string{"javascript", "Java", "C#", "golang", "swift"}
+	fmt.Println("------Before removing item from slice-------")
+	fmt.Println(cources)
+	var index int = 2
+	cources = append(cources[:index], cources[index+1:]...)
+	fmt.Println("------After removing item from slice-------")
+	fmt.Println(cources)
 
 }

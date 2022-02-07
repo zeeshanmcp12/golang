@@ -215,3 +215,14 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - It will start from Mango because 0 is not counted here...
       - Second element is Banana
       - Third element is Peach but it will not be printed because the last range is always non-inclusive, that's why Peach will not be printed.
+- Remove item from slice based on index
+  - First we need to declare index number that we want to remove
+  - then we need to write :(colon) syntax that we used before to add items in slice
+  - Syntax
+    - [javascript Java C# golang swift] -> slice items
+    - var index int = 2
+      - We want the value on index number 2 to be deleted
+    - cources = append(cources[:index], cource[index+1:]...)
+      - :index -> start from default value which is on 0th position and go to index(th) position which is C#. This is not inclusive.
+      - It will start from javascript, take java and leave C#
+      - 
