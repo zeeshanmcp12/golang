@@ -225,4 +225,6 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - cources = append(cources[:index], cource[index+1:]...)
       - :index -> start from default value which is on 0th position and go to index(th) position which is C#. This is not inclusive.
       - It will start from javascript, take java and leave C#
-      - 
+      - cource[index+1:] -> start from index+1 (2+1=3) which means golang...and go till end
+      - ... : not sure about these 3 dots at the moment.
+  - In simple words, to remove an item from array (or slice) we can delete that item by skipping it.

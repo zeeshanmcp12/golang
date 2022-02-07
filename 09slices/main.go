@@ -36,12 +36,12 @@ func main() {
 	highScores[1] = 234
 	highScores[2] = 456
 	highScores[3] = 678
-	fmt.Println(highScores)
+	// fmt.Println(highScores)
 	// highScores[4] = 891 // This will throw an error because we just defined 4 elements in slice.
 	// fmt.Println(highScores)
 	// let's try to use append method and add some more elements in slice.
-	highScores = append(highScores, 876, 654, 432, 321)
-	fmt.Println(highScores)
+	// highScores = append(highScores, 876, 654, 432, 321)
+	// fmt.Println(highScores)
 
 	// in above case, slice should not allow to add more values because we had defined 4 initially. But it allowed us and added more values into it.
 	// The reason behind this is "reallocating the memory" in golang. This time, it realloced the memory and accomodated more values in slice.
@@ -55,9 +55,11 @@ func main() {
 	var cources = []string{"javascript", "Java", "C#", "golang", "swift"}
 	fmt.Println("------Before removing item from slice-------")
 	fmt.Println(cources)
+	fmt.Println()
 	var index int = 2
 	cources = append(cources[:index], cources[index+1:]...)
 	fmt.Println("------After removing item from slice-------")
 	fmt.Println(cources)
+	fmt.Println()
 
 }
