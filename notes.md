@@ -245,3 +245,6 @@ Notes are written for my own understanding so these may be inappropriate for oth
 - Delete key value pair from map in golang
   - Syntax:
     - delete(abbreviations, "JS") -> it requires only key to remove the pair from map.
+- Structs in golang
+  - Structs is an alternative of class because golang doesn't have classes.
+  - No inheritance and parent child kind of stuff in golang.
