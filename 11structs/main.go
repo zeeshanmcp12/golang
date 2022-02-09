@@ -7,11 +7,13 @@ func main() {
 
 	// Let's utilize our structure
 	newUser := User{"Zeeshan", 30, "acloudtechie@outlook.com", "DevOPS Engineer"}
-	fmt.Println(newUser)
+	// fmt.Println(newUser)
+	fmt.Printf("------------------------------------------------\n")
 
 	// %v stands for value
 	// %+v This will print more details like Key:Value for example Name:Zeeshan
 	fmt.Printf("User details are: %+v\n", newUser)
+	fmt.Printf("------------------------------------------------\n")
 
 	fmt.Printf("Username: %v\nEmail: %v", newUser.Name, newUser.Email)
 }
