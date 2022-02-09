@@ -228,3 +228,7 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - cource[index+1:] -> start from index+1 (2+1=3) which means golang...and go till end
       - ... : not sure about these 3 dots at the moment.
   - In simple words, to remove an item from array (or slice) we can delete that item by skipping it.
+- Maps in golang
+  - Maps also known as hash table or key value pairs in some languages.
+  - We can use make() to create whether it is slice or map. for example:
+    - languages := make()
