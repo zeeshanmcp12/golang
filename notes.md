@@ -247,4 +247,17 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - delete(abbreviations, "JS") -> it requires only key to remove the pair from map.
 - Structs in golang
   - Structs is an alternative of class because golang doesn't have classes.
-  - No inheritance and parent child kind of stuff in golang.
+  - No inheritance in golang.
+  - No parent child concept do exist in golang.
+  - How do we define struct in golang?
+    - First, we need to define the structure and then can utilize it anywhere in different ways.
+    - Syntax:
+      - type User struct {}
+      - type -> first we use a keyword "type"
+      - User -> notice the first letter that is capital which means publicaly available. It also means that since it is an alternative of class so similarly it can be exported.
+      - struct -> here we are saying that I want to define the structure.
+      - {} -> curly braces to define the structure.
+- Note about structs
+  - Make sure the following:
+    - There is no inheritance in golang
+    - The first letter of element in structure should be upper-case (with capital letters) so it can be exported and accessed by anyone.
