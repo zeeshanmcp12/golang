@@ -232,3 +232,16 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Maps also known as hash table or key value pairs in some languages.
   - We can use make() to create whether it is slice or map. for example:
     - languages := make()
+  - Syntax:
+    - abbreviations := make(map[string]string)
+    - make() -> is a function that handles memory management.
+      - it can accept storage which means it wont give errors with non-zeroed storage
+      - map[string]string -> map is data type which we must define when starting working with maps in golang
+      - [string]string -> first string represents the key
+      - string -> this second string represents the value
+    - initialize variable:
+    - abbreviations["JS"] = "JavaScript"
+    - it will print "map[JS:JavaScript OS:OperatingSystem PS:PowerShell]"
+- Delete key value pair from map in golang
+  - Syntax:
+    - delete(abbreviations, "JS") -> it requires only key to remove the pair from map.
