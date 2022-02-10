@@ -18,11 +18,23 @@ func main() {
 	// // fmt.Println("After slicing: ", todos)
 	// todos = append(todos[:4])
 	// fmt.Println("from 0th to 4(non-inclusive)", todos)
-	var todos = []string{"Workout", "Walk", "LearnToCode", "WriteSomeWords"}
-	fmt.Println(todos)
-	todos = append(todos, "SprintTask")
-	fmt.Println(todos)
-	var index int = 2
-	todos = append(todos[:index], todos[index+1:]...)
-	fmt.Println(todos)
+	// var todos = []string{"Workout", "Walk", "LearnToCode", "WriteSomeWords"}
+	// fmt.Println(todos)
+	// todos = append(todos, "SprintTask")
+	// fmt.Println(todos)
+	// var index int = 2
+	// todos = append(todos[:index], todos[index+1:]...)
+	// fmt.Println(todos)
+
+	fmt.Println("Practice to structs in golnag")
+	userData := User{"Zeeshan", 30, "acloudtechie@outlook.com", "DevOPS Engineer"}
+	fmt.Printf("Name: %+v\nEmail: %+v ", userData.Name, userData.Email)
+
+}
+
+type User struct {
+	Name       string
+	Age        int
+	Email      string
+	Profession string
 }
