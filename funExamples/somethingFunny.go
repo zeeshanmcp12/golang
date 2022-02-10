@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("This is about fun exercises!")
+	fmt.Println("Return something funny!")
 	var funnyItems = []string{"Looks good!", "That's really cool", "No way", "Awesome", "Beautiful"}
 	// fmt.Println(funnyItems)
 	fmt.Println("------------------------------")
