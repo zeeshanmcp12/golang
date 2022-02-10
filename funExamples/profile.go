@@ -9,32 +9,49 @@ import (
 )
 
 /*
-1- Take input for user details
-2- Convert input to string/int
-3- Define structure
-4- Utilize elements from structure
-5- Validate if user exist
-
+1- Take input for user details -> Done
+2- Convert input to string/int -> Done
+3- Define structure -> Done
+4- Utilize elements from structure -> Done
+5- Validate if user exist -> not done yet
 */
+
 func main() {
-	fmt.Println("Create Profile!")
+	fmt.Println("\tCreate Profile!")
+	fmt.Println()
+
+	// Take input for user details
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter username: ")
+	fmt.Printf("Enter your Name: ")
 	username, _ := reader.ReadString('\n')
-	fmt.Printf("Enter email address: ")
+	fmt.Printf("Enter Email Address: ")
 	emailAddress, _ := reader.ReadString('\n')
-	fmt.Printf("Enter Age: ")
+	fmt.Printf("Enter your Age: ")
 	age, _ := reader.ReadString('\n')
 
+	// Convert input to string/int
+	// Age converted to Int because it was string before
 	convertedAge, _ := strconv.Atoi(strings.TrimSpace(age))
-	// convertedUsername, _ := strconv.Atoi(strings.TrimSpace(username))
+
+	// Trim space from string because of ReadString function above
 	convertedUsername := strings.TrimSpace(username)
 	convertedEmail := strings.TrimSpace(emailAddress)
 
-	fmt.Printf("Types of variable %T, %T, %T", username, emailAddress, age)
+	// Utilize elements from structure
+	userProfile := User{convertedUsername, convertedEmail, convertedAge}
 	fmt.Println()
-	fmt.Printf("Types of variable %T %T %T", convertedUsername, convertedEmail, convertedAge)
-	fmt.Println()
-	fmt.Printf("Your Profile: %v, %v, %v", convertedUsername, convertedEmail, convertedAge)
+	fmt.Printf("----------Your Profile----------\n")
+	fmt.Printf("Name: %v\nEmail: %v\nAge: %v\n\n", userProfile.Name, userProfile.Email, userProfile.Age)
+	fmt.Println("--------------------------------")
 
+	fmt.Println("Press enter to continue...")
+	pressAnyKey, _ := reader.ReadString('\n')
+	fmt.Println(pressAnyKey)
+}
+
+// Define Structure
+type User struct {
+	Name  string
+	Email string
+	Age   int
 }
