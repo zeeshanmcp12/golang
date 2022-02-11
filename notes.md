@@ -261,3 +261,9 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Make sure the following:
     - There is no inheritance in golang
     - The first letter of element in structure should be upper-case (with capital letters) so it can be exported and accessed by anyone.
+- If/Else in golang
+  - We can write if/else logic on the go. 
+  - for example:
+    - initialize and assign value to variable
+    - check if/else. for example
+    - if num := 3 , num > 3

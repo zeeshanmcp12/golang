@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
 	fmt.Println("If/Else in golang!")
@@ -18,10 +23,22 @@ func main() {
 		result = "Exactly 10 login count"
 		fmt.Println(result)
 	}
+	if 2*5 == 10 {
+		fmt.Println("Both are equal")
+	} else {
+		fmt.Println("There is no equality")
+	}
 
-	if isLoggedIn := true; !isLoggedIn {
-		fmt.Println("Thank you for login!")
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter your name: ")
+	input, _ := reader.ReadString('\n')
+	c_name := strings.TrimSpace(input)
+	fmt.Println(c_name)
+
+	if name := c_name; c_name == name {
+		fmt.Printf("%v Thank you for login!", c_name)
 	} else {
 		fmt.Println("Enter correct username")
 	}
+
 }
