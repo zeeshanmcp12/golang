@@ -26,9 +26,10 @@ func main() {
 	if userProfile.Name == userDb[0] {
 		fmt.Printf("Thank you for login, %v", userProfile.Name)
 		fmt.Println()
+	} else if userProfile.Name != userDb[0] {
+		fmt.Println("User does not exist")
 	} else {
 		fmt.Println("Enter correct details")
-
 	}
 	/*
 		fmt.Println()
