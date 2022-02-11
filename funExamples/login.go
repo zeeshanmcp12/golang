@@ -7,6 +7,8 @@ import (
 	"strings"
 )
 
+var userDb = []string{"Zeeshan", "Bajo", "Hussain"}
+
 func main() {
 	fmt.Println("Login to system!")
 
@@ -30,13 +32,14 @@ func main() {
 	// Utilize elements from structure
 	userProfile := User{convertedUsername, convertedEmail}
 
-	if userProfile.Name == userProfile.Name {
+	if userProfile.Name == userDb[0] {
 		fmt.Printf("Thank you for login, %v", userProfile.Name)
 		fmt.Println()
-	} else if userProfile.Name != userProfile.Name {
-		fmt.Printf("Your provided %v does not match with our system.", userProfile.Name)
+	} else if userProfile.Name != userDb[0] {
+		fmt.Printf("Your provided %v value does not exist in our system.\n", userProfile.Name)
 
 	} else {
+		fmt.Println("Enter correct details!")
 
 	}
 	/*
