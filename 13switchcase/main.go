@@ -24,12 +24,14 @@ func main() {
 	case 2:
 		fmt.Printf("Number is %v, move to 2 spaces", number)
 		fmt.Println()
+		fallthrough // yet to be understand about this fallthrough in golang
 	case 3:
 		fmt.Printf("Number is %v, move to 3 spaces", number)
 		fmt.Println()
 	case 4:
 		fmt.Printf("Number is %v, move to 4 spaces", number)
 		fmt.Println()
+		fallthrough
 	case 5:
 		fmt.Printf("Number is %v, move to 5 spaces", number)
 		fmt.Println()
