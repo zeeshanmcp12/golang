@@ -24,12 +24,12 @@ func main() {
 
 	if convertToInt == 1 {
 		// fmt.Println(convertToInt)
-		fmt.Printf("\n==============Birthday Qoutes===============\n")
+		fmt.Printf("\n==============Birthday Quotes===============\n")
 		fmt.Println(birthday)
 
 	} else if convertToInt == 2 {
 
-		fmt.Printf("\n==============Best Wishes Qoutes===============\n")
+		fmt.Printf("\n==============Best Wishes Quotes===============\n")
 		fmt.Println(bestWishes)
 
 	} else {
