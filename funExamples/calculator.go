@@ -45,5 +45,8 @@ func main() {
 
 		}
 	}
+	fmt.Println("\nPress enter to continue...")
+	pressAnyKey, _ := reader.ReadString('\n')
+	fmt.Println(pressAnyKey)
 
 }
