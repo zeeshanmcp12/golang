@@ -41,7 +41,7 @@ func main() {
 		case "div":
 			fmt.Println("Division of two number: ", numOne/numTwo)
 		default:
-			fmt.Println("Default statement executed!")
+			fmt.Println("Please enter correct value.")
 
 		}
 	}
