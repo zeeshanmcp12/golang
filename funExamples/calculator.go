@@ -15,7 +15,7 @@ func main() {
 	firstNum, _ := reader.ReadString('\n')
 	fmt.Printf("Enter second number: ")
 	secondNum, _ := reader.ReadString('\n')
-	fmt.Printf("Enter any of these operator, sum, sub, mul, div: ")
+	fmt.Printf("Select any of these to calculate: 'sum, sub, mul, div': ")
 	calculate, _ := reader.ReadString('\n')
 
 	numOne, err := strconv.Atoi(strings.TrimSpace(firstNum))
@@ -26,20 +26,20 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Printf("Thank you for entering first number %v ", numOne)
-		fmt.Println()
-		fmt.Printf("Thank you for entering second number %v ", numTwo)
+		// fmt.Printf("Thank you for entering first number %v ", numOne)
+		// fmt.Println()
+		// fmt.Printf("Thank you for entering second number %v ", numTwo)
 		fmt.Println()
 
 		switch operator {
 		case "sum":
-			fmt.Println("Sum of two number: ", numOne+numTwo)
+			fmt.Println("Sum of two numbers: ", numOne+numTwo)
 		case "sub":
-			fmt.Println("Subtraction of two number: ", numOne-numTwo)
+			fmt.Println("Subtraction of two numbers: ", numOne-numTwo)
 		case "mul":
-			fmt.Println("Product of two number: ", numOne*numTwo)
+			fmt.Println("Product of two numbers: ", numOne*numTwo)
 		case "div":
-			fmt.Println("Division of two number: ", numOne/numTwo)
+			fmt.Println("Division of two numbers: ", numOne/numTwo)
 		default:
 			fmt.Println("Please enter correct value.")
 
