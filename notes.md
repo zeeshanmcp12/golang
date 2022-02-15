@@ -267,3 +267,21 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - initialize and assign value to variable
     - check if/else. for example
     - if num := 3 , num > 3
+- Switch Case
+- Loops in golang
+  - It's good to define a data structure which we want to loop through on.
+  - Best option is to define slice as below:
+    - days := []string{"Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"}
+    - d := 0; d < len(days); d++{
+    - fmt.Println(days[d])}
+      - d -> is similar to 'i' we have been working when defining loop in different languages.
+        - so here, d is equal to 0
+      - d < len(days) -> run the loop till the value in 'd' is less than the values defined in slice (days)
+        - so, here we have all elements in len(days).
+      - d := 0; d < len(days)
+        - loop will start from 0
+        - 0 < 7 (0 is less then 7)
+      - d++
+        - d = 0+1
+        - print the value from d(th) position which will be Saturday in first run.
+        - so, I want to print out whats the value of days at the present d, means 0th position, 1st position, 2nd position etc
