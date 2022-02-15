@@ -31,4 +31,8 @@ func main() {
 		fmt.Println("Enter correct value")
 
 	}
+	// reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("\nPress enter to continue....")
+	pressedKey, _ := reader.ReadString('\n')
+	fmt.Printf(pressedKey)
 }
