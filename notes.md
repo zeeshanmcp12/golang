@@ -269,10 +269,17 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - if num := 3 , num > 3
 - Switch Case
 - Loops in golang
+  - golang has only one type of loop which is for-loop
+  - basic syntax to understand the loops (basic for loop)
+    - for initialization; condition; post{
+       // statements....}
+      - The initialization statement is optional and executes before for loop starts. The initialization statement is always in a simple statement like variable declarations, increment or assignment statements, or function calls.
+      - The condition statement holds a boolean expression, which is evaluated at the starting of each iteration of the loop. If the value of the conditional statement is true, then the loop executes.
+      - The post statement is executed after the body of the for-loop. After the post statement, the condition statement evaluates again if the value of the conditional statement is false, then the loop ends.
   - It's good to define a data structure which we want to loop through on.
   - Best option is to define slice as below:
     - days := []string{"Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"}
-    - d := 0; d < len(days); d++{
+    - for d := 0; d < len(days); d++{
     - fmt.Println(days[d])}
       - d -> is similar to 'i' we have been working when defining loop in different languages.
         - so here, d is equal to 0
