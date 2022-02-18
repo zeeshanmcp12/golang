@@ -9,4 +9,11 @@ func main() {
 		fmt.Printf("2 x %v = %v\n", d, d*2)
 
 	}
+
+	// for loop as while loop
+	// loop will keep run until the condition is true.
+	/*index := 9
+	for index < 10 {
+		fmt.Println("While loop")
+	}*/
 }
