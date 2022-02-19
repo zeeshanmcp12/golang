@@ -16,30 +16,18 @@ func main() {
 		for i := 0; i < 10; i++ {
 			fmt.Printf("The Value is %v\n", i)
 		}*/
-	sum := 0
-	for i := 1; i < 5; i++ {
-		fmt.Printf("Sum inside loop %v\n", sum)
-		sum += i
-	}
-	fmt.Printf("Sum outside of loop %v\n", sum)
 	/*	sum := 0
-		sum += 1
-		fmt.Println(sum)
-		sum += 1
-		fmt.Println(sum)
-		sum += 1
-		fmt.Println(sum)
-		sum += 1
-		fmt.Println(sum)
-		sum += 1
-		fmt.Println(sum)
-		sum += 1
-		fmt.Println(sum)*/
-
+		for i := 1; i < 5; i++ {
+			fmt.Printf("Sum inside loop %v\n", sum)
+			sum += i
+		}
+		fmt.Printf("Sum outside of loop %v\n", sum)
+	*/
 	// for loop as while loop
 	// loop will keep run until the condition is true.
-	/*index := 9
-	for index < 10 {
-		fmt.Println("While loop")
-	}*/
+	number := 0
+	for number < 5 {
+		fmt.Println(number)
+		number++
+	}
 }

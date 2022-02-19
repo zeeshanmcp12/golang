@@ -292,3 +292,17 @@ Notes are written for my own understanding so these may be inappropriate for oth
         - d = 0+1
         - print the value from d(th) position which will be Saturday in first run.
         - so, I want to print out whats the value of days at the present d, means 0th position, 1st position, 2nd position etc
+  - for loop in writing style of while loop
+    - num := 0
+    - for i < 5 {
+      - fmt.Println(i)
+      - num++
+    - }
+  - break in loops
+    - is actually imediatly exits the loop.
+    - it doesn't look for what after the break is in curely braces.
+    - it also exits the loop even the condition is staisfying.
+    - in simple words: exits and goes to the end.
+  - continue in loops
+    - it imediatly jumps to beginning of the loop and skip rest of the statements.
+    - in simple words: jumps back right to the beginning.
