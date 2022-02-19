@@ -40,6 +40,7 @@ func main() {
 	for i := range days {
 		fmt.Println(days[i])
 	}
+	// when we are using this i here, it returns an index and not the actual value.
 
 	// If we want index and it's value together then we can use below format.
 	for index, day := range days {
