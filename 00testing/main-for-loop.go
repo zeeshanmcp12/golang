@@ -46,10 +46,15 @@ func main() {
 
 		} else if c_quotes == 2 {
 			fmt.Printf("Best Wishes:\n%v\n", bestWishes)
+			fmt.Println()
 			break
 
 		} else {
-			fmt.Println("Else statement executed!")
+			fmt.Println("You didn't enter any number!")
 		}
 	}
+	pressKey := bufio.NewReader(os.Stdin)
+	fmt.Printf("Press enter to continue....")
+	pressAnyKey, _ := pressKey.ReadString('\n')
+	fmt.Println(pressAnyKey)
 }
