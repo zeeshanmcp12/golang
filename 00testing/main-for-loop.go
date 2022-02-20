@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Practice..Pactice..Practice!")
+	fmt.Println("--- Quotes library ---")
 
 	// ------------- Print table of any number by taking input ----------------
 	/*
@@ -32,7 +32,7 @@ func main() {
 
 	// ------------- Daily Quotes ----------------
 	birthdayQuotes := []string{"Happy Birthday\n", "Cuties born in Feb!\n", "Enjoy your day"}
-	bestWishes := []string{"All the best!\n", "Don't give up\n", "Alway try to not getting fear of"}
+	bestWishes := []string{"All the best!\n", "Don't give up\n", "Always try to not getting fear of"}
 
 	for i := 0; true; i++ {
 		reader := bufio.NewReader(os.Stdin)
@@ -51,6 +51,7 @@ func main() {
 
 		} else {
 			fmt.Println("You didn't enter any number!")
+			fmt.Println()
 		}
 	}
 	pressKey := bufio.NewReader(os.Stdin)
