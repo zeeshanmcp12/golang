@@ -34,22 +34,22 @@ func main() {
 	birthdayQuotes := []string{"Happy Birthday\n", "Cuties born in Feb!\n", "Enjoy your day"}
 	bestWishes := []string{"All the best!\n", "Don't give up\n", "Alway try to not getting fear of"}
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Enter anyone to see something cool: [1]Birthday Quotes, [2]Best Wishes: ")
-	input, _ := reader.ReadString('\n')
-	c_quotes, err := strconv.Atoi(strings.TrimSpace(input))
-	if err != nil {
-		fmt.Println(err)
-	} else {
-
-		// Using if/else (condition logic)
+	for i := 0; true; i++ {
+		reader := bufio.NewReader(os.Stdin)
+		fmt.Printf("Select any number: [1]Birthday Quotes, [2]Best Wishes: ")
+		input, _ := reader.ReadString('\n')
+		c_quotes, _ := strconv.Atoi(strings.TrimSpace(input))
 		if c_quotes == 1 {
 			fmt.Printf("Birthday Quotes:\n%v\n", birthdayQuotes)
+			fmt.Println()
+			continue
+
 		} else if c_quotes == 2 {
 			fmt.Printf("Best Wishes:\n%v\n", bestWishes)
+			break
 
 		} else {
-			fmt.Println("Enter correct value!")
+			fmt.Println("Else statement executed!")
 		}
 	}
 }
