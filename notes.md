@@ -306,3 +306,12 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - continue in loops
     - it imediatly jumps to beginning of the loop and skip rest of the statements.
     - in simple words: jumps back right to the beginning.
+- functions in golang
+  - Basic syntax:
+    - func main(){}
+    - main is an entry point in golang
+    - as soon as we create main function we don't even need to call it and can execute the file (go run main.go)
+    - because golang knows that main is an entry point.
+  - Function inside the function is not allowed.
+    - It will throw an error saying "expression is expected and not function"
+  - ... (three triple dots) are variadic functions and they can expect any values.
