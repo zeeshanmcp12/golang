@@ -16,7 +16,7 @@ func main() {
 
 		reader := bufio.NewReader(os.Stdin)
 		input, _ := reader.ReadString('\n')
-		f_text := strings.TrimSpace(input)
+		f_text := strings.TrimSpace(input) // f_text refers to 'final text' after triming space
 
 		if f_text != "Done" {
 			if f_text != "" {
@@ -30,6 +30,7 @@ func main() {
 		} else if f_text == "Done" {
 
 			fmt.Println()
+			// j, todo -> to get the index and it's value alongside
 			for j, todo := range todos {
 				fmt.Printf("Task %v %v\n", j+1, todo)
 			}
