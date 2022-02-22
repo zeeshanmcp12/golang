@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	fmt.Println("------Todo app------")
+	fmt.Println("Todo app")
 	todos := []string{}
-	fmt.Printf("Add todos: ")
+	fmt.Printf("Add todo: ")
 
 	for i := 0; true; i++ {
 
@@ -30,9 +30,7 @@ func main() {
 		} else if f_text == "Done" {
 
 			fmt.Println()
-			for j, todo := range todos {
-				fmt.Printf("Task %v %v\n", j+1, todo)
-			}
+			fmt.Printf("Your Todos %v\n", todos)
 			fmt.Println()
 			break
 
