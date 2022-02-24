@@ -343,3 +343,11 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - func data(num1 int, name string) (int, string){}
   - We can omit data type and define only once if parameters are of the same data type. for example:
     - func add(num1, num2 int){}
+  - label our return value
+    - We can lable return values in golang
+    - Syntax:
+      - func add(num1, num2 int) (lbl1 int){
+      - lbl1 = num1 + num2
+      - return
+      - }
+      - In this case, I dont need to write something like this: return num1 + num2 because we've labled our return variable.
