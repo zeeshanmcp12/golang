@@ -316,6 +316,9 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - It will throw an error saying "expression is expected and not function"
   - ... (three triple dots) are variadic functions and they can expect any values.
   - We write function to resue it and avoid copy pasting code etc.
+  - We can have multiple parameters in function call even with different data types, for example:
+    - func add(num1 int, num2 int){}
+    - func add (num1 int, name string){}
   - function declaration
     - func add(num1 int, num2 int){
     - fmt.Println(num1 + num2)}
@@ -324,4 +327,19 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - fmt.Println(num1 + num2) -> in this function, we want to add two numbers
   - function call
     - add(5,5)
-      - in Function call, we just need to pass value as comma separated.
+      - in Function call, we just need to pass value as comma separated. Do not put any operand in function call for example +, -, * (multiply) etc
+  - return keyword
+    - If we are not willing to get things done directly in function declaration then we can simply pass the result to someone else to perform certain operation on behalf of us.
+    - we need to use return keyword in function declaration.
+    - we also need to add type of value that we want to return
+      - for example if we want to return 'int' then we need to define 'int' after parantheses (and before curly braces)
+        - Syntax of return
+          - func add(num1 int, num2 int) int {
+            - return num1 + num2
+          - }
+          - ans := add(5,5)
+          - fmt.Println(ans)
+    - if we are returning two data types then we need to enclosed both types in parantheses as below:
+      - func data(num1 int, name string) (int, string){}
+  - We can omit data type and define only once if parameters are of the same data type. for example:
+    - func add(num1, num2 int){}
