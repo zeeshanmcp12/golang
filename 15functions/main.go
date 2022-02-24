@@ -10,8 +10,12 @@ func main() {
 	// fmt.Printf("Sum of two number is %v ", result)
 
 	// fmt.Println(data(32, "Zeeshan"))
-	result := sub(14, 7)
-	fmt.Printf("14 - 7 is %v", result)
+	// result := sub(14, 7)
+	// fmt.Printf("14 - 7 is %v", result)
+
+	// return value by using variadic function
+	result := unlimitedValue(3, 2, 1)
+	fmt.Println(result)
 }
 
 // Write function that can add two numbers
@@ -35,7 +39,17 @@ func main() {
 
 // labele our return values
 // lbl1 -> is the lable for our return value
-func sub(num1, num2 int) (lbl1 int) {
+/*func sub(num1, num2 int) (lbl1 int) {
 	lbl1 = num1 - num2
 	return
+}*/
+func unlimitedValue(values ...int) int {
+	total := 0
+
+	for _, val := range values {
+		total += val // this (val) value will be added every single time to total and total is being upgraded.
+
+	}
+	// now, return the value
+	return total
 }

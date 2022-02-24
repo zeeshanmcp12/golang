@@ -315,6 +315,7 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Function inside the function is not allowed.
     - It will throw an error saying "expression is expected and not function"
   - ... (three triple dots) are variadic functions and they can expect any values.
+  - When we call any function then it direclty jumps to the function declaration, performs operation and return back to the line where it jumped from.
   - We write function to resue it and avoid copy pasting code etc.
   - We can have multiple parameters in function call even with different data types, for example:
     - func add(num1 int, num2 int){}
@@ -328,7 +329,16 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - function call
     - add(5,5)
       - in Function call, we just need to pass value as comma separated. Do not put any operand in function call for example +, -, * (multiply) etc
-  - return keyword
+  - variadic function
+    - sometimes we dont know how many values are going to come in to function call, hence we cannot define it as an argument.
+    - for example: in this case, we know two values are there in function declaration. Syntax:
+      - func add(num1 int, num2 int) int {return num1 + num2}
+      - add(5,5) 
+    - In order to support this case, we can variadic function, for example:
+      - refer to folder 15functions for example.
+    - This is similar to append method in slices.
+  - return keyword (returning result)
+    - Sometimes instead of priting the result we want to hold it and use later on or manipulate them.
     - If we are not willing to get things done directly in function declaration then we can simply pass the result to someone else to perform certain operation on behalf of us.
     - we need to use return keyword in function declaration.
     - we also need to add type of value that we want to return
