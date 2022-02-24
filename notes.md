@@ -315,3 +315,13 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Function inside the function is not allowed.
     - It will throw an error saying "expression is expected and not function"
   - ... (three triple dots) are variadic functions and they can expect any values.
+  - We write function to resue it and avoid copy pasting code etc.
+  - function declaration
+    - func add(num1 int, num2 int){
+    - fmt.Println(num1 + num2)}
+      - We need to pass stuff as parameter if we want any operation to be performed using this function.
+      - We also need to define it's type, i.e. int, string, float64 etc
+      - fmt.Println(num1 + num2) -> in this function, we want to add two numbers
+  - function call
+    - add(5,5)
+      - in Function call, we just need to pass value as comma separated.
