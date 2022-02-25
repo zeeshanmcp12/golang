@@ -26,9 +26,6 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		// fmt.Printf("Thank you for entering first number %v ", numOne)
-		// fmt.Println()
-		// fmt.Printf("Thank you for entering second number %v ", numTwo)
 		fmt.Println()
 
 		switch operator {
