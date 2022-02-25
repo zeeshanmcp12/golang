@@ -30,7 +30,10 @@ func main() {
 		} else if f_text == "Done" {
 
 			fmt.Println()
-			fmt.Printf("Your Todos %v\n", todos)
+			for j, todo := range todos {
+				fmt.Printf("Task %v %v\n", j+1, todo)
+
+			}
 			fmt.Println()
 			break
 
