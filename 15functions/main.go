@@ -16,6 +16,12 @@ func main() {
 	// return value by using variadic function
 	result := unlimitedValue(3, 2, 1)
 	fmt.Println(result)
+
+	// writing function inside function
+	output := func() {
+		fmt.Println("function call from inside of function")
+	}
+	output()
 }
 
 // Write function that can add two numbers
