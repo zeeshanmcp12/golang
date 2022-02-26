@@ -370,4 +370,6 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - func (u User) method_name(){}
     - u -> representing to an object (or struct) which is User
     - User -> is a struc we've defined in 11structs file.
-  
+  - Basic syntax
+    - see line 19 in [16method.go file](/16methods/main.go)
+    - 
