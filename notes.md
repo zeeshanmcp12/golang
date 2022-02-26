@@ -364,6 +364,10 @@ Notes are written for my own understanding so these may be inappropriate for oth
 - Difference between Method and function
   - function -> when we do regular things and waraped up that is called function.
   - Method -> Since golang does not have classes so when these functions go into the classes (or struct in golang) then it is called method.
-    - Because of not having classes in golang, we need to bring our functions into structs so we can call them methods.
 - Methods in golang
+  - Because of not having classes in golang, we need to bring our functions into structs so we can call them methods.
+  - to create a method we should have sturct that we can pass on to method as object. for example:
+  - func (u User) method_name(){}
+    - u -> representing to an object (or struct) which is User
+    - User -> is a struc we've defined in 11structs file.
   
