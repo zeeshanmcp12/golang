@@ -361,3 +361,9 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - return
       - }
       - In this case, I dont need to write something like this: return num1 + num2 because we've labled our return variable.
+- Difference between Method and function
+  - function -> when we do regular things and waraped up that is called function.
+  - Method -> Since golang does not have classes so when these functions go into the classes (or struct in golang) then it is called method.
+    - Because of not having classes in golang, we need to bring our functions into structs so we can call them methods.
+- Methods in golang
+  
