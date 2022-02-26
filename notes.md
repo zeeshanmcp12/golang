@@ -314,6 +314,13 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - because golang knows that main is an entry point.
   - Function inside the function is not allowed.
     - It will throw an error saying "expression is expected and not function"
+    - but in once case, it is allowed: when we assign func to a variable. See a complete example in [main.go](00practice/main.go)
+      - func main(){
+      - test := func(){
+        - fmt.Println("hello world")
+      - }
+      - test()
+      - }
   - ... (three triple dots) are variadic functions and they can expect any values.
   - When we call any function then it direclty jumps to the function declaration, performs operation and return back to the line where it jumped from.
   - We write function to resue it and avoid copy pasting code etc.
