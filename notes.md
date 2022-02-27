@@ -379,4 +379,6 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - User -> is a struc we've defined in 11structs file.
   - Basic syntax
     - see line 19 in [16method.go file](/16methods/main.go)
-    - 
+  - Important notes
+    - Whenever we pass on these objects (or structs) it actually passes on a copy, here comes the concept of pointers in golang
+    - So to pass the original object, we should be passing up the reference of it (or a pointer to that).

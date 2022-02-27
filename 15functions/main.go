@@ -22,6 +22,12 @@ func main() {
 		fmt.Println("function call from inside of function")
 	}
 	output()
+
+	user := User{"Zeeshan", 32, true, "abc@abc.com"}
+
+	fmt.Println("Name is: ", user.Name)
+	fmt.Println("Age is: ", user.Age)
+	fmt.Println("Email is: ", user.Email)
 }
 
 // Write function that can add two numbers
@@ -58,4 +64,11 @@ func unlimitedValue(values ...int) int {
 	}
 	// now, return the value
 	return total
+}
+
+type User struct {
+	Name   string
+	Age    int
+	Status bool
+	Email  string
 }
