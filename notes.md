@@ -382,3 +382,13 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Important notes
     - Whenever we pass on these objects (or structs) it actually passes on a copy, here comes the concept of pointers in golang
     - So to pass the original object, we should be passing up the reference of it (or a pointer to that).
+- Defer in golang
+  - code executes line by line in golang
+  - defer is a keyword in golang.
+  - defer means, it delays the execution of code (line) that has defer with it. for example:
+    - func main(){
+      - defer fmt.Println("World")
+      - fmt.Println("Hello")
+      - }
+      - This "world will get jump this line 389 to very end of the block before curly braces.
+      - So, it will print, Hello, World.
