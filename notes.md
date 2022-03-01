@@ -394,3 +394,4 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - This "world will get jump this line 389 to very end of the block before curly braces.
       - So, it will print, Hello, World.
   - In reverse order, it works like "LIFO" (last in first out)
+  - More examples and notes added in [17defer.go file](/17defer/main.go)
