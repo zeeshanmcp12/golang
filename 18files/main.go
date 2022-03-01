@@ -1,31 +1,35 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
+	"strings"
 )
 
 func main() {
-	fmt.Println("Working with files in golang")
-	content := "The text written in file created by golang."
-	file, err := os.Create("./newfile.txt")
+	fmt.Println("Working with files in golang!")
+	content := userInput()
+
+	file, err := os.Create("./userData.txt")
+
+	io.WriteString(file, content)
+
 	CheckNilErr(err)
+	readFile("./userData.txt")
 
-	textLength, err := io.WriteString(file, content)
-	CheckNilErr(err)
-	fmt.Println("Text length is: ", textLength)
-	readFile()
+	defer file.Close()
 
-	// data, _ := ioutil.ReadFile("./gofile.txt")
-
-	defer file.Close() // we used defer to close the file after reading it's content
 }
 
-func readFile() {
-	data, _ := ioutil.ReadFile("./newfile.txt")
-	fmt.Println("The data we read from file is:\n", string(data))
+func userInput() string {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter any text to add in file: ")
+	input, _ := reader.ReadString('\n')
+	f_text := strings.TrimSpace(input)
+	return f_text
 
 }
 
@@ -33,4 +37,10 @@ func CheckNilErr(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func readFile(fileData string) {
+	data, _ := ioutil.ReadFile(fileData)
+	fmt.Print("File to be written with data\n", string(data))
+
 }

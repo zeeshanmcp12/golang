@@ -405,8 +405,14 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - read file
   - Packages we need to use for "working with file in golang"
     - os
-      - os.Create -> to create the file
+      - os.Create 
+        - -> to create the file
+        - -> it requires one argument, file name(file path) which has to create.
     - io
-      - io.WriteString -> to write string in file
+      - io.WriteString 
+        - -> to write string in file
+        - -> it requires two arguments, file and content
     - ioutil
-      - ioutil.ReadFile -> to read the file
+      - ioutil.ReadFile 
+      - -> to read the file
+      - It requires one argument which is file data
