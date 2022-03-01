@@ -10,7 +10,7 @@ import (
 func main() {
 	fmt.Println("Working with files in golang")
 	content := "The text written in file created by golang."
-	file, err := os.Create("./gofile.txt")
+	file, err := os.Create("./newfile.txt")
 	CheckNilErr(err)
 
 	textLength, err := io.WriteString(file, content)
@@ -24,7 +24,7 @@ func main() {
 }
 
 func readFile() {
-	data, _ := ioutil.ReadFile("./gofile.txt")
+	data, _ := ioutil.ReadFile("./newfile.txt")
 	fmt.Println("The data we read from file is:\n", string(data))
 
 }
