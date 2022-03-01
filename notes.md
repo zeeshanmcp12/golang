@@ -395,3 +395,19 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - So, it will print, Hello, World.
   - In reverse order, it works like "LIFO" (last in first out)
   - More examples and notes added in [17defer.go file](/17defer/main.go)
+  - As soon as we see 'defer' then execution of it will get little delay.
+- Working with files in golang
+  - Using built-in packages, we can only read txt file in golang
+  - to read/write csv file, we need external package
+  - We need following items in order to perform read/write operations in golang
+    - content
+    - create file
+    - read file
+  - Packages we need to use for "working with file in golang"
+    - os
+      - os.Create
+      - os.ReadFile
+    - io
+      - io.WriteString
+    - ioutil
+      - ioutil.ReadFile

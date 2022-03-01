@@ -37,7 +37,7 @@ func main() {
 func deferFunc() {
 
 	for i := 0; i < 5; i++ {
-		defer fmt.Print(i)
+		defer fmt.Print(i) // it will get stored into the stack and then print as we visualize in line 35
 	}
 
 }
