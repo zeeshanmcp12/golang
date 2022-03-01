@@ -405,9 +405,8 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - read file
   - Packages we need to use for "working with file in golang"
     - os
-      - os.Create
-      - os.ReadFile
+      - os.Create -> to create the file
     - io
-      - io.WriteString
+      - io.WriteString -> to write string in file
     - ioutil
-      - ioutil.ReadFile
+      - ioutil.ReadFile -> to read the file

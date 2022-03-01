@@ -20,7 +20,7 @@ func main() {
 
 	// data, _ := ioutil.ReadFile("./gofile.txt")
 
-	defer file.Close()
+	defer file.Close() // we used defer to close the file after reading it's content
 }
 
 func readFile() {
