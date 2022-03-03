@@ -6,19 +6,29 @@ import (
 	"net/http"
 )
 
-const url = "https://lco.dev"
+const url = "https://dev-id.matas.dk"
 
 func main() {
-	fmt.Println("Handling Web request/response in golang")
+	fmt.Println("Handling web request in golang!")
 
 	response, err := http.Get(url)
 	CheckNilErr(err)
 
-	fmt.Printf("Type of url is %T", response)
+	fmt.Printf("Type of response is %T\n", response)
+	// Type of response is *http.Response which is a pointer
+	// fmt.Println(response.Status)
+	// fmt.Println(response.Request)
 
-	databytes, err := ioutil.ReadAll(response.Body)
+	// Close connection because it's caller's responsibility
+	defer response.Body.Close()
+
+	// Read the response
+	// In this case, we only need to read the Body and not header etc
+	data, err := ioutil.ReadAll(response.Body)
 	CheckNilErr(err)
-	fmt.Println(string(databytes))
+
+	// Convert the response into string
+	fmt.Print(string(data))
 
 }
 

@@ -416,3 +416,21 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - ioutil.ReadFile 
       - -> to read the file
       - It requires one argument which is file data
+- Handling web request in golang
+  - Whenever we send a request to any web server (or website), it returns with a response object.
+    - So, to handle this web request and response we use net/http package in golang.
+    - http package has so many functions, types and methods etc to work with it.
+    - We will start with GET
+    - If we want to handle response object then we need to use type "Response" with http package.
+  - Close (this is a type in http package)
+    - Whenever we make a new request to any website, it is our responsibility to close the connection because neither ReadResponse nor Response.Write does this.
+  - At this stage,
+    - First of all, we need to define a url in global space
+    - In most cases, there is a separate function for this request handling so we can use it anywhere but at this stage we're gonna write the code in 'main' function.
+  - Type of response
+    - Type of response is *http.Response which is a pointer. Having the type of response is pointer means, we will get an original value and not the copy of it.
+  - ioutil
+    - Previously in file handling, we used ioutil with ReadFile (like this ioutil.ReadFile) but in response handling, we will use ioutil.ReadAll
+    - Majority of the reading is done by ioutil package (it's majority and not all)
+    - After reading response, we also need to convert it to string
+    
