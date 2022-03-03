@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-const acUrl = "https://lco.dev"
+const acUrl = "https://google.com"
 
 func main() {
 	fmt.Println("Web request handling in golang!")
@@ -36,7 +36,7 @@ func main() {
 func storeRes(data string) {
 	resBody := data
 
-	file, err := os.Create("./site_response.html")
+	file, err := os.Create("./site_google.html")
 	CheckNilErr(err)
 
 	io.WriteString(file, resBody)
