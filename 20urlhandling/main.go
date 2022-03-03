@@ -36,6 +36,15 @@ func main() {
 		fmt.Printf("Key is %v Value is %v\n", i, val)
 		// i++
 	}
+
+	constructUrl := &url.URL{ // dont forget to pass the reference of url here and not the copy.
+		Scheme: "https",
+		Host:   "acloudtechie.com",
+		Path:   "/azure",
+	}
+
+	homePage := constructUrl.String()
+	fmt.Println(homePage)
 }
 
 func CheckNilErr(err error) {
