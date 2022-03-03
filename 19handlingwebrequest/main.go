@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -23,22 +24,22 @@ func main() {
 	// Close connection because it's caller's responsibility
 	defer response.Body.Close()
 
-	successReq := 200
+	// successReq := 200
 
-	if successReq == response.StatusCode {
-		fmt.Printf("%v returning %v status ", url, response.Status)
+	/*	if successReq == response.StatusCode {
+			fmt.Printf("%v returning %v status ", url, response.Status)
 
-	} else {
-		fmt.Println("There is an error")
-	}
+		} else {
+			fmt.Println("There is an error")
+		}*/
 
 	// Read the response
 	// In this case, we only need to read the Body and not header etc
-	// data, err := ioutil.ReadAll(response.Body)
-	// CheckNilErr(err)
+	data, err := ioutil.ReadAll(response.Body)
+	CheckNilErr(err)
 
 	// Convert the response into string
-	// fmt.Print(string(data))
+	fmt.Print(string(data))
 
 }
 
