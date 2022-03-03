@@ -417,6 +417,7 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - -> to read the file
       - It requires one argument which is file data
 - Handling web request in golang
+  - This is about, How we can make a request to URL
   - Whenever we send a request to any web server (or website), it returns with a response object.
     - So, to handle this web request and response we use net/http package in golang.
     - http package has so many functions, types and methods etc to work with it.
@@ -433,4 +434,10 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - Previously in file handling, we used ioutil with ReadFile (like this ioutil.ReadFile) but in response handling, we will use ioutil.ReadAll
     - Majority of the reading is done by ioutil package (it's majority and not all)
     - After reading response, we also need to convert it to string
+- URL handling in golang
+  - We do have "url" library in golang to work with url handling
+  - Parsing means we want to extract some information from the url (in context meaning)
+    - When we do Parsing on a URL then there comes up so many details from that url.
+    - Syntax:
+      - url.Parse() -> pass url as an argument
     
