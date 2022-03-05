@@ -7,7 +7,7 @@ const OvenTime = 40
 
 func main() {
 	fmt.Println("Practice from exercism!")
-	RemainingOvenTime()
+	RemainingOvenTime(result)
 }
 
 // RemainingOvenTime returns the remaining minutes based on the `actual` minutes already in the oven.
