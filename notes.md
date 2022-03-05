@@ -449,4 +449,24 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - parsedUrl.Query() this (.Query()) function helps us to extract the query parameters in a format of key value pair.
     - partsOfUrl.String() -> this (.String()) will construct the url with the values provided in &url.URL{}
     - See this [main.go](/20urlhandling/main.go) for code.
-    
+- Web Request with Get Method
+  - string is a data type
+  - strings is a package in golang
+  - ioutil.ReadAll(response.Body)
+    - We use ioutil to read the body of response. This is of type "byte" hence we do convert it into string.
+- Web Request with POST Method
+  - We do mostly sends the data either in json format or in url-encoded forms.
+  - http.Post
+    - This method requires some parameters
+      - url -> whatever the url it is there
+      - data type -> string or json...
+        - if it's json then -> make sure it should be something like this "application/json"
+      - content/data -> request body
+  - Create fake json payload
+    - Syntax:
+      - requestBody := strings.NewReader(`
+      - {
+        - "name":"Zeeshan"
+        - "age": 32
+        - "website":"https://acloudtechie.com"
+      - }`)
