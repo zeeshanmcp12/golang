@@ -470,3 +470,12 @@ Notes are written for my own understanding so these may be inappropriate for oth
         - "age": 32
         - "website":"https://acloudtechie.com"
       - }`)
+- Web Request with Postform
+  - In this request, we are gonna send form data with our request
+  - Method to be used for this:
+    - url.Values
+      - .Values -> is the method to be used to work with post form request.
+    - Syntax:
+      - url.Values{} -> initially keep the defination empty so later values can be assigned to it.
+      - data := url.Values{} -> first assign the value to variable.
+      - data.Add() -> use Add method to add fake values.
