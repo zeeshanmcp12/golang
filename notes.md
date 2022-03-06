@@ -479,3 +479,16 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - url.Values{} -> initially keep the defination empty so later values can be assigned to it.
       - data := url.Values{} -> first assign the value to variable.
       - data.Add() -> use Add method to add fake values.
+- Create Json Data in golang
+  - encoding of json:
+    - it means, we have the data in any format, either it is slices, string or int. We need to convert it into json that is called encoding in this section.
+  - json.Marshal() -> it requires one parameter which is struct
+  - json.MarshallIndent() it requires three parameters:
+    - struct (interface)
+    - prefix (it could be empty string) ""
+    - "\t" -> this is for tab, similar to \n for new line
+  - To encode data in JSON format:
+    - First we need to define data structure
+    - Second we need to create the data that has to be package as JSON
+    - Third package the data in JSON format
+    - ....in progress
