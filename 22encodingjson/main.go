@@ -14,12 +14,12 @@ func main() {
 // First we need to define data structure
 
 type Profile struct {
-	FullName string
-	Age      int
-	Email    string
-	Password string
-	Platform string
-	Tags     []string
+	FullName string   `json:"name"`
+	Age      int      `json:"age"`
+	Email    string   `json:"email"`
+	Password string   `json:"-"`
+	Platform string   `json:"website"`
+	Tags     []string `json:"tags,omitempty"`
 }
 
 func EndcodeJSON() {
@@ -27,7 +27,7 @@ func EndcodeJSON() {
 	profileData := []Profile{
 		{"Muhammad Zeeshan", 32, "acloudtechie@outlook.com", "abc123+", "acloudtechie.com", []string{"cloud", "azops"}},
 		{"Abdullah", 26, "abdullah@outlook.com", "def123+", "acloudtechie.com", []string{"support", "helpdesk"}},
-		{"Nasir", 30, "nasir@outlook.com", "ghi123+", "acloudtechie.com", []string{"devops", "support"}},
+		{"Nasir", 30, "nasir@outlook.com", "ghi123+", "acloudtechie.com", nil},
 	}
 
 	// Third package the data in JSON format

@@ -482,13 +482,35 @@ Notes are written for my own understanding so these may be inappropriate for oth
 - Create Json Data in golang
   - encoding of json:
     - it means, we have the data in any format, either it is slices, string or int. We need to convert it into json that is called encoding in this section.
-  - json.Marshal() -> it requires one parameter which is struct
-  - json.MarshallIndent() it requires three parameters:
-    - struct (interface)
-    - prefix (it could be empty string) ""
-    - "\t" -> this is for tab, similar to \n for new line
+  - json.Marshal() 
+    - .Marshal() is used to encode the data in json format.
+    - it requires one parameter which is struct
+  - json.MarshallIndent() 
+    - It will indent the content in proper format and not in single line.
+    - it requires three parameters:
+      - struct (interface)
+      - prefix (it could be empty string) "" -> this will add in all lines of output so if there is something else then it will print similar to this.
+      - "\t" -> this is for tab, similar to \n for new line
   - To encode data in JSON format:
     - First we need to define data structure
     - Second we need to create the data that has to be package as JSON
     - Third package the data in JSON format
-    - ....in progress
+  - Creating alias of Keys in data structure (struct)
+    - Syntax:
+      - type Profile struct {}
+        - This can accepts parameters for example
+          - Name string -> string is one parameter
+        - Now, If we want to create an alias of this name so it prints alias and not the actual key then we need to add another parameter something like this:
+          - Name string `json:"fullname"` (followed with back tick and json keyword)
+          - head over to [this](/22encodingjson/main.go) file from line number 16 to 23
+    - Important note:
+      - If your API contains some sensitive information and you want to omit this for people consuming your APIs then we can do something like this in our struct:
+        - Password string `json:"-"`
+          - This will omit Password key and it's value to be printed in output.
+      - omitempty
+        - what this means is if any value is empty(or nil) in against a key in struct then it will not be printed out. for example:
+          - tags []string
+            - If someone didn't provide the value and only provided 'nil' then it will print "null" in output
+          - tags []string `json:"tags,omitempty"`
+            - Above will not print any value which were not provided as struct's value.
+            - See [here](/22encodingjson/main.go) for complete code.
