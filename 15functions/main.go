@@ -59,7 +59,7 @@ func unlimitedValue(values ...int) int {
 	total := 0
 
 	for _, val := range values {
-		total += val // this (val) value will be added every single time to total and total is being upgraded.
+		total += val // this (val) value will be added every time to total and total is being upgraded.
 
 	}
 	// now, return the value
