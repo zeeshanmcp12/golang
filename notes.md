@@ -4,6 +4,38 @@ Notes are written for my own understanding so these may be inappropriate for oth
 
 ## 01Into
 
+- Jargons being used in golang
+  - literal value = an untyped numeric constant like 42, 3.14
+  - untyped = If the value declaration on the right hand side is not the typed then it is untyped
+  - typed = any value of data type (int, bool etc)
+  - Standard type sizes (unless developer has specific needs)
+    - int
+    - unint
+    - float64
+    - complex128
+  - Casting a float to an integer truncates the floating point portion.
+  - default native types:
+    - int
+    - unint
+    - float64
+    - complex128
+    - string
+    - bool
+    - byte
+    - rune
+  - constants cant use the := (short) declaration syntax.
+    - the value can't be changed once it has been declared.
+
+### Syntax stuff
+- Same line declarations
+  - floatNumber, text := 3.14, "Hello World
+- Some types can be converted in this way:
+  - yearsInSchool := 2.4
+  - yearsInSchoolInt := int(yearsInSchool)
+  - Casting a float to an integer truncates the floating point portion.
+
+
+
 - Create directory named 01Into
 - Open this in "Integrated terminal"
 - Execute "go mod init hello" -> it will initialize a module named "hello" as well as create go.mod file.
@@ -514,3 +546,10 @@ Notes are written for my own understanding so these may be inappropriate for oth
           - tags []string `json:"tags,omitempty"`
             - Above will not print any value which were not provided as struct's value.
             - See [here](/22encodingjson/main.go) for complete code.
+- Create Json Data in golang
+  - Decoding JSON data
+    - It means, how we can consume the JSON data.
+      - In many cases, JSON data will come to us as an API resource or from any other backend.
+      - We should be able to consume that JSON data.
+      - But, before consuming it, we need to decode it
+    - First thing: we should have JSON data. (at this stage)
