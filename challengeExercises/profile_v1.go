@@ -27,8 +27,6 @@ func main() {
 
 	userProile := Profile{username, password, email, agestoi}
 
-	// fmt.Printf("Here is your data \n%v\n%v\n%v\n%v", userProile.Name, userProile.Password, userProile.Email, userProile.Age)
-
 	value := reflect.ValueOf(userProile)
 
 	typeOfStruct := value.Type()
