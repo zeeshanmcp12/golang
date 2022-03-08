@@ -2,7 +2,9 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"reflect"
 	"strconv"
@@ -15,17 +17,19 @@ func main() {
 	username := strings.TrimSpace(onlyInput())
 
 	fmt.Printf("Enter Password: ")
-	// onlyInput()
 	password := strings.TrimSpace(onlyInput())
 
 	fmt.Printf("Enter Email Address: ")
-	// onlyInput()
 	email := strings.TrimSpace(onlyInput())
 
 	fmt.Printf("Enter your Age: ")
 	agestoi := userInput()
 
 	userProile := Profile{username, password, email, agestoi}
+
+	// fmt.Printf("Type of struct is %T\n", userProile)
+
+	// structIterator(userProile)
 
 	value := reflect.ValueOf(userProile)
 
@@ -36,6 +40,18 @@ func main() {
 
 	}
 
+	JSONData, err := json.Marshal(userProile)
+
+	CheckNilErr(err)
+
+	jsonDataInStrForm := string(JSONData)
+
+	fmt.Println(jsonDataInStrForm)
+
+	file, _ := os.Create("./userProfile.json")
+
+	io.WriteString(file, jsonDataInStrForm)
+
 }
 
 type Profile struct {
@@ -43,6 +59,14 @@ type Profile struct {
 	Password string `json:"-"`
 	Email    string `json:"emailaddress"`
 	Age      int    `json:"age"`
+}
+
+func structIterator([]reflect.StructField) {
+	fields := reflect.VisibleFields(reflect.TypeOf(struct{ Profile }{}))
+	for _, field := range fields {
+		fmt.Printf("Key: %s\tType: %s\n", field.Name, field.Type)
+	}
+	// return fields
 }
 
 func onlyInput() string {
