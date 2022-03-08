@@ -38,6 +38,14 @@ func EndcodeJSON() {
 
 }
 
+func DecodeJSON() {
+	fmt.Println("Decoding Json in golang!")
+
+	// Check if json is valid or not
+	json.Valid()
+
+}
+
 func CheckNilErr(err error) {
 	if err != nil {
 		panic(err)

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 	"reflect"
 	"strconv"
@@ -52,6 +53,45 @@ func main() {
 
 	io.WriteString(file, jsonDataInStrForm)
 
+	defer file.Close()
+
+	DecodeJSON()
+
+}
+
+func DecodeJSON() {
+	fmt.Println("Decoding JSON data!")
+	// ReadFile()
+
+	var userData Profile
+
+	file, err := ioutil.ReadFile("./userProfile.json")
+	CheckNilErr(err)
+
+	jsonDataFromFile := []byte(file)
+
+	// isJSONValid := json.Valid(jsonDataFromFile)
+
+	json.Unmarshal(jsonDataFromFile, &userData)
+
+	fmt.Printf("%#v\n", userData)
+
+	var myOnlineData map[string]interface{}
+	json.Unmarshal(jsonDataFromFile, &myOnlineData)
+
+	for _, val := range myOnlineData {
+		fmt.Printf("%#v\n", val)
+	}
+
+	/*
+		if isJSONValid {
+			json.Unmarshal(isJSONValid, &userData)
+			fmt.Printf("%#v\n", userData)
+
+		} else {
+			fmt.Println("JSON is not Valid.")
+		}*/
+
 }
 
 type Profile struct {
@@ -67,6 +107,14 @@ func structIterator([]reflect.StructField) {
 		fmt.Printf("Key: %s\tType: %s\n", field.Name, field.Type)
 	}
 	// return fields
+}
+
+func ReadFile() {
+	data, err := ioutil.ReadFile("./userProfile.json")
+	CheckNilErr(err)
+	// return data
+	fmt.Printf("Type of data is %T\n", data)
+
 }
 
 func onlyInput() string {

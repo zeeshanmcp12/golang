@@ -25,6 +25,8 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - rune
   - constants cant use the := (short) declaration syntax.
     - the value can't be changed once it has been declared.
+  - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
+    - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
 
 ### Syntax stuff
 - Same line declarations
@@ -553,3 +555,15 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - We should be able to consume that JSON data.
       - But, before consuming it, we need to decode it
     - First thing: we should have JSON data. (at this stage)
+  - First of all we need to check either the json data is valid or not. Use this function:
+    - json.Valid(data)
+  - Second, if/else to check if json is valid or not:
+    - if valid, then json.Unmarshal(), it accepts two parameters: jsonData, interface
+      - jsonData -> the data available to use in json format
+      - interface -> another name of struct, so we need to put struct here
+      - Make sure to pass reference of structure and not the copy
+        - json.UnMarshal(jsonDataFromFile, &userData)
+        - See [DecodeJSON()](/challengeExercises/profile_v1.go) function for example
+  - Print decoded json data:
+    - fmt.Printf("%#v\n", struct)
+      - %#v -> this is special format to print struct's value that is coming from structure
