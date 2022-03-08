@@ -40,7 +40,7 @@ func main() {
 
 	}
 
-	JSONData, err := json.Marshal(userProile)
+	JSONData, err := json.MarshalIndent(userProile, "", "\t")
 
 	CheckNilErr(err)
 
