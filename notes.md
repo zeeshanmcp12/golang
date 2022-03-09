@@ -578,6 +578,7 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Important
     - Whenver we are creating map to get the JSON data, we always know that first value (or key) will be string but for second value, we don't know because either it could be an array, integer or string etc.
 - Go modules
+  - Workspaces have almost gone from golang, if there is any legacy application then it's a good time to change it with Module system in golang. go mod is here to do that.
   - go mod is a tooling
   - go gives us lot of stuff which we can use for tooling.
   - Actually these are the tools which we can use for variety of reasons. for example:
@@ -586,6 +587,20 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - go mod 
     - go env -> it is another set of tooling
     - go tidy -> When we've added any third party library, it will be showing as "Indirect". When we've used that library into our code and if it still shows "Indirect" then we execute this command.
+      - It also removes all the package that we are not using.
+      - It tidies up all the libraries that we are depending on that.
+      - It also bring us all the packages that we've removed from our code.
+    - go mod verify
+    - go list all -> it will show (or list down) all the packages that are installed in local system.
+    - go list -m all -> it will only show the package that we are using in our code.
+  - Important:
+    - make sure that every operation with "go mod" is very expensives so remember it when working with CICD etc
+    - go mod graph -> it will print in a way which package is dependent on which pagkage
+    - go mod edit -> this it to edit the go.mod file and not manually.
+      - go mod edit -go 1.16 -> to change the go version
+      - go mod edit -module 1.16
+    - go mod vendor
+    - go run -mod=vendor main.go
   - Where packages goes in filesystem?
     - It does not go into the workspace (or working directory of code). It goes to another directory which we can see by executing go env command and see GOPATH variable.
   - gorilla/mux package
