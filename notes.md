@@ -575,3 +575,5 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Print decoded json data:
     - fmt.Printf("%#v\n", struct)
       - %#v -> this is special format to print struct's value that is coming from structure
+  - Important
+    - Whenver we are creating map to get the JSON data, we always know that first value (or key) will be string but for second value, we don't know because either it could be an array, integer or string etc.

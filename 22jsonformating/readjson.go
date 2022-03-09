@@ -42,11 +42,12 @@ func DecodeJSON() {
 
 	fmt.Printf("%#v\n", userData)
 
+	// Another case where you want to add data to key value
 	var myOnlineData map[string]interface{}
 	json.Unmarshal(jsonDataFromFile, &myOnlineData)
 	// fmt.Printf("%#v\n", myOnlineData)
 
-	for k, val := range myOnlineData {
+	for k, val := range myOnlineData { //k = key, val = value
 		fmt.Printf("Key: %v\tValue: %v\tType: %T\n", k, val, val)
 	}
 
