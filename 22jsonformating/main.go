@@ -6,8 +6,9 @@ import (
 )
 
 func main() {
-	fmt.Println("Encoding Json in golang!")
-	EndcodeJSON()
+	fmt.Println("Encoding/Decoding Json in golang!")
+	// EndcodeJSON()
+	DecodeJSON()
 }
 
 // To encode data in JSON format:
@@ -35,6 +36,35 @@ func EndcodeJSON() {
 	CheckNilErr(err)
 
 	fmt.Printf("%s", JsonFormat)
+
+}
+
+func DecodeJSON() {
+	fmt.Println("Consuming JSON data!")
+
+	jsonStruct := []byte(`
+	{
+		"name": "Muhammad Zeeshan",
+		"age": 32,
+		"email": "acloudtechie@outlook.com",
+		"website": "acloudtechie.com",      
+		"tags": ["cloud","azops"]
+	}
+	`)
+
+	var jsonData Profile
+
+	isJSONValid := json.Valid(jsonStruct)
+
+	if isJSONValid {
+
+		fmt.Println("JSON is Valid!")
+		json.Unmarshal(jsonStruct, &jsonData) // here as 1st parameter, we need to pass "slice of type byte" which is jsonStruct in our case.
+		fmt.Printf("%#v\t", jsonData)
+
+	} else {
+		fmt.Println("JSON is not valid!")
+	}
 
 }
 

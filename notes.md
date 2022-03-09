@@ -554,10 +554,18 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - In many cases, JSON data will come to us as an API resource or from any other backend.
       - We should be able to consume that JSON data.
       - But, before consuming it, we need to decode it
+  - The data that is coming from web will be in slice of byte format. something like this:
+    - []byte()
+      - So, in order to create JSON data we need to use this data inside slice of byte .
     - First thing: we should have JSON data. (at this stage)
-  - First of all we need to check either the json data is valid or not. Use this function:
+      - So, first of all, create a var of type struct
+        - In our case it is Profile, something like this
+          - var jsonData Profile
+      - Why we are using previously created struct again?
+        - May be there is usecase that we would not want to create the structure again and use the same to add json data in it.
+  - Second of all we need to check either the json data is valid or not. Use this function:
     - json.Valid(data)
-  - Second, if/else to check if json is valid or not:
+  - Third, if/else to check if json is valid or not:
     - if valid, then json.Unmarshal(), it accepts two parameters: jsonData, interface
       - jsonData -> the data available to use in json format
       - interface -> another name of struct, so we need to put struct here
