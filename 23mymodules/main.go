@@ -11,7 +11,7 @@ import (
 func main() {
 	fmt.Println("Learning Go Modules!")
 	r := mux.NewRouter()
-	r.HandleFunc("/", serveHome)
+	r.HandleFunc("/", serveHome).Methods("GET")
 	fmt.Println("Listening on http://localhost:8000")
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
