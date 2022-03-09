@@ -577,3 +577,40 @@ Notes are written for my own understanding so these may be inappropriate for oth
       - %#v -> this is special format to print struct's value that is coming from structure
   - Important
     - Whenver we are creating map to get the JSON data, we always know that first value (or key) will be string but for second value, we don't know because either it could be an array, integer or string etc.
+- Go modules
+  - go mod is a tooling
+  - go gives us lot of stuff which we can use for tooling.
+  - Actually these are the tools which we can use for variety of reasons. for example:
+    - go build -> we can make builds using this tool.
+    - go run -> it runs at low cost as compare to "go build"
+    - go mod 
+    - go env -> it is another set of tooling
+    - go tidy -> When we've added any third party library, it will be showing as "Indirect". When we've used that library into our code and if it still shows "Indirect" then we execute this command.
+  - Where packages goes in filesystem?
+    - It does not go into the workspace (or working directory of code). It goes to another directory which we can see by executing go env command and see GOPATH variable.
+  - gorilla/mux package
+    - to serve the url and do operations stuff like this.
+    - w -> it represents to ResponseWriter -> This is function of http package. Syntax: http.ResponseWriter
+    - r -> it represents to Request -> This is also a function of http package. Syntax: *http.Request
+      - Make sure that, this 'r' http.Request is a pointer.
+    - How and Why use those w and r parameters?
+      - When somebody sending us a request -> for example, if we want to use parameters, urls etc that all is inside the 'r' (http.ResponseWriter)
+      - We need to send some response to that request that is inside the 'w' (http.ResponseWriter)
+      - So, to send response back to a request, we need to use 'w' which means "Write a response for me" by using Write function. Syntax:
+        - w.Write()
+          - this Write function accepts "slice of byte" because the data is coming from the web.
+          - write whatever the reponse you want to return back.
+            - w.Write([]byte("<h1>Hello World!</h1>"))
+    - Now, we need to copy paste below code from gorilla/mux library:
+      - r := mux.NewRouter()
+      - r.HandleFunc("/", HomeHandler) -> it accepts two parameters: request and response
+        - "/" is the request
+        - HomeHandler is the response so here we will add serveHome function but instead of doing like this we will add the reference of it.
+        - .Methods("GET") -> complete syntax: r.HandleFunc("/", HomeHandler).Methods("GET")
+    - Now, we need a server to send or receive a response. Creating server in golang is super easy (as per Hitesh)
+    - We can use a function from http package:
+      - http.ListenAndServe() -> it requires port and router (request either it is for "/" or "/product" etc)
+      - http.ListenAndServer(":8000", r)
+    - Now, during this operation we can face any errors or exception or any issues. So cater this, we need to use:
+      - log.Fatal(<server creation code>)
+        - log.Fatal(http.ListenAndServe(":8000", r))
