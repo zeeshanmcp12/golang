@@ -604,8 +604,8 @@ Notes are written for my own understanding so these may be inappropriate for oth
   - Where packages goes in filesystem?
     - It does not go into the workspace (or working directory of code). It goes to another directory which we can see by executing go env command and see GOPATH variable.
   - gorilla/mux package
-    - to serve the url and do operations stuff like this.
-    - w -> it represents to ResponseWriter -> This is function of http package. Syntax: http.ResponseWriter
+    - to serve the url and do operations accordingly.
+    - w -> it represents to ResponseWriter -> This is a function of http package. Syntax: http.ResponseWriter
     - r -> it represents to Request -> This is also a function of http package. Syntax: *http.Request
       - Make sure that, this 'r' http.Request is a pointer.
     - How and Why use those w and r parameters?
@@ -629,3 +629,8 @@ Notes are written for my own understanding so these may be inappropriate for oth
     - Now, during this operation we can face any errors or exception or any issues. So cater this, we need to use:
       - log.Fatal(<server creation code>)
         - log.Fatal(http.ListenAndServe(":8000", r))
+- Build API in golang
+  - Follow the steps:
+    - Create model for course
+    - Create model for author
+    - Create helper method to check if id and name is not empty.
