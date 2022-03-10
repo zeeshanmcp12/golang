@@ -631,6 +631,9 @@ Notes are written for my own understanding so these may be inappropriate for oth
         - log.Fatal(http.ListenAndServe(":8000", r))
 - Build API in golang
   - Follow the steps:
-    - Create model for course
-    - Create model for author
+    - Create model for course and author
     - Create helper method to check if id and name is not empty.
+    - Create controllers
+      - Contollers always goes into separate files but at this stage, we are going to define in same file.
+      - controller here means, a router which will serve request and response (or do whatever we will say to) for example if the request is for "/" then response back with "Welcome to acloudtechie.com"
+      - ....in progress
