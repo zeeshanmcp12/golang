@@ -49,8 +49,16 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 
 // This is to be understand again
 func getAllVal(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Get all cources")
-	w.Header().Add("Content-Type", "application/json")
+	fmt.Println("Get all courses")
+	// Sometimes you might want to set special headers things here. Obviously response is one of the major thing but sometimes speacial headers are required.
+	// So, to include or set the headers, we use Header function within http package. Something like this: w.Header()
+	// We can use the Set method like in line 56
+	w.Header().Set("Content-Type", "application/json")
+	// We can also use w.SetHeader() instead of w.Header().Set(<headers>)
+
+	// Now, how we can go and grab and through all of the things which we have in our fake DB (line 31) and show up as JSON.
+	// we can use json.NewEncoder function to achieve above goal.
+	// We also need to use ".Encode()" function. Whatever we will pass in this Encode function, it will be treated as JSON value and it will be throwed back to the requester (as response) whoever making a request. It will be done via this "w" i.e. ResponseWriter.
 	json.NewEncoder(w).Encode(courses)
 }
 
