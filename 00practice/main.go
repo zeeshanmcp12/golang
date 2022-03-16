@@ -1,13 +1,12 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
+	"math/rand"
+	"time"
 )
 
+/*
 func main() {
 	fmt.Println("Reading notes to rephrase the learning!")
 	fmt.Println("Taking input from user!")
@@ -18,6 +17,19 @@ func main() {
 	converted, _ := strconv.Atoi(strings.TrimSpace(input))
 	fmt.Printf("Type of string is %T and value is %v", converted, input)
 
+}*/
+
+func main() {
+	fmt.Println("Another main function!")
+	rand.Seed(time.Now().UnixNano())
+	randNumber := rand.Intn(5)
+	fmt.Println(randNumber)
+
+	currentTime := time.Now()
+	fmt.Println(currentTime.Format("Monday, 2-1-2006"))
+
+	currentDate := time.Date(2006, time.March, 2, 00, 00, 00, 00, time.Local)
+	fmt.Println(currentDate)
 }
 
 func CheckNilErr(err error) {
