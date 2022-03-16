@@ -9,20 +9,19 @@ import (
 )
 
 func main() {
-	fmt.Println("Practice about functions in golang")
-
-	// writing function inside function
-	output := func() {
-		fmt.Println("function call from inside of function")
-	}
-	output()
+	fmt.Println("Reading notes to rephrase the learning!")
+	fmt.Println("Taking input from user!")
 
 	reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter any text: ")
 	input, _ := reader.ReadString('\n')
-	f_text, err := strconv.Atoi(strings.TrimSpace(input))
+	converted, _ := strconv.Atoi(strings.TrimSpace(input))
+	fmt.Printf("Type of string is %T and value is %v", converted, input)
 
-	CheckNilErr(err)
+}
 
-	fmt.Println(f_text)
-
+func CheckNilErr(err error) {
+	if err != nil {
+		panic(err)
+	}
 }

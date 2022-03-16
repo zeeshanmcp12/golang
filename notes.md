@@ -1,8 +1,8 @@
 # Notes
 
-Notes are written for my own understanding so these may be inappropriate for others to understand. But I tried to write in a way so any begineer can understand.
+Notes are written for my own understanding so these may be inappropriate (or detailed) for others. However, I tried to write in a way so any begineer can understand.
 
-## 01Into
+## 01Intro
 
 - Jargons being used in golang
   - literal value = an untyped numeric constant like 42, 3.14
@@ -30,12 +30,11 @@ Notes are written for my own understanding so these may be inappropriate for oth
 
 ### Syntax stuff
 - Same line declarations
-  - floatNumber, text := 3.14, "Hello World
+  - floatNumber, text := 3.14, "Hello World"
 - Some types can be converted in this way:
   - yearsInSchool := 2.4
   - yearsInSchoolInt := int(yearsInSchool)
   - Casting a float to an integer truncates the floating point portion.
-
 
 
 - Create directory named 01Into
@@ -169,10 +168,10 @@ Notes are written for my own understanding so these may be inappropriate for oth
         - nano second -> int 00
         - location -> time.Local (time.UTC) - different formats available.
 - Memory Management
-  - It handle automatically in golang.
+  - It's being handled automatically in golang.
   - It has two functions new() and make()
   - Both functions accepts data types such that pointer, array, slice etc
-  - new() works with zeroed storage which means it does not accept any value initially. In simple word, we cannot store anything initially in new() function.
+  - new() works with zeroed storage which means it does not accept any value initially. In simple words, we cannot store anything initially in new() function.
   - new() cannot be initialized initially
   - make() accept storage
   - make() can be initiallized
