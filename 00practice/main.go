@@ -54,8 +54,38 @@ func main() {
 	fmt.Println("Fruilist:", fruitList)
 	fmt.Printf("Total characters in %v are %v\n", fruitList[1], len(fruitList[1]))
 
-	var todos = [4]string{"Recite Quran,", "Learn to code,", "Write some words"}
-	fmt.Println(todos)
+	// for i, v := range fruitList {
+	// 	fmt.Printf("Index is %v and value is %v\n", i, v)
+
+	// }
+
+	// var todos = [4]string{"Recite Quran,", "Learn to code,", "Write some words"}
+	// fmt.Println(todos)
+
+	// array := [...]int{6, 4, 3, 5, 4, 34, 8, 9, 20}
+	// // fmt.Println(len(array))
+	// for i := 0; i < len(array); i++ {
+	// 	fmt.Printf("index is %v, value is %v\n", i, array[i])
+
+	// }
+	/*
+		tableValue := 2
+
+		for i := 1; i < 10+1; i++ {
+			fmt.Printf("%v x %v = %v\n", tableValue, i, tableValue*i)
+
+		}*/
+
+	// work is in progress....
+	tables := [3]int{2, 3, 4}
+
+	for i := 1; i < 10+1; i++ {
+		for i := 0; i < 10+tables[i]; i++ {
+			fmt.Printf("%v x %v = %v\n", tables[i], i, tables[i]*i)
+
+		}
+
+	}
 
 }
 

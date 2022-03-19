@@ -223,18 +223,18 @@ Notes are written for my own understanding so these may be inappropriate (or det
 - Slices in golang
   - Main difference in between array and slices is if we are defining a value in sqaure braces then it means a simple array for example:
     - var list = [4]string
-  - If we dont define values there then it means this is "slices". for example
+  - If there is no value inside the braces then this is "slice". for example
     - var list = []string
       - If we are using this syntax then we must initialized it as well for example
         - var list = []string{"Apple", "Mango", "Banana"}
   - Array was defined very precisely and we cannot assign value more than we defined in array.
-  - In Slices, we can add many values as we like and it keeps expand memory for us.
+  - In Slices, we can add many values as we like and it keeps expanding memory for us.
   - Syntax:
     - var sliceList = []string{"Apple", "Mango", "Banana"}
     - Notice the difference. We didn't add elements in square braces above.
   - Slice will return following type:
     - []string
-- How to append any element in existing array:
+- How to append any element in existing slice:
   - In slices, we have append function which requires some arguments. for example:
     - sliceList = append(sliceList, "Peach","Orange")
 - Slicing in slice (array)
