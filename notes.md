@@ -190,7 +190,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - var ptr *int
       - var -> keyword
       - ptr -> var name
-      - *int -> this integer is of type integer which means it will store integer value in this pointer.
+      - *int -> this pointer is of type integer which means it will store integer value in this pointer.
     - myNumber := 23
     - var ptr := &myNumber
       - & (amp sign) -> it means we are not just initializing a var but also referencing an initialized var.
@@ -209,7 +209,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - var fruitList [4]string
       - var -> keyword
       - fruitList -> var name
-      - [4] -> Length of array, such that elements to be in Array.
+      - [4] -> Length of array, which means elements in Array.
       - string -> data type
       - var fruitList [4]string -> here, we just declared an array but not initialized.
       - fruitList[0] = "Apple" -> here, we initialized the array with value.

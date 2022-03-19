@@ -6,7 +6,6 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"time"
 )
 
 /*
@@ -23,7 +22,7 @@ func main() {
 	fmt.Printf("Type is %T: ", stringText)
 
 }*/
-
+/*
 func main() {
 	fmt.Println("Practice 6 to 10")
 	fmt.Println("-----------------------")
@@ -39,6 +38,24 @@ func main() {
 	birthDate := time.Date(year, time.Month(month), date, 00, 00, 00, 00, time.Local)
 	fmt.Printf("Happy Birthday on %v\n", birthDate.Format("02 Jan, 2006"))
 	fmt.Printf("It was %v!\n", birthDate.Format("Monday"))
+
+}*/
+
+func main() {
+	fmt.Println("Practice 6 to 10")
+	var fruitList [4]string
+
+	fruitList[0] = "Apple"
+	fruitList[1] = "Mango"
+	fruitList[2] = "Banana"
+	fruitList[3] = "Peach"
+
+	fmt.Println("Total elements in array are: ", len(fruitList))
+	fmt.Println("Fruilist:", fruitList)
+	fmt.Printf("Total characters in %v are %v\n", fruitList[1], len(fruitList[1]))
+
+	var todos = [4]string{"Recite Quran,", "Learn to code,", "Write some words"}
+	fmt.Println(todos)
 
 }
 
