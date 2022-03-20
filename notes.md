@@ -237,12 +237,15 @@ Notes are written for my own understanding so these may be inappropriate (or det
 - How to append any element in existing slice:
   - In slices, we have append function which requires some arguments. for example:
     - sliceList = append(sliceList, "Peach","Orange")
+  - Define slice using make()
+  - Syntax:
+    - highScores := make([]int, 4)
 - Slicing in slice (array)
   - colon (:) between two elements slice up the slice. In simple words, if you want to make a separate part of slice then use colon (:)
   - Range is always non-inclusive in golang which means it does not include in result.
   - Syntax:
     - sliceList = append(sliceList[1:])
-      - In result, it will start from the first elemnent which is Apple. But Apple is at the zeroed index of array.
+      - In result, it will start from the first elemnent which is Apple. But Apple is at the zeroed index of slice.
     - sliceList = append(sliceList[1:3])
       - Array elements -> [Apple Mango Banana Peach Orange]
       - It will start from Mango because 0 is not counted here...
@@ -269,7 +272,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - abbreviations := make(map[string]string)
     - make() -> is a function that handles memory management.
       - it can accept storage which means it wont give errors with non-zeroed storage
-      - map[string]string -> map is data type which we must define when starting working with maps in golang
+      - map[string]string -> map is data type which we must define when working with maps in golang.
       - [string]string -> first string represents the key
       - string -> this second string represents the value
     - initialize variable:

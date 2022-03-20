@@ -77,29 +77,41 @@ func main() {
 
 		}*/
 
+	//slice in golang
 	/*
-		for i := 0; i < 10+1; i++ {
-			tables := [...]int{2, 3, 4}
-			for i := 0; true; i++ {
-				fmt.Printf("%v x %v = %v\n", tables[i], i, tables[i]*i)
-			}
+		var sliceList = []string{".NET", "Java", "golang"}
+		fmt.Printf("Type of sliceList is %T\n", sliceList)
 
-		}*/
+		sliceList = append(sliceList, "Ruby", "JavaScript")
+		fmt.Println(sliceList)
 
-	var sliceList = []string{".NET", "Java", "golang"}
-	fmt.Printf("Type of sliceList is %T\n", sliceList)
-
-	sliceList = append(sliceList, "Ruby", "JavaScript")
-	fmt.Println(sliceList)
-
-	sliceList = append(sliceList[1:3])
-	fmt.Println(sliceList)
+		sliceList = append(sliceList[1:3])
+		fmt.Println(sliceList)*/
 
 	/*
 		var intsForSort = []int{}
 		intsForSort = append(intsForSort, 3, 2, 4, 6, 3, 6, 5, 9, 10, 8)
 		sort.Ints(intsForSort)
 		fmt.Println(intsForSort)*/
+
+	//slice with make() function
+	var sliceWithMake = make([]int, 4)
+	sliceWithMake[0] = 120
+	sliceWithMake[1] = 220
+	sliceWithMake[2] = 320
+	sliceWithMake[3] = 420
+	// fmt.Println(sliceWithMake)
+
+	// sliceWithMake = append(sliceWithMake, 520, 620, 720)
+	// fmt.Println(sliceWithMake)
+
+	// map
+	languages := make(map[string]string)
+	languages["JS"] = "JavaScript"
+	languages[".Net"] = "dotnet"
+	languages["PS"] = "PowerShell"
+
+	fmt.Println("JS stands for", languages["JS"])
 
 }
 
