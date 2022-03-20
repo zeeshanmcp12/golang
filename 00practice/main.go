@@ -43,7 +43,7 @@ func main() {
 
 func main() {
 	fmt.Println("Practice 6 to 10")
-	var fruitList [4]string
+	/*var fruitList [4]string
 
 	fruitList[0] = "Apple"
 	fruitList[1] = "Mango"
@@ -53,6 +53,7 @@ func main() {
 	fmt.Println("Total elements in array are: ", len(fruitList))
 	fmt.Println("Fruilist:", fruitList)
 	fmt.Printf("Total characters in %v are %v\n", fruitList[1], len(fruitList[1]))
+	*/
 
 	// for i, v := range fruitList {
 	// 	fmt.Printf("Index is %v and value is %v\n", i, v)
@@ -76,16 +77,29 @@ func main() {
 
 		}*/
 
-	// work is in progress....
-	tables := [3]int{2, 3, 4}
+	/*
+		for i := 0; i < 10+1; i++ {
+			tables := [...]int{2, 3, 4}
+			for i := 0; true; i++ {
+				fmt.Printf("%v x %v = %v\n", tables[i], i, tables[i]*i)
+			}
 
-	for i := 1; i < 10+1; i++ {
-		for i := 0; i < 10+tables[i]; i++ {
-			fmt.Printf("%v x %v = %v\n", tables[i], i, tables[i]*i)
+		}*/
 
-		}
+	var sliceList = []string{".NET", "Java", "golang"}
+	fmt.Printf("Type of sliceList is %T\n", sliceList)
 
-	}
+	sliceList = append(sliceList, "Ruby", "JavaScript")
+	fmt.Println(sliceList)
+
+	sliceList = append(sliceList[1:3])
+	fmt.Println(sliceList)
+
+	/*
+		var intsForSort = []int{}
+		intsForSort = append(intsForSort, 3, 2, 4, 6, 3, 6, 5, 9, 10, 8)
+		sort.Ints(intsForSort)
+		fmt.Println(intsForSort)*/
 
 }
 
