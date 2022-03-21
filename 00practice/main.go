@@ -43,7 +43,31 @@ func main() {
 */
 
 func main() {
-	fmt.Println("Switchcase and struct together")
+	fmt.Println("Switchcase and if/else together")
+	fmt.Printf("Enter 1st number: ")
+	firstNumber := userInputToInt()
+
+	fmt.Printf("Enter 2nd number: ")
+	secondNumber := userInputToInt()
+
+	fmt.Printf("Select anyone to calculate, sum, sub, mul, div: ")
+	operator := strings.TrimSpace(onlyString())
+
+	if operator == "sum" || operator == "sub" || operator == "mul" || operator == "div" {
+		switch operator {
+		case "sum":
+			fmt.Println("Sum of two number is", firstNumber+secondNumber)
+		case "sub":
+			fmt.Println("Subtraction of two number is", firstNumber-secondNumber)
+		case "mul":
+			fmt.Println("Product of two number is", firstNumber*secondNumber)
+		case "div":
+			fmt.Println("Division of two number is", firstNumber/secondNumber)
+		}
+
+	} else {
+		fmt.Println("Invalid Input!")
+	}
 
 }
 
