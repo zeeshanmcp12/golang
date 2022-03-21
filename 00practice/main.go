@@ -111,6 +111,8 @@ func main() {
 	languages[".Net"] = "dotnet"
 	languages["PS"] = "PowerShell"
 
+	fmt.Println(languages)
+
 	fmt.Println("JS stands for", languages["JS"])
 
 }
