@@ -41,7 +41,8 @@ func main() {
 
 }
 */
-
+// SwitchCase
+/*
 func main() {
 	fmt.Println("Switchcase and if/else together")
 	fmt.Printf("Enter 1st number: ")
@@ -69,6 +70,47 @@ func main() {
 		fmt.Println("Invalid Input!")
 	}
 
+}
+*/
+
+// Loops
+func main() {
+	fmt.Println("Loops in golang")
+
+	/*
+		output := funcForLoop(4)
+		fmt.Println(output)
+
+		result := addNumbers(4, funcForLoop(4))
+		fmt.Println(result)
+
+		for i := funcForLoop(5); i < 10; i++ {
+			fmt.Println("Hello world")
+
+		}*/
+
+	days := []string{"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"}
+
+	// loop to print index along with the value
+	for i := 0; i < len(days); i++ {
+		fmt.Printf("Day is %v at %v location\n", days[i], i)
+	}
+
+	// Similar method to above
+	fmt.Println()
+	for i, day := range days {
+		fmt.Printf("Day is %v at %v location\n", day, i)
+
+	}
+}
+
+func addNumbers(num1, num2 int) int {
+	result := num1 + num2
+	return result
+}
+
+func funcForLoop(num int) int {
+	return num
 }
 
 type Profile struct {
