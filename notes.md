@@ -27,6 +27,11 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - the value can't be changed once it has been declared.
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
+  - Rune is an alias of int32. This emphasis that an integer represents to code point.
+    - code point -> ASCII define every character with a number which ranges from 0-127 so total 128.
+    - These are identified as code points. It covers English letters, latin numbers and a few other characters.
+      - fmt.Println([]byte("Héllo"))
+      - fmt.Println([]rune("Héllo"))
 
 ### Syntax stuff
 - Same line declarations

@@ -92,9 +92,17 @@ func main() {
 	days := []string{"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"}
 
 	// loop to print index along with the value
-	for i := 0; i < len(days); i++ {
-		fmt.Printf("Day is %v at %v location\n", days[i], i)
-	}
+	/*
+		for i := 0; i < len(days); i++ {
+			fmt.Printf("Day is %v at %v location\n", days[i], i)
+		}*/
+
+	//Rune is an alias of int32. This emphasis that an integer represents to code point.
+	// code point -> ASCII define every character with a number which ranges from 0-127 so total 128.
+	// These are identified as code points. It covers English letters, latin numbers and a few other characters.
+	// We can also loop over Rune.
+	fmt.Println([]byte("Héllo"))
+	fmt.Println([]rune("Héllo"))
 
 	// Similar method to above
 	fmt.Println()
