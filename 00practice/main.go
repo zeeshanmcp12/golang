@@ -14,8 +14,29 @@ func main() {
 	fmt.Printf("Enter any number to make table: ")
 	tableNum := userInput()
 
+	/*
+		for i := 1; i < 10+1; i++ {
+			fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
+		}*/
+
 	for i := 1; i < 10+1; i++ {
-		fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
+
+		fmt.Printf("%v x %v = ", tableNum, i)
+		userInput()
+
+		/*
+			if tableNum*i == tableNum*i {
+				// fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
+				fmt.Printf("%v x %v = %v\n", tableNum, i, userInput())
+				continue
+
+			} else if i > 10+1 {
+				fmt.Println("Table end!")
+
+			} else {
+				fmt.Println("Wrong answer!")
+			}*/
+
 	}
 
 }
