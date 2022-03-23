@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-var userDb = []string{"Zeeshan", "Bajo", "Hussain"}
+var userDb = []string{"Zeeshan", "Ali", "Hussain"}
 
 func main() {
 	fmt.Println("Login to system!")
