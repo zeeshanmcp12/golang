@@ -355,7 +355,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - because golang knows that main is an entry point.
   - Function inside the function is not allowed.
     - It will throw an error saying "expression is expected and not function"
-    - but in once case, it is allowed: when we assign func to a variable. See a complete example in [main.go](00practice/main.go)
+    - but there is a when it is allowed:
+      - when we assign func to a variable. See a complete example in [main.go](00practice/main.go)
       - func main(){
       - test := func(){
         - fmt.Println("hello world")
@@ -382,7 +383,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - for example: in this case, we know two values are there in function declaration. Syntax:
       - func add(num1 int, num2 int) int {return num1 + num2}
       - add(5,5) 
-    - In order to support this case, we can variadic function, for example:
+    - In order to support this case, we can use variadic function, for example:
       - refer to folder 15functions for example.
     - This is similar to append method in slices.
   - return keyword (returning result)

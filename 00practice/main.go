@@ -74,6 +74,7 @@ func main() {
 */
 
 // Loops
+/*
 func main() {
 	fmt.Println("Loops in golang")
 
@@ -87,15 +88,15 @@ func main() {
 		for i := funcForLoop(5); i < 10; i++ {
 			fmt.Println("Hello world")
 
-		}*/
+		}
 
 	days := []string{"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"}
 
 	// loop to print index along with the value
-	/*
+
 		for i := 0; i < len(days); i++ {
 			fmt.Printf("Day is %v at %v location\n", days[i], i)
-		}*/
+		}
 
 	//Rune is an alias of int32. This emphasis that an integer represents to code point.
 	// code point -> ASCII define every character with a number which ranges from 0-127 so total 128.
@@ -110,6 +111,22 @@ func main() {
 		fmt.Printf("Day is %v at %v location\n", day, i)
 
 	}
+}*/
+
+// Method in golang
+func main() {
+	fmt.Println("Method in golang!")
+	userProfile := Profile{"Zeeshan", 32, "acloudtechie@outlook.com"}
+	fmt.Printf("User email is: %v", userProfile.Email)
+	fmt.Println()
+	fmt.Println("User email after using method")
+	userProfile.UserEmail()
+
+}
+
+func (p Profile) UserEmail() {
+	p.Email = "abc@dev.co"
+	fmt.Printf("Update email is: %s", p.Email)
 }
 
 func addNumbers(num1, num2 int) int {
