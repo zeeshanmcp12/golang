@@ -3,20 +3,24 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
+	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
 )
 
+// todo app logic
+/*
 func main() {
 	fmt.Println("New File for practice!")
 	fmt.Println()
 
-	/*
+
 		for i := 1; i < 10+1; i++ {
 			fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
-		}*/
-	/*
+		}
+
 		fmt.Printf("Enter any number to make table: ")
 		tableNum := userInput()
 
@@ -34,7 +38,7 @@ func main() {
 				fmt.Printf("Wrong Answer!\n%v x %v = %v\n", tableNum, i, userInput())
 			}
 
-		}*/
+		}
 
 	todos := []string{}
 	fmt.Printf("Add task: ")
@@ -65,6 +69,28 @@ func main() {
 			break
 		}
 	}
+}*/
+
+func main() {
+	fmt.Println("Working with files")
+	content := ("This text needs to be put in practiceFile.txt file.")
+
+	file, _ := os.Create("./practiceFile.txt")
+
+	io.WriteString(file, content)
+
+	fmt.Println("File has been written with this data.")
+	defer file.Close()
+
+	readFile("./practiceFile.txt")
+}
+
+func readFile(filename string) {
+	data, err := ioutil.ReadFile(filename)
+	CheckNilErr(err)
+
+	fmt.Printf("This was the data which had been written in file: \n\t%v", string(data))
+
 }
 
 func userInput() int {
