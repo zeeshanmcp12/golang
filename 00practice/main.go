@@ -11,31 +11,28 @@ import (
 func main() {
 	fmt.Println("New File for practice!")
 	fmt.Println()
-	fmt.Printf("Enter any number to make table: ")
-	tableNum := userInput()
 
 	/*
 		for i := 1; i < 10+1; i++ {
 			fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
 		}*/
 
+	fmt.Printf("Enter any number to make table: ")
+	tableNum := userInput()
+
 	for i := 1; i < 10+1; i++ {
 
+		// anotherInt := i * 2
 		fmt.Printf("%v x %v = ", tableNum, i)
-		userInput()
+		result := userInput()
 
-		/*
-			if tableNum*i == tableNum*i {
-				// fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
-				fmt.Printf("%v x %v = %v\n", tableNum, i, userInput())
-				continue
+		// Working logic
+		if result == tableNum*i {
+			fmt.Println("result executed")
 
-			} else if i > 10+1 {
-				fmt.Println("Table end!")
-
-			} else {
-				fmt.Println("Wrong answer!")
-			}*/
+		} else {
+			fmt.Printf("Wrong Answer!\n%v x %v = %v\n", tableNum, i, userInput())
+		}
 
 	}
 
