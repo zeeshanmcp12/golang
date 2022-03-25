@@ -72,14 +72,13 @@ func main() {
 }*/
 
 func main() {
-	fmt.Println("Working with files")
-	content := ("This text needs to be put in practiceFile.txt file.")
+	fmt.Println("Working with files in golang!")
+	content := "Text to be written in File."
 
-	file, _ := os.Create("./practiceFile.txt")
+	file, err := os.Create("./practiceFile.txt")
+	CheckNilErr(err)
 
 	io.WriteString(file, content)
-
-	fmt.Println("File has been written with this data.")
 	defer file.Close()
 
 	readFile("./practiceFile.txt")
@@ -89,7 +88,7 @@ func readFile(filename string) {
 	data, err := ioutil.ReadFile(filename)
 	CheckNilErr(err)
 
-	fmt.Printf("This was the data which had been written in file: \n\t%v", string(data))
+	fmt.Println(string(data))
 
 }
 
