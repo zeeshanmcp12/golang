@@ -3,9 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io"
 	"io/ioutil"
-	"net/http"
+	"net/url"
 	"os"
 	"strconv"
 	"strings"
@@ -89,8 +88,10 @@ func main() {
 
 }*/
 
-const url = "https://acloudtechie.com"
+// const url string = "https://acloudtechie.com/azure"
 
+// Handling web request
+/*
 func main() {
 	fmt.Println("Handling web request in golang!")
 
@@ -112,6 +113,33 @@ func main() {
 	fmt.Println("File has been created and written with response.")
 
 	io.WriteString(file, string(content))
+
+}*/
+
+// URL handling
+const customUrl string = "https://acloudtechie.com/azure?article_name=geo-restricting-web-app&publish_date=march"
+
+func main() {
+	fmt.Println("Handling URL in golang")
+	fmt.Println(customUrl)
+
+	parsedURL, err := url.Parse(customUrl)
+	CheckNilErr(err)
+
+	fmt.Printf("Type of parsedURL is %T", parsedURL)
+	fmt.Println()
+
+	// fmt.Println("URL scheme is: ", parsedURL.Scheme)
+	// fmt.Println("Host is: ", parsedURL.Host)
+	// fmt.Println("Hostname is: ", parsedURL.Hostname())
+	// fmt.Println("Port is: ", parsedURL.Port())
+	// fmt.Println("Query param is: ", parsedURL.Path)
+	// fmt.Println("URL scheme is: ", parsedURL.RawQuery)
+
+	queryParams := parsedURL.Query()
+	for i, val := range queryParams {
+		fmt.Println(i, val)
+	}
 
 }
 
