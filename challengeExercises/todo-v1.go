@@ -37,7 +37,7 @@ func main() {
 var Todos = []string{}
 
 func main() {
-	fmt.Println("Todo App v1")
+	// fmt.Println("Todo App v1")
 
 	// appItems := []string{"[1]add task", "[2]show task"}
 
@@ -63,9 +63,8 @@ func main() {
 				fmt.Println()
 				addTask()
 			} else if checkSlice > 0 {
-				fmt.Printf("Your Todos:")
+				fmt.Println("Your Todos:")
 				showTask(Todos)
-				// break
 			} else {
 				fmt.Println("else statement from main function.")
 			}
@@ -103,7 +102,7 @@ func addTask() {
 				fmt.Printf("%v: %v\n", j+1, val)
 			}
 			// fmt.Println()
-			fmt.Println("Return to main menu")
+			fmt.Printf("Return to main menu, ")
 			// showTask(Todos)
 			main()
 
@@ -115,7 +114,7 @@ func addTask() {
 
 func showTask(tasks []string) {
 	// todos := []string{}
-	fmt.Println(" from showTask function!")
+	// fmt.Println(" from showTask function!")
 
 	// taskLength := 0
 
