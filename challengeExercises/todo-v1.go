@@ -78,8 +78,6 @@ func main() {
 
 func addTask() {
 
-	// todos := []string{}
-
 	fmt.Printf("Add Task: ")
 
 	for i := 0; true; i++ {
@@ -101,7 +99,7 @@ func addTask() {
 			for j, val := range Todos {
 				fmt.Printf("%v: %v\n", j+1, val)
 			}
-			// fmt.Println()
+
 			fmt.Printf("Return to main menu, ")
 			// showTask(Todos)
 			main()
@@ -113,34 +111,13 @@ func addTask() {
 }
 
 func showTask(tasks []string) {
-	// todos := []string{}
-	// fmt.Println(" from showTask function!")
 
-	// taskLength := 0
-
-	// if true {
-	// 	fmt.Printf("Currently no task added Please add: ")
-	// 	fmt.Println()
-	// 	addTask()
-
-	// } else {
-	// 	for j, val := range tasks {
-	// 		fmt.Printf("%v: %v\n", j+1, val)
-	// 		fmt.Println()
-	// 		break
-	// 	}
-	// }
 	for j, val := range tasks {
 		fmt.Printf("%v: %v\n", j+1, val)
 		// fmt.Println()
 		// break
 	}
 }
-
-// func status() {
-// 	fmt.Println("Thank you for adding up your tasks!")
-
-// }
 
 func userInputInt() int {
 	reader := bufio.NewReader(os.Stdin)
