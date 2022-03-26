@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"net/http"
 	"os"
 	"strconv"
 	"strings"
@@ -71,24 +72,55 @@ func main() {
 	}
 }*/
 
+// working with files
+/*
 func main() {
-	fmt.Println("Working with files in golang!")
-	content := "Text to be written in File."
+
+	fmt.Println("Working with Files in golang")
+	content := "Magic! Magic! Magic!"
 
 	file, err := os.Create("./practiceFile.txt")
 	CheckNilErr(err)
 
 	io.WriteString(file, content)
-	defer file.Close()
 
+	defer file.Close()
 	readFile("./practiceFile.txt")
+
+}*/
+
+const url = "https://acloudtechie.com"
+
+func main() {
+	fmt.Println("Handling web request in golang!")
+
+	response, err := http.Get(url)
+	CheckNilErr(err)
+	fmt.Printf("Type of response is %T", response)
+	fmt.Println()
+
+	// fmt.Printf("Site status: %v", string(response.Status))
+	defer response.Body.Close()
+
+	res, err := ioutil.ReadAll(response.Body)
+	fmt.Println(response.Header)
+
+	content := res
+
+	file, err := os.Create("./disclaimer.html")
+	CheckNilErr(err)
+	fmt.Println("File has been created and written with response.")
+
+	io.WriteString(file, string(content))
+
 }
 
 func readFile(filename string) {
 	data, err := ioutil.ReadFile(filename)
+
 	CheckNilErr(err)
 
-	fmt.Println(string(data))
+	fmt.Printf("This data is retrieved from file:\n%v", string(data))
 
 }
 

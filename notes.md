@@ -464,7 +464,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - So, to handle this web request and response we use net/http package in golang.
     - http package has so many functions, types and methods etc to work with it.
     - We will start with GET
-    - If we want to handle response object then we need to use type "Response" with http package.
+    - If we want to handle response object then we need to use type "Response" within http package.
   - Close (this is a type in http package)
     - Whenever we make a new request to any website, it is our responsibility to close the connection because neither ReadResponse nor Response.Write does this.
   - At this stage,
