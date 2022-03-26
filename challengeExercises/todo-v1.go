@@ -37,18 +37,20 @@ func main() {
 func main() {
 	fmt.Println("Todo App v1")
 
-	appItems := []string{"[1]add task", "[2]show task"}
+	// appItems := []string{"[1]add task", "[2]show task"}
 
-	todos := []string{}
+	// todos := []string{}
+
+	// fmt.Printf("Type of appItems %T\n", appItems)
+	// fmt.Printf("Type of todos %T", todos)
+	fmt.Printf("Select any number [1]Add Task, [2]Show Task: ")
 
 	for i := 0; i < 3; i++ {
 
-		fmt.Printf("Select any number from the list:%v ", appItems)
 		f_text := userInputInt()
-
 		if f_text == 1 {
-			fmt.Printf("Add task or Enter done: ")
-			addTask(todos)
+
+			addTask()
 			// continue
 
 		} else if f_text == 2 {
@@ -57,25 +59,24 @@ func main() {
 			// break
 
 		} else {
-			fmt.Println("Invalid Input, Select any number from the list")
+			fmt.Printf("Invalid Input, Select any number from the list")
 		}
 	}
 }
 
-func addTask(tasks []string) {
+func addTask() {
 
-	// todos := []string{}
+	todos := []string{}
 
-	// fmt.Println("Add Task: ")
-
-	task := strings.TrimSpace(onlyString())
+	fmt.Printf("Add Task: ")
 
 	for i := 0; true; i++ {
+		task := strings.TrimSpace(onlyString())
 
 		if task != "done" {
 			if task != "" {
-				// fmt.Println("Add task or Enter done: ")
-				tasks = append(tasks, task)
+				fmt.Printf("Add task or Enter done: ")
+				todos = append(todos, task)
 				continue
 
 			} else {
@@ -84,7 +85,11 @@ func addTask(tasks []string) {
 			}
 		} else if task == "done" {
 			// fmt.Println("Your Todos")
-			status()
+			fmt.Println("Thank you for adding up your tasks!")
+			for j, val := range todos {
+				fmt.Printf("%v: %v\n", j+1, val)
+			}
+			fmt.Println()
 			break
 
 		}
