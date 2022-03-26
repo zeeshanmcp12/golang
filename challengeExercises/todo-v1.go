@@ -34,6 +34,8 @@ func main() {
 
 }*/
 
+var Todos = []string{}
+
 func main() {
 	fmt.Println("Todo App v1")
 
@@ -45,18 +47,29 @@ func main() {
 	// fmt.Printf("Type of todos %T", todos)
 	fmt.Printf("Select any number [1]Add Task, [2]Show Task: ")
 
-	for i := 0; i < 3; i++ {
+	for i := 0; i <= 2; i++ {
 
 		f_text := userInputInt()
 		if f_text == 1 {
 
 			addTask()
-			// continue
+			continue
 
 		} else if f_text == 2 {
-			fmt.Println("Your Todos")
-			// showTask(todos)
-			// break
+			checkSlice := len(Todos)
+
+			if checkSlice == 0 {
+				fmt.Printf("Currently no task added Please add: ")
+				fmt.Println()
+				addTask()
+			} else if checkSlice > 0 {
+				fmt.Printf("Your Todos:")
+				showTask(Todos)
+				// break
+			} else {
+				fmt.Println("else statement from main function.")
+			}
+			break
 
 		} else {
 			fmt.Printf("Invalid Input, Select any number from the list")
@@ -66,7 +79,7 @@ func main() {
 
 func addTask() {
 
-	todos := []string{}
+	// todos := []string{}
 
 	fmt.Printf("Add Task: ")
 
@@ -76,20 +89,24 @@ func addTask() {
 		if task != "done" {
 			if task != "" {
 				fmt.Printf("Add task or Enter done: ")
-				todos = append(todos, task)
+				Todos = append(Todos, task)
 				continue
 
 			} else {
-				fmt.Println("Invalid Input, Add task or Enter done: ")
+				fmt.Printf("Invalid Input, Add task or Enter done: ")
 
 			}
 		} else if task == "done" {
 			// fmt.Println("Your Todos")
 			fmt.Println("Thank you for adding up your tasks!")
-			for j, val := range todos {
+			for j, val := range Todos {
 				fmt.Printf("%v: %v\n", j+1, val)
 			}
-			fmt.Println()
+			// fmt.Println()
+			fmt.Println("Return to main menu")
+			// showTask(Todos)
+			main()
+
 			break
 
 		}
@@ -98,16 +115,33 @@ func addTask() {
 
 func showTask(tasks []string) {
 	// todos := []string{}
+	fmt.Println(" from showTask function!")
+
+	// taskLength := 0
+
+	// if true {
+	// 	fmt.Printf("Currently no task added Please add: ")
+	// 	fmt.Println()
+	// 	addTask()
+
+	// } else {
+	// 	for j, val := range tasks {
+	// 		fmt.Printf("%v: %v\n", j+1, val)
+	// 		fmt.Println()
+	// 		break
+	// 	}
+	// }
 	for j, val := range tasks {
-		fmt.Printf("%v: %v", j+1, val)
-		fmt.Println()
+		fmt.Printf("%v: %v\n", j+1, val)
+		// fmt.Println()
+		// break
 	}
 }
 
-func status() {
-	fmt.Println("Thank you for adding up your tasks!")
+// func status() {
+// 	fmt.Println("Thank you for adding up your tasks!")
 
-}
+// }
 
 func userInputInt() int {
 	reader := bufio.NewReader(os.Stdin)
