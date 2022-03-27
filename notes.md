@@ -486,7 +486,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - We can also construct url if we already have values for example, protocol, host, port, path etc
     - In this case, we must need to pass the reference of url. This is very important. For example
       - partsOfUrl := &url.URL{} -> this is the syntax of constructing url.
-  - Two important packages:
+  - Three important packages:
     - url.Parse() this (.Parse()) function parses the url. for example url.Parse(url)
     - parsedUrl.Query() this (.Query()) function helps us to extract the query parameters in a format of key value pair.
     - partsOfUrl.String() -> this (.String()) will construct the url with the values provided in &url.URL{}

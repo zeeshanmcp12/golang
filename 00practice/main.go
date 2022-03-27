@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io/ioutil"
+	"net/http"
 	"net/url"
 	"os"
 	"strconv"
@@ -117,6 +118,7 @@ func main() {
 }*/
 
 // URL handling
+/*
 const customUrl string = "https://acloudtechie.com/azure?article_name=geo-restricting-web-app&publish_date=march"
 
 func main() {
@@ -140,6 +142,65 @@ func main() {
 	for i, val := range queryParams {
 		fmt.Println(i, val)
 	}
+
+	constructUrl := &url.URL{
+		Scheme: "https",
+		Host:   "acloudtechie.com",
+		Path:   "/disclaimer",
+	}
+
+	fmt.Println(constructUrl.String())
+
+}*/
+
+func main() {
+	fmt.Println("Web request verb!")
+
+	// const siteUrl = "https://acloudtechie.com"
+	// GetRequest([]byte(siteUrl))
+	CallAzureFunc()
+
+}
+
+func GetRequest(customUrl []byte) {
+
+	response, err := http.Get(string(customUrl))
+	CheckNilErr(err)
+
+	fmt.Println("Site status is ", response.Status)
+
+	// to retrieve headers
+	for j, val := range response.Header {
+		fmt.Printf("%v %v\n", j, val)
+	}
+}
+
+func CallAzureFunc() {
+	const myUrl = "http://localhost:7071/api/getname?name=zeeshan&demo=test"
+
+	response, _ := http.Get(myUrl)
+
+	fmt.Println("getprofile func returning ", response.Status)
+
+	// for j, val := range response.Header {
+	// 	fmt.Printf("%v %v\n", j, val)
+	// }
+
+	funcContent, _ := ioutil.ReadAll(response.Body)
+
+	fmt.Println(string(funcContent))
+
+	parsedUrl, err := url.Parse(myUrl)
+	CheckNilErr(err)
+
+	fmt.Println("API path is URL ", parsedUrl.Path)
+
+	qparams := parsedUrl.Query()
+	for j, val := range qparams {
+		fmt.Printf("Query parameter: %v %v\n", j, val)
+	}
+
+	defer response.Body.Close()
 
 }
 
