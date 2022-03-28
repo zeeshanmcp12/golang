@@ -158,7 +158,9 @@ func main() {
 
 	// const siteUrl = "https://acloudtechie.com"
 	// GetRequest([]byte(siteUrl))
-	CallAzureFunc()
+	// CallAzureFunc()
+	// PostRequest()
+	PostFormRequest()
 
 }
 
@@ -173,6 +175,45 @@ func GetRequest(customUrl []byte) {
 	for j, val := range response.Header {
 		fmt.Printf("%v %v\n", j, val)
 	}
+}
+
+func PostRequest() {
+	const myUrl = "http://localhost:8000/post"
+
+	fakeJson := strings.NewReader(`
+	{
+		"name":"zeeshan",
+		"blog":"acloudtechie.com"
+	}
+	`)
+
+	response, err := http.Post(myUrl, "application/json", fakeJson)
+	CheckNilErr(err)
+
+	defer response.Body.Close()
+	content, err := ioutil.ReadAll(response.Body)
+
+	fmt.Println(string(content))
+
+}
+
+func PostFormRequest() {
+	const myUrl = "http://localhost:8000/postform"
+
+	data := url.Values{}
+
+	data.Add("name", "Zeeshan")
+	data.Add("age", "32")
+	data.Add("blog", "acloudtechie.com")
+
+	response, err := http.PostForm(myUrl, data)
+	CheckNilErr(err)
+
+	defer response.Body.Close()
+
+	content, _ := ioutil.ReadAll(response.Body)
+
+	fmt.Println(string(content))
 }
 
 func CallAzureFunc() {
