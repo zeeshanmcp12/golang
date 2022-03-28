@@ -13,9 +13,9 @@ func main() {
 func EncodingJson() {
 
 	userProfile := []User{
-		{"Muhammad Zeeshan", 32, "abc123+", "zeeshan@dev.io"},
-		{"Hussain Raza", 28, "abc123+", "hussain@dev.io"},
-		{"Abdullah Shafiq", 25, "abc123+", "raza@dev.io"},
+		{"Muhammad Zeeshan", 32, "+", "zeeshan@dev.io"},
+		{"Hussain Raza", 28, "+", "hussain@dev.io"},
+		{"Abdullah Shafiq", 25, "+", "raza@dev.io"},
 	}
 
 	finalJson, err := json.MarshalIndent(userProfile, "", "\t")

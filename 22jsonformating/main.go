@@ -26,9 +26,9 @@ type Profile struct {
 func EndcodeJSON() {
 	// Second we need to create the data that has to be package as JSON
 	profileData := []Profile{
-		{"Muhammad Zeeshan", 32, "acloudtechie@outlook.com", "abc123+", "acloudtechie.com", []string{"cloud", "azops"}},
-		{"Abdullah", 26, "abdullah@outlook.com", "def123+", "acloudtechie.com", []string{"support", "helpdesk"}},
-		{"Nasir", 30, "nasir@outlook.com", "ghi123+", "acloudtechie.com", nil},
+		{"Muhammad Zeeshan", 32, "acloudtechie@outlook.com", "adfdf", "acloudtechie.com", []string{"cloud", "azops"}},
+		{"Abdullah", 26, "abdullah@outlook.com", "adfdf", "acloudtechie.com", []string{"support", "helpdesk"}},
+		{"Nasir", 30, "nasir@outlook.com", "asfdf", "acloudtechie.com", nil},
 	}
 
 	// Third package the data in JSON format
