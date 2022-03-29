@@ -3,11 +3,14 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 )
 
 func main() {
 	fmt.Println("Working with JSON. Encoding/Decoding")
-	EncodingJson()
+	// EncodingJson()
+	// DecodeJSON()
+	DecodeJSONFromFile()
 }
 
 func EncodingJson() {
@@ -25,6 +28,72 @@ func EncodingJson() {
 
 }
 
+func DecodeJSON() {
+	jsonData := []byte(`
+		{
+			"fullname": "Muhammad Zeeshan",
+			"age": 32,
+			"email": "zeeshan@dev.io"
+		}
+	`)
+
+	isJsonValid := json.Valid(jsonData)
+
+	var jsonStruct User
+
+	if isJsonValid {
+		json.Unmarshal(jsonData, &jsonStruct)
+		fmt.Printf("%#v", jsonStruct)
+
+	} else {
+		fmt.Println("JSON IS NOT VALID")
+	}
+
+}
+
+func DecodeJSONFromFile() {
+	file, err := ioutil.ReadFile("./readjson.json")
+
+	CheckNilErr(err)
+
+	jsonData := []byte(file)
+
+	var jsonStruct FileData
+
+	validJson := json.Valid(jsonData)
+
+	if validJson {
+		fmt.Printf("JSON is Valid!")
+		json.Unmarshal(jsonData, &jsonStruct)
+		fmt.Printf("%#v\n", jsonStruct)
+	} else {
+		fmt.Println("JSON IS NOT VALID!")
+	}
+
+	var myOnlineData map[string]interface{}
+	json.Unmarshal(jsonData, &myOnlineData)
+
+	for index, val := range myOnlineData {
+		fmt.Printf("Key is %v Value is %v\n", index, val)
+	}
+
+	// Another case where you want to add data to key value
+	// var myOnlineData map[string]interface{}
+	// json.Unmarshal(jsonDataFromFile, &myOnlineData)
+	// // fmt.Printf("%#v\n", myOnlineData)
+
+	// for k, val := range myOnlineData { //k = key, val = value
+	// 	fmt.Printf("Key: %v\tValue: %v\tType: %T\n", k, val, val)
+	// }
+
+}
+
+func CheckNilErr(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
 type User struct {
 	Name        string `json:"fullname"`
 	Age         int    `json:"age"`
@@ -32,8 +101,8 @@ type User struct {
 	ContactInfo string `json:"email"`
 }
 
-func CheckNilErr(err error) {
-	if err != nil {
-		panic(err)
-	}
+type FileData struct {
+	Name        string `json:"fullname"`
+	Age         int    `json:"age"`
+	ContactInfo string `json:"email"`
 }
