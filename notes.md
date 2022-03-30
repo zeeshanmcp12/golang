@@ -634,7 +634,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - We can use a function from http package:
       - http.ListenAndServe() -> it requires port and router (request either it is for "/" or "/product" etc)
       - http.ListenAndServer(":8000", r)
-    - Now, during this operation we can face any errors or exception or any issues. So cater this, we need to use:
+    - Now, during this operation we can face any errors or exception or any issues. So to cater this, we need to use:
       - log.Fatal(<server creation code>)
         - log.Fatal(http.ListenAndServe(":8000", r))
 - Build API in golang
