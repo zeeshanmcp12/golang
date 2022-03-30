@@ -617,7 +617,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - r -> it represents to Request -> This is also a function of http package. Syntax: *http.Request
       - Make sure that, this 'r' http.Request is a pointer.
     - How and Why use those w and r parameters?
-      - When somebody sending us a request -> for example, if we want to use parameters, urls etc that all is inside the 'r' (http.ResponseWriter)
+      - When somebody sending us a request -> for example, if we want to use parameters, urls etc that all is inside the 'r' (*http.Request)
       - We need to send some response to that request that is inside the 'w' (http.ResponseWriter)
       - So, to send response back to a request, we need to use 'w' which means "Write a response for me" by using Write function. Syntax:
         - w.Write()
@@ -638,6 +638,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - log.Fatal(<server creation code>)
         - log.Fatal(http.ListenAndServe(":8000", r))
 - Build API in golang
+  - gorilla/mux
+    - package in golang to create/build API
   - Follow the steps:
     - Create model for course and author
     - Create helper method to check if id and name is not empty.

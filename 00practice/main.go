@@ -4,13 +4,31 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
 	fmt.Println("Working with JSON. Encoding/Decoding")
 	// EncodingJson()
 	// DecodeJSON()
-	DecodeJSONFromFile()
+	// DecodeJSONFromFile()
+	greeter()
+
+	r := mux.NewRouter()
+	r.HandleFunc("/", serverHome).Methods("GET")
+
+}
+
+func greeter() {
+	fmt.Println("Hello from golang!")
+}
+
+func serverHome(w http.ResponseWriter, r *http.Request) {
+
+	w.Write([]byte("<h1>Welcome to A Cloud Techie!</h1>"))
+
 }
 
 func EncodingJson() {
