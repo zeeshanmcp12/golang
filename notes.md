@@ -642,6 +642,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - package in golang to create/build API
   - Follow the steps:
     - Create model for course and author
+      - model means, how our course is looks like
+      - We can also call it as database (or model as described above)
     - Create helper method to check if id and name is not empty.
     - Create controllers
       - Contollers always goes into separate files but at this stage, we are going to define in same file.
