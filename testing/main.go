@@ -16,8 +16,9 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", serveHome).Methods("GET")
 	r.HandleFunc("/data", showData).Methods("GET")
-	fmt.Println("Listening on port 4000")
-	log.Fatal(http.ListenAndServe(":4000", r))
+	listenAddr := ":4000"
+	fmt.Printf("About to Listen on %s. Go to http://127.0.0.1%s\n", listenAddr, listenAddr)
+	log.Fatal(http.ListenAndServe(listenAddr, r))
 
 }
 
