@@ -8,22 +8,30 @@ import (
 	"strings"
 )
 
+// var weight, height, bmi float64
+
 func main() {
 	fmt.Println("BMI Calculator!")
 	fmt.Printf("Enter your Weight: ")
-	weight := userInputToInt()
+	// weight := userInputToInt()
+	// fmt.Scanf("%f", &weight)
+	reader := bufio.NewReader(os.Stdin)
+	weight, _ := reader.ReadString('\n')
+	convWeight, err := strconv.ParseFloat(strings.TrimSpace(weight), 64)
+	CheckNilErr(err)
 
 	fmt.Printf("Enter your height: ")
 	// height := userInputToInt()
-	reader := bufio.NewReader(os.Stdin)
-	input, _ := reader.ReadString('\n')
-	height, err := strconv.ParseFloat(strings.TrimSpace(input), 64)
+	// reader := bufio.NewReader(os.Stdin)
+	height, _ := reader.ReadString('\n')
+	convHeight, err := strconv.ParseFloat(strings.TrimSpace(height), 64)
 	CheckNilErr(err)
+	// fmt.Scanf("%f", &height)
 
 	// result := calculateBMI(float64(height), weight)
-	result := weight / int(height) * 2
+	bmiResult := convWeight / convHeight * 2
 
-	fmt.Printf("Your BMI: %v", result)
+	fmt.Printf("Your BMI: %v", bmiResult)
 
 }
 
