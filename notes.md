@@ -10,7 +10,11 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - typed = any value of data type (int, bool etc)
   - Standard type sizes (unless developer has specific needs)
     - int
+      - int -> signed integers
+      - it contains both positive and negative numbers
     - unint
+      - uint -> unsigned integer
+      - which means only positive number including 0
     - float64
     - complex128
   - Casting a float to an integer truncates the floating point portion.
@@ -25,6 +29,14 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - rune
   - constants cant use the := (short) declaration syntax.
     - the value can't be changed once it has been declared.
+  - static typed
+    - In static typed, we compiler throws an error when data is mismatched with type. for example, we defined two integers and then called one from them as integer and another as string.
+    - C++, C, Java comes under this category.
+  - dynamic typed
+    - We don't need to define it's data type for example int, string or bool etc
+    - It is also called loosly type. JavaScript, Python and PHP comes under this category
+  - Golang as static and dynamic
+    - golang works with static typed but sometimes it also refers to as dynamic type.
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
