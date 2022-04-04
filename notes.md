@@ -57,14 +57,23 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - those variables are not accessible outside of block of function
           - those can be used and declared in loops and conditions
         - Global
-        - for [main.go](00notesexample/main.go)
+        - for example [main.go](00notesexample/main.go)
     - zero values
       - when we declare any variable but not initialzed it. This comes with default value which is known as zero value.
     - User Input
       - Scanf
         - this function is part of fmt package.
         - It takes input according to variable, it's data type and format specifier.
-        - this function requires input sequentially. for example, if 1st variable is int and second is string then in function call we must keep the same sequence.
+        - this function requires input sequentially. for example, if .1st variable is int and second is string then in function call we must keep the same sequence.
+        - variable in scanf statment must be with & (& sign) which is a reference to make sure the actual value is being stored in variable.
+          - fmt.Scanf("%f\n", &weight)
+        - to take input from multiple lines, i.e. by pressing enter then define the syntax as below:
+          - fmt.Scanf("%s\n", &variableName)
+          - "\n" will send the cursor to next line
+        - Scanf function requires two arguements, count and err
+          - count - will return the count of successful execution
+          - err - will throw an error (if any)
+          - rerfer to this file [main.go](00notesexample/scanf.go)
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
