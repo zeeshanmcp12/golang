@@ -60,6 +60,11 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - for [main.go](00notesexample/main.go)
     - zero values
       - when we declare any variable but not initialzed it. This comes with default value which is known as zero value.
+    - User Input
+      - Scanf
+        - this function is part of fmt package.
+        - It takes input according to variable, it's data type and format specifier.
+        - this function requires input sequentially. for example, if 1st variable is int and second is string then in function call we must keep the same sequence.
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
