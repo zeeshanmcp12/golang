@@ -80,6 +80,14 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - fmt.Printf("Type of variable is %T",variable)
     - reflect.TypeOf()
       - this function returns the type of both value and it's variable
+  - Constants
+    - typed
+      - when we explicitly assign a type to constant, for example const name string = "Zeeshan"
+    - untyped
+      - when the type is infered by compiler at runtime. for example const age = 32
+    - A value cannot be changed once it is initialiezed with constant.
+    - We cannot declare constant without value hence Zero or null value does not apply here
+    - We cannot declare constant with shothand syntax such that const name := "Zeeshan". It will throw an error
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
