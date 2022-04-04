@@ -56,6 +56,10 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - those variables that are declared inside a function or block is termed as local variable.
           - those variables are not accessible outside of block of function
           - those can be used and declared in loops and conditions
+        - Global
+        - for [main.go](00notesexample/main.go)
+    - zero values
+      - when we declare any variable but not initialzed it. This comes with default value which is known as zero value.
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
