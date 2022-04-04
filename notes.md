@@ -37,6 +37,25 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - It is also called loosly type. JavaScript, Python and PHP comes under this category
   - Golang as static and dynamic
     - golang works with static typed but sometimes it also refers to as dynamic type.
+  - Format specifier
+    - It tell golang about how to format different types of data types.
+      - %v is used to format the value in a default format.
+      - %d is used to format decimal integers var grades int = 42; fmt.Printf("Marks are %d", grades)
+      - %s is used for normal string
+      - %T is used for type of the value
+      - %f is used for floating number
+      - %t is used for boolean value
+      - %c is used for character
+      - %q is used to format quoted string
+    - Variable scope:
+      - Outer vs inner block
+        - Outer block cannot access variable that is defined in inner block, hence a variable defined in inner block cannot be accessd via outer block.
+        - for example [main.go](00notesexample/main.go)
+      - Local vs Global variables
+        - Local
+          - those variables that are declared inside a function or block is termed as local variable.
+          - those variables are not accessible outside of block of function
+          - those can be used and declared in loops and conditions
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
