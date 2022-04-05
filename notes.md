@@ -88,6 +88,27 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - A value cannot be changed once it is initialiezed with constant.
     - We cannot declare constant without value hence Zero or null value does not apply here
     - We cannot declare constant with shothand syntax such that const name := "Zeeshan". It will throw an error
+
+  - Operators in golang
+    - comparison
+      - == != < => <= >
+    - arithmetic
+      - addition(+) subtraction(-) multiplication(*) division(/) modulus(%) increament(++) decreament(--)
+      - We can use addition operator on string.
+      - We cannot use subtraction operator on string as it will throw an error.
+      - Subtraction works well with number.
+      - division operator returns the qoutient when left operand is divided by right operand. var a,b int = 24,2 (we get the qoutient as 12 because 24 is divided by 12)
+      - modulus returns the "reminder" when the left operand is divided by right operand.
+      - increment operator is a unary operator. Unary operators are that act upon a single operand to produce a new value. var i int = 1; i++
+    - logical
+      - This checks the logic between two expressions.
+      - && (logical and), || (logical OR), ! (logical not)
+      - && returns true when both left and right side are true
+      - || returns true when one of them is true and return false when both sides are false
+      - ! reverse the results. For example if expression returns true then it will reverse it to false.
+    - assignment
+    - bitwise
+    - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
