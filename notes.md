@@ -107,6 +107,19 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - || returns true when one of them is true and return false when both sides are false
       - ! reverse the results. For example if expression returns true then it will reverse it to false.
     - assignment
+      - = -> assign
+        - var number int = 10
+      - += -> add and assign
+        - it assigns left operand with the addition result.
+        - x+= y means, x = x + y
+      - -= -> substract and assign
+        - x-= y means, x = x - y
+      - *= -> multiply and assign
+        - x*= y means, x = x * y
+      - /= -> divide and assign qoutient
+        - x/= y means, x = x / y
+      - %= -> divide and assign modulus
+        - x%= y means, x = x % y
     - bitwise
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.

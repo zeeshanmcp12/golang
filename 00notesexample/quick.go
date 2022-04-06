@@ -50,8 +50,14 @@ func main() {
 	// result := 10 > 50
 	// fmt.Println(!(a || result))
 
-	var a, b bool = false, false
-	fmt.Println(a && b)
-	fmt.Println(a || b)
+	// var a, b bool = false, false
+	// fmt.Println(a && b)
+	// fmt.Println(a || b)
+
+	var x, y int = 100, 9
+	x /= y
+	fmt.Println(x)
+	x %= y
+	fmt.Println(x)
 
 }
