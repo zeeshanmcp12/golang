@@ -46,8 +46,12 @@ func main() {
 	// result := 10 > 50
 	// fmt.Println(!(a && result))
 
-	var a bool = true
-	result := 10 > 50
-	fmt.Println(!(a || result))
+	// var a bool = true
+	// result := 10 > 50
+	// fmt.Println(!(a || result))
+
+	var a, b bool = false, false
+	fmt.Println(a && b)
+	fmt.Println(a || b)
 
 }
