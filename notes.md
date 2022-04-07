@@ -99,7 +99,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - Subtraction works well with number.
       - division operator returns the qoutient when left operand is divided by right operand. var a,b int = 24,2 (we get the qoutient as 12 because 24 is divided by 12)
       - modulus returns the "reminder" when the left operand is divided by right operand.
-      - increment operator is a unary operator. Unary operators are that act upon a single operand to produce a new value. var i int = 1; i++
+      - increment operator is a unary operator. Unary operators are the operators that act upon a single operand to produce a new value. var i int = 1; i++
     - logical
       - This checks the logic between two expressions.
       - && (logical and), || (logical OR), ! (logical not)
@@ -121,6 +121,37 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - %= -> divide and assign modulus
         - x%= y means, x = x % y
     - bitwise
+      - It is different than other operators
+      - It works at bit level
+      - It performs bit by bit operations
+        - & (bitwise AND)
+          - It takes two numbers as operand and does AND operations on every bit of two numbers.
+          - In simple words, this operations performs on binary format because it works at bit level.
+          - In AND case, it checks the bit of one number and the corresponding bit of second number.
+            - We get 1 if both bit of two operands 1.
+            - We get 0 If one of the bit of two operands is 0 or 1.
+            - Example:
+              - var num1, num2 = 10,22
+              - 0 0 0 0 1 0 1 0 -> binary representation
+	            - 0 0 0 1 0 1 1 0 -> binary representation
+              - result := num1 & num2
+              - fmt.Println(result)
+              - output -> 2
+        - | (bitwise OR)
+          - It takes two numbers as operand and perform OR operations on every bit of two numbers.
+          - We get 1 with even if one bit of two operands is 1.
+          - We get 0 when both bit of two operands are 0.
+            - Example:
+              - var num1, num2 int = 10, 22
+	            - 0 0 0 0 1 0 1 0
+	            - 0 0 0 1 0 1 1 0
+	            - bitwiseAND := num1 & num2
+	            - bitwiseOR := num1 | num2
+	            - fmt.Println(bitwiseOR)
+	            - output -> 30
+        - ^ (bitwise XOR)
+        - >> (right shift)
+        - << (left shift)
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
