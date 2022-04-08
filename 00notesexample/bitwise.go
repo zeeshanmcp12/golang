@@ -7,9 +7,18 @@ func main() {
 	var num1, num2 int = 10, 22
 	// 0 0 0 0 1 0 1 0
 	// 0 0 0 1 0 1 1 0
+	// bitwise AND
 	// bitwiseAND := num1 & num2
 
-	bitwiseOR := num1 | num2
-	fmt.Println(bitwiseOR)
+	// bitwise OR
+	// bitwiseOR := num1 | num2
+
+	// bitwise XOR
+	bitwiseXOR := num1 ^ num2
+	fmt.Println(bitwiseXOR)
+
+	// bitwise leftshift
+	bitwiseLeftShift := bitwiseXOR << 1
+	fmt.Println(bitwiseLeftShift)
 
 }

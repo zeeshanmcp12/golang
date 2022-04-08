@@ -128,7 +128,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - It takes two numbers as operand and does AND operations on every bit of two numbers.
           - In simple words, this operations performs on binary format because it works at bit level.
           - In AND case, it checks the bit of one number and the corresponding bit of second number.
-            - We get 1 if both bit of two operands 1.
+            - We get 1 if both bit of two operands is 1.
             - We get 0 If one of the bit of two operands is 0 or 1.
             - Example:
               - var num1, num2 = 10,22
@@ -150,8 +150,25 @@ Notes are written for my own understanding so these may be inappropriate (or det
 	            - fmt.Println(bitwiseOR)
 	            - output -> 30
         - ^ (bitwise XOR)
-        - >> (right shift)
+          - It takes two numbers as operand and perform XOR operations on every bit of two numbers.
+          - We get 1 if two bits are opposite
+          - We get 0 if both of the two bits are same.
+            - Example:
+              - var num1, num2 int = 10, 22
+              - 0 0 0 0 1 0 1 0
+              - 0 0 0 1 0 1 1 0
+              - bitwiseXOR := num1 ^ num2
+              - fmt.Println(bitwiseXOR)
+              - output -> 24
         - << (left shift)
+          - It shifts all bits towards left by a certain number of specified bits.
+            - For example, we have 212 = 11010100
+            - when we shift all bits towards left by 1 then it will be:
+              -  11010100 -> 212
+              - 110101000 -> 424
+          - The bit positions that have been vacated by the left shift operator are filled with 0.
+          - example is in the [bitwise.go](00notesexample/bitwise.go)
+        - >> (right shift)
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
