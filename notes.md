@@ -168,6 +168,12 @@ Notes are written for my own understanding so these may be inappropriate (or det
               - 110101000 -> 424
           - The bit positions that have been vacated by the left shift operator are filled with 0.
           - example is in the [bitwise.go](00notesexample/bitwise.go)
+          - Example:
+            - var num1, num2 int = 10, 22
+            - bitwiseXOR := num1 ^ num2
+            - fmt.Println(bitwiseXOR)
+            - bitwiseLeftShift := bitwiseXOR << 1
+            - fmt.Println(bitwiseLeftShift)
         - >> (right shift)
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
