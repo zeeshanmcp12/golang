@@ -174,7 +174,15 @@ Notes are written for my own understanding so these may be inappropriate (or det
             - fmt.Println(bitwiseXOR)
             - bitwiseLeftShift := bitwiseXOR << 1
             - fmt.Println(bitwiseLeftShift)
+            - output -> 56
         - >> (right shift)
+          - It shift all bits towards right by a certain number of specified bits.
+          - excess bits shifted off to the right are discarded.
+          - Example:
+            - 0 0 0 1 0 1 1 0 -> 22
+            - bitwiseRightShift := 22 >> 2
+            - fmt.Println("bitwise right shift", bitwiseRightShift)
+            - output -> 5
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.

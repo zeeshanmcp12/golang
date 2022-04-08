@@ -15,10 +15,13 @@ func main() {
 
 	// bitwise XOR
 	bitwiseXOR := num1 ^ num2
-	fmt.Println(bitwiseXOR)
+	fmt.Println("bitwiseXOR", bitwiseXOR)
 
 	// bitwise leftshift
 	bitwiseLeftShift := bitwiseXOR << 1
-	fmt.Println(bitwiseLeftShift)
+	fmt.Println("bitwise left shift", bitwiseLeftShift)
+
+	bitwiseRightShift := 22 >> 2
+	fmt.Println("bitwise right shift", bitwiseRightShift)
 
 }
