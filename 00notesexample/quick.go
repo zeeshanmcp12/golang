@@ -54,10 +54,19 @@ func main() {
 	// fmt.Println(a && b)
 	// fmt.Println(a || b)
 
-	var x, y int = 100, 9
-	x /= y
-	fmt.Println(x)
-	x %= y
-	fmt.Println(x)
+	// var x, y int = 100, 9
+	// x /= y
+	// fmt.Println(x)
+	// x %= y
+	// fmt.Println(x)
+
+	// bitwise AND and OR
+	// var x, y int = 100, 90
+	// fmt.Println(x & y)
+	// fmt.Println(x | y)
+
+	// need to validate
+	var x, y int = 100, 90
+	fmt.Println(!(((x + y) >> 2) == 47))
 
 }
