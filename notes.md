@@ -159,7 +159,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
               - 0 0 0 1 0 1 1 0
               - bitwiseXOR := num1 ^ num2
               - fmt.Println(bitwiseXOR)
-              - output -> 24
+              - output -> 28
         - << (left shift)
           - It shifts all bits towards left by a certain number of specified bits.
             - For example, we have 212 = 11010100
@@ -183,6 +183,12 @@ Notes are written for my own understanding so these may be inappropriate (or det
             - bitwiseRightShift := 22 >> 2
             - fmt.Println("bitwise right shift", bitwiseRightShift)
             - output -> 5
+  - if-else statement (control flow)
+  - switch-case
+    - fallthrough
+      - It is a keyword used in switch-case
+      - It forces the execution flow to fall through the successive case block.
+        - jis case k sath ye keyword hoga wo next case block ko execute kardega...ye isi tarah chalta rahega until it found "default" keyword or not found fallthrough keyword. 
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
