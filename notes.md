@@ -188,7 +188,14 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - fallthrough
       - It is a keyword used in switch-case
       - It forces the execution flow to fall through the successive case block.
-        - jis case k sath ye keyword hoga wo next case block ko execute kardega...ye isi tarah chalta rahega until it found "default" keyword or not found fallthrough keyword. 
+        - jis case k sath ye keyword hoga wo next case block ko execute kardega...ye isi tarah chalta rahega until it found "default" keyword or not found fallthrough keyword.
+    - break keyword
+      - In golang we don't even worry about explicitely define break keyword.
+        - For example, 
+          - we have two cases in switch block.
+          - both are true
+          - execution flow will stop when first case is executed as true.
+          - program will exit from the switch block and we don't need to define break keyword.
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
