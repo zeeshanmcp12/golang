@@ -91,16 +91,29 @@ func main() {
 	// 	}
 	// }
 
-	var tableNum int
-	fmt.Printf("Enter table number: ")
+	// var tableNum int
+	// fmt.Printf("Enter table number: ")
 
-	fmt.Scanf("%d", &tableNum)
+	// fmt.Scanf("%d", &tableNum)
 
-	for i := 1; i < 10+1; i++ {
-		fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
-		// if i == 4 {
-		// 	break
-		// }
+	// for i := 1; i < 10+1; i++ {
+	// 	fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
+	// 	// if i == 4 {
+	// 	// 	break
+	// 	// }
+	// }
+
+	days := []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+
+	for d, val := range days {
+		// fmt.Printf("Index: %v Day:%v\n", d, val)
+		fmt.Printf("Apply for leave: ")
+		fmt.Scanf("%s", &val)
+		if val == days[d] {
+			fmt.Printf("Index: %v Day:%v\n", d, val)
+			fmt.Printf("You applied for %v", val)
+			break
+		}
 	}
 
 }
