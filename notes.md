@@ -195,8 +195,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - we have two cases in switch block.
           - both are true
           - execution flow will stop when first case is executed as true.
-          - program will exit from the switch block and we don't need to define break keyword.
-    - 
+          - program will exit from the switch block and we don't need to explicitely define break keyword.
+  - looping with For
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.

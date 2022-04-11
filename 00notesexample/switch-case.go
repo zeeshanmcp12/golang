@@ -5,17 +5,18 @@ import "fmt"
 func main() {
 	fmt.Println("Switch Case in golang!")
 
-	var number int = 100
+	// var number int = 100
+	var num1, num2 int = 10, 20
 
-	switch number {
-	case 100:
-		fmt.Println("It is 100")
-	case 90:
-		fmt.Println("It is 90")
+	switch {
+	case num1+num2 == 30:
+		fmt.Println("Greater than 30")
+	case num1+num2 >= 30:
+		fmt.Println("Greater than equal to 30")
 		// fallthrough
-	case 2:
-		fmt.Println("What to do next")
+	// case 2:
+	// fmt.Println("What to do next")
 	default:
-		fmt.Println("Sorry, 100 is lost!")
+		fmt.Println("No matched!")
 	}
 }
