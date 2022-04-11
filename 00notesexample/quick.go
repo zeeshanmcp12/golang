@@ -72,16 +72,35 @@ func main() {
 	// Tricky question in kodekloud lab.
 	// If below code is not in editor then we need to find out either there will be an error or any result.
 	// This will through an error because switch contains "int" value while cases contains bool and it is not allowed to convert untyped bool to int. That's why it will give error.
-	var a, b = 100, 5
-	switch a {
-	case a/b == 10:
-		fmt.Println("10")
-	case a/b == 20:
-		fmt.Println("20")
-	case a/b == 10:
-		fmt.Println("30")
-	default:
-		fmt.Println("default")
+	// var a, b = 100, 5
+	// switch a {
+	// case a/b == 10:
+	// 	fmt.Println("10")
+	// case a/b == 20:
+	// 	fmt.Println("20")
+	// case a/b == 10:
+	// 	fmt.Println("30")
+	// default:
+	// 	fmt.Println("default")
+	// }
+
+	// for i := 0; i <= 5; i++ {
+	// 	fmt.Println(i * i)
+	// 	if i == 3 {
+	// 		continue
+	// 	}
+	// }
+
+	var tableNum int
+	fmt.Printf("Enter table number: ")
+
+	fmt.Scanf("%d", &tableNum)
+
+	for i := 1; i < 10+1; i++ {
+		fmt.Printf("%v x %v = %v\n", tableNum, i, tableNum*i)
+		// if i == 4 {
+		// 	break
+		// }
 	}
 
 }
