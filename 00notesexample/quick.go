@@ -105,15 +105,32 @@ func main() {
 
 	days := []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
 
-	for d, val := range days {
+	// var leaveDay string
+
+	// fmt.Printf("Apply for leave: ")
+	// fmt.Scanf("%s", &leaveDay)
+	// indexToRemove := days[:5]
+
+	// days = append(indexToRemove)
+
+	for _, val := range days {
 		// fmt.Printf("Index: %v Day:%v\n", d, val)
 		fmt.Printf("Apply for leave: ")
 		fmt.Scanf("%s", &val)
-		if val == days[d] {
-			fmt.Printf("Index: %v Day:%v\n", d, val)
-			fmt.Printf("You applied for %v", val)
+		if val == "Saturday" || val == "Sunday" {
+			fmt.Println("It's a weekend, apply for other days.")
+
 			break
+		} else if val != "Saturday" && val != "Sunday" {
+			// days = append(indexToRemove)
+			fmt.Printf("Remaining Days:%v\n", append(days[:5]))
+			// fmt.Printf("You applied for %v\n", leaveDay)
+			break
+
+		} else {
+			fmt.Println("Invalid input!")
 		}
+
 	}
 
 }
