@@ -245,6 +245,12 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - var arr = [3][2]int{{1,2},{10,4},{20,50}}
         - [3] -> {1,2},{10,4},{20,50}
         - [2] -> 1,2 | 10,4 | 20,50
+  - Slice in golang
+    - we can initialize and declare a slice using make function
+    - Syntax:
+      - slice := make([]<data_type>, length, capacity)
+        - capacity is optional
+        - slice := make([]int, 5, 10)
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.

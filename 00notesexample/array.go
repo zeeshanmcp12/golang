@@ -30,7 +30,8 @@ func main() {
 	}*/
 	// var table = [4]int{2, 3, 4, 5}
 
-	calculateTable([]int{2})
+	// calculateTable([]int{2, 3, 4})
+	calTable([]int{2})
 	// i := 0
 	// for i < len(table) {
 	// 	for d := 0; d < 10+1; d++ {
@@ -64,16 +65,24 @@ func main() {
 
 }
 
-func calculateTable(arr []int) {
-	// res := 0
-	for d := 0; d < len(arr); d++ {
-		for i := 0; i < 10+1; i++ {
-			// res *= arr[i]
-			fmt.Printf("%v x %v = %v\n", arr[i], i, arr[i]*i)
-			// if i != 10 {
-			// 	continue
-			// }
-		}
+func calculateTable(arr []int) int {
+	res := 0
+	// for d := 0; d < len(arr); d++ {
+	for i := 0; i < 10+1; i++ {
+		// res *= arr[i]
+		res = arr[i] * i
+		fmt.Printf("%v x %v = %v\n", res, i, res)
+		// if i != 10 {
+		// 	continue
+		// }
 	}
-	// return res
+	// }
+	return res
+}
+
+func calTable(arr []int) {
+	for i := 0; i < 10+1; i++ {
+		fmt.Printf("%v x %v = %v\n", arr[i], i, arr[i]*i)
+
+	}
 }
