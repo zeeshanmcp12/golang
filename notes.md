@@ -247,6 +247,25 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - [2] -> 1,2 | 10,4 | 20,50
   - Slice in golang
     - we can initialize and declare a slice using make function
+    - An array is represented by three things in golang:
+      - Pointer
+        - represents the location of first element in array
+      - Length
+        - represents the elements (or size) in the array
+        - how many elements we have
+      - Capacity
+        - it is always the same as length (as per Tim Youtuber)
+        - maximum amount of elemnts we could have in the array.
+    - Slice is really a portion of an array. for example:
+      - array [4]int{0,1,10,4}
+      - slice -> 1,10 will a slice in above underlying array.
+    - Difference between slice and array
+      - slice is a portion of underlying array.
+      - length will be consider when we've sliced an array. for example, this is an array [4]int{0,1,10,4}, now if we want to slice it, we have 1,10.
+      - the location of first element (1) is pointer.
+      - lenght of slice is 2 because 1 and 10
+      - capacity is 3 because we have one element left in array after pointer of slice which 4 so in that case, slice could have maximum amount of elements.
+      - If we extend a slice then capacity will changed here.
     - Syntax:
       - slice := make([]<data_type>, length, capacity)
         - capacity is optional
