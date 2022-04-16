@@ -270,6 +270,24 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - slice := make([]<data_type>, length, capacity)
         - capacity is optional
         - slice := make([]int, 5, 10)
+  - Maps
+    - this is key value pair similar to hash table in java and dictionary in python.
+    - it provides efficient add, delete and update operations.
+    - it gives output in unorderd format and array is orderd.
+    - Basic syntax:
+      - var <map_name> map[<data type of key>]<data type of value>
+      - key data type will be inside the sqaure bracket.
+      - var myMap map[string]int
+        - "age" : 32
+        - here string will be = "age"
+        - int will be = 32
+    - map declared without value (or nil value)
+      - map without value is nil
+      - it will throw a runtime error when we will add a value to nil map
+      - var code map[string]string
+      - code["en"] = "English"
+      - this will throw an erro
+    - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.

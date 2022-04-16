@@ -103,7 +103,7 @@ func main() {
 	// 	// }
 	// }
 
-	days := []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+	// days := []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
 
 	// var leaveDay string
 
@@ -133,11 +133,61 @@ func main() {
 
 	// }
 
-	arr := [10]int{10, 20, 30, 50}
-	fmt.Println(arr[0])
-	fmt.Println(arr[2])
-	fmt.Println(arr[4])
-	fmt.Println(arr[8])
-	fmt.Println(arr[10])
+	// arr := [10]int{10, 20, 30, 50}
+	// fmt.Println(arr[0])
+	// fmt.Println(arr[2])
+	// fmt.Println(arr[4])
+	// fmt.Println(arr[8])
+	// fmt.Println(arr[10])
+
+	// arr := [5]string{"a", "b", "c", "d", "e"}
+	// slice := arr[:4]
+	// fmt.Println(arr)
+	// fmt.Println(slice)
+	// slice[1] = "x"
+	// fmt.Println(arr)
+	// fmt.Println(slice)
+
+	// Need to understand why this is the output
+	// arr := [5]int{10, 20, 90, 70, 60}
+	// slice := arr[:3]
+	// fmt.Println(cap(slice))
+	// new_slice := append(slice, 100, 200)
+	// fmt.Println(cap(new_slice))
+
+	// Need to understand why this is the output
+	// arr := [5]int{10, 20, 90, 70, 60}
+	// slice := arr[:3]
+	// fmt.Println(cap(slice)) // 5
+
+	// slice_2 := make([]int, 5, 20)
+	// new_slice := append(slice, slice_2...)
+	// fmt.Println(cap(new_slice)) // 10
+
+	//It throws an error.
+	// arr := [5]int{10, 20, 90, 70, 60}
+	// slice := append(arr[:2], arr[3:])
+	// fmt.Println(slice)
+
+	// Need to understand why this is the output
+	// arr := []int{10, 20, 90, 70, 60}
+	// slice := make([]int, 10)
+	// num := copy(slice, arr)
+	// fmt.Println(slice) // [10 20 90 70 60 0 0 0 0 0]
+	// fmt.Println(num)   // 5
+
+	// Need to understand why this is the output
+	// arr := []int{10, 20, 90, 70, 60}
+	// slice := make([]int, 10)
+	// copy(slice, arr)
+	// slice[1] = 1000
+	// fmt.Println(arr)   // [10 20 90 70 60]
+	// fmt.Println(slice) // [10 1000 90 70 60 0 0 0 0 0]
+
+	arr := [10]int{10, 20}
+	// [10 1000 90 70 60 50 40 30 20 10]
+	slice := arr[2:8]       // 2 is 90 and 8 is 20 but not inclusive so this will be 30
+	fmt.Println(len(slice)) // 6 -> because from 90 to 30, the length will be 6
+	fmt.Println(cap(slice)) // 8 -> after 30 we still have 2 elements to it will be 6+2=8
 
 }
