@@ -256,6 +256,15 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - Capacity
         - it is always the same as length (as per Tim Youtuber)
         - maximum amount of elemnts we could have in the array.
+        - capacity function is mostly used with slice, however it works with arrays as well.
+    - Difference of capacity function in array and slice
+      - in array, capacity is equal to the length of the array.
+      - in slice, capacity is considered from the start of the index of slice
+      - Example:
+        - var arr = [10]int{10,20,30,40,50,60,70,80,90,100}
+        - mySlice := [1:8]
+        - fmt.Println(cap(arr)) // output: 10 -> because in array capacity is equal to length of an array.
+        - fmt.Println(cap(mySlice)) // output: 9 -> because in slice it starts from the first index of the slice.
     - Slice is really a portion of an array. for example:
       - array [4]int{0,1,10,4}
       - slice -> 1,10 will a slice in above underlying array.
@@ -266,10 +275,19 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - lenght of slice is 2 because 1 and 10
       - capacity is 3 because we have one element left in array after pointer of slice which 4 so in that case, slice could have maximum amount of elements.
       - If we extend a slice then capacity will changed here.
+    - Update value in slice
+      - Since slice is a reference of underlying array so when we change any value in slice it will also effect the value in array.
+      - Example:
+      - Go to [slice.go](00notesexample/slice.go)
+    - Declaring and initializing slice with make function
+      - make function accepts 3 parameters:
+        - data_type, length, capacity
+      - Basic syntax:
+        - mySlice := make([]data_type, length, capacity)
     - Syntax:
       - slice := make([]<data_type>, length, capacity)
         - capacity is optional
-        - slice := make([]int, 5, 10)
+        - slice := make([]int, 5, 10) -> here we declared a slice without any value hence it is nil and default value of nil integer is 0.
   - Maps
     - this is key value pair similar to hash table in java and dictionary in python.
     - it provides efficient add, delete and update operations.
