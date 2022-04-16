@@ -279,6 +279,13 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - Since slice is a reference of underlying array so when we change any value in slice it will also effect the value in array.
       - Example:
       - Go to [slice.go](00notesexample/slice.go)
+    - Appending a value in slice
+    - go has a builtin function called append
+    - append function accepts some parameters:
+      - func append(s []T, vs ...T) []T
+        - s []T -> slice of some data type
+        - vs ...T -> values of the same data type
+        - []T -> resulting value of this append function is the slice containing all the values(elements) of original slice plus the provided values.
     - Declaring and initializing slice with make function
       - make function accepts 3 parameters:
         - data_type, length, capacity
