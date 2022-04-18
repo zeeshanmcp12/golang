@@ -273,7 +273,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - length will be consider when we've sliced an array. for example, this is an array [4]int{0,1,10,4}, now if we want to slice it, we have 1,10.
       - the location of first element (1) is pointer.
       - lenght of slice is 2 because 1 and 10
-      - capacity is 3 because we have one element left in array after pointer of slice which 4 so in that case, slice could have maximum amount of elements.
+      - capacity is 3 because we have one element left in array after pointer of slice which is 4 so in that case, slice could have maximum amount of elements.
       - If we extend a slice then capacity will changed here.
     - Update value in slice
       - Since slice is a reference of underlying array so when we change any value in slice it will also effect the value in array.
@@ -286,6 +286,14 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - s []T -> slice of some data type
         - vs ...T -> values of the same data type
         - []T -> resulting value of this append function is the slice containing all the values(elements) of original slice plus the provided values.
+    - deleting an element from slice
+    - copying from a slice
+      - copy element from one slice to another
+      - func copy(dst, src []Type) int
+      - this builtin copy function copies elements from destination slice to a source slice.
+      - Basic syntax:
+        - num := copy(dest_slice, srs_slice)
+      - to copy elements from one slice to another, the elements must be of the same data type. It is not possible to copy elements from slice of string to slice of int.
     - Declaring and initializing slice with make function
       - make function accepts 3 parameters:
         - data_type, length, capacity
