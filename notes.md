@@ -304,9 +304,10 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - capacity is optional
         - slice := make([]int, 5, 10) -> here we declared a slice without any value hence it is nil and default value of nil integer is 0.
   - Maps
-    - this is key value pair similar to hash table in java and dictionary in python.
+    - this is the key value pair similar to hash table in java and dictionary in python.
     - it provides efficient add, delete and update operations.
-    - it gives output in unorderd format and array is orderd.
+    - maps are implemented by hash table in golang.
+    - it gives output in unorderd format while array is orderd.
     - Basic syntax:
       - var <map_name> map[<data type of key>]<data type of value>
       - key data type will be inside the sqaure bracket.
@@ -319,7 +320,10 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - it will throw a runtime error when we will add a value to nil map
       - var code map[string]string
       - code["en"] = "English"
-      - this will throw an erro
+      - this will throw us a rutime error.
+    - declaring and initializing a map
+    - add,update,delete key value pair in maps
+    - looping through maps
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
