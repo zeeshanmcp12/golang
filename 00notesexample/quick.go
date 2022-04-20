@@ -184,10 +184,52 @@ func main() {
 	// fmt.Println(arr)   // [10 20 90 70 60]
 	// fmt.Println(slice) // [10 1000 90 70 60 0 0 0 0 0]
 
-	arr := [10]int{10, 20}
-	// [10 1000 90 70 60 50 40 30 20 10]
-	slice := arr[2:8]       // 2 is 90 and 8 is 20 but not inclusive so this will be 30
-	fmt.Println(len(slice)) // 6 -> because from 90 to 30, the length will be 6
-	fmt.Println(cap(slice)) // 8 -> after 30 we still have 2 elements to it will be 6+2=8
+	// arr := [10]int{10, 20}
+	// // [10 1000 90 70 60 50 40 30 20 10]
+	// slice := arr[2:8]       // 2 is 90 and 8 is 20 but not inclusive so this will be 30
+	// fmt.Println(len(slice)) // 6 -> because from 90 to 30, the length will be 6
+	// fmt.Println(cap(slice)) // 8 -> after 30 we still have 2 elements to it will be 6+2=8
 
+	// ascii_codes := map[string]string{}
+	// ascii_codes["A"] = 65
+	// fmt.Println(ascii_codes) // Error: cannot use 65 (type untyped int) as type string in assignment
+
+	// - create a map using make() function with key data type as string, and value data type as int.
+	// - add the following key_value pairs to it
+	// ("A", 65)
+	// ("F", 70)
+	// ("K", 75)
+	// - delete the key "F"
+	// - print the map
+
+	// ------------------------------
+	// var myMap = make(map[string]int)
+	// myMap["A"] = 65
+	// myMap["F"] = 70
+	// myMap["K"] = 75
+
+	// delete(myMap, "F")
+	// fmt.Println(myMap) // output: map[A:65 K:75]
+	// ------------------------------
+
+	// ------------------------------
+	// ascii_codes := make(map[string]int)
+	// ascii_codes["A"] = 65
+	// ascii_codes["F"] = 70
+	// ascii_codes["K"] = 75
+	// fmt.Println(ascii_codes)
+
+	// ascii_codes = make(map[string]int)
+	// ascii_codes["U"] = 85
+	// fmt.Println(ascii_codes)
+	// ------------------------------
+
+	ascii_codes := make(map[string]int, 10)
+	ascii_codes["A"] = 65
+	ascii_codes["F"] = 70
+	ascii_codes["K"] = 75
+	fmt.Println(len(ascii_codes))
+	ascii_codes = make(map[string]int)
+	ascii_codes["U"] = 85
+	fmt.Println(len(ascii_codes))
 }

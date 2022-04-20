@@ -45,7 +45,7 @@ func main() {
 	fmt.Println(found, value) //true 1
 
 	value2, found2 := data["hh"]
-	fmt.Println(found2, value2) // false <empty space>
+	fmt.Println(found2, value2) // false <empty space> -> because "hh" does not exist
 
 	// truncate a map
 	// using for loop with range keyword
