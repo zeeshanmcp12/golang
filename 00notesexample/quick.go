@@ -224,12 +224,79 @@ func main() {
 	// fmt.Println(ascii_codes)
 	// ------------------------------
 
-	ascii_codes := make(map[string]int, 10)
-	ascii_codes["A"] = 65
-	ascii_codes["F"] = 70
-	ascii_codes["K"] = 75
-	fmt.Println(len(ascii_codes))
-	ascii_codes = make(map[string]int)
-	ascii_codes["U"] = 85
-	fmt.Println(len(ascii_codes))
+	// ------------------------------
+	// ascii_codes := make(map[string]int, 10)
+	// ascii_codes["A"] = 65
+	// ascii_codes["F"] = 70
+	// ascii_codes["K"] = 75
+	// fmt.Println(len(ascii_codes))
+	// ascii_codes = make(map[string]int)
+	// ascii_codes["U"] = 85
+	// fmt.Println(len(ascii_codes))
+	// -------------------------------
+
+	// -------------------------------
+	// It throws an error saying : .\quick.go:238:14: no new variables on left side of :=
+	// ascii_codes := map[string]int{}
+	// ascii_codes["A"] = 65
+	// _, found := ascii_codes["B"]
+	// if found {
+	// 	fmt.Println("key B was not found")
+	// }
+	// -------------------------------
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// arr := [5]string{"one", "two", "three"}
+	// slice := arr[:3]
+	// my_map := make(map[int]string)
+	// for i, el := range slice {
+	// 	my_map[i+1] = el
+	// }
+	// fmt.Println(my_map) // Output: map[1:one 2:two 3:three]
+	// -------------------------------
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// arr := [5]int{}
+	// my_map := make(map[string]int)
+	// my_map["A"] = 65
+	// my_map["B"] = 66
+	// i := 0
+	// for _, value := range my_map {
+	// 	arr[i] = value
+	// 	i += 1
+	// }
+	// fmt.Println(arr) // [66 65 0 0 0]
+	// -------------------------------
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// arr := [5]int{10, 20, 30, 90, 100}
+	// new_slice := append(arr[:3], arr[4:]...)
+	// fmt.Print(new_slice) // [10 20 30 100]
+	// -------------------------------
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// It throws an error because map keyword is not defined in make function which must be there.
+	// invalid argument: cannot make [int]int; type must be slice, map, or channel
+	// my_map := make([int]int)
+	// my_map[2] = 4
+	// my_map[4] = 16
+	// my_map[8] = 64
+	// delete(my_map, 4)
+	// fmt.Print(my_map)
+	// -------------------------------
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	arr := [10]string{"a", "b", "c"}
+	hashmap := make(map[string]int)
+	my_slice := arr[:]
+	fmt.Println(len(my_slice)) // 10 -> because length is defined in array
+	fmt.Println(cap(my_slice)) // 10 -> capacity is same as lenght in array
+	fmt.Println(len(hashmap))  // 0 -> because no any value added in map (hashmap)
+	// -------------------------------
+
 }
