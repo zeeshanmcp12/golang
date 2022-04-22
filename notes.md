@@ -324,6 +324,26 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - declaring and initializing a map
     - add,update,delete key value pair in maps
     - looping through maps
+  - functions in golang
+    - Why we use functions:
+      - Reuseability
+      - Abstraction
+    - basic syntax
+      - func <func_name>(<params>) return type{
+        - // body of function
+      - }
+      - func addNum(num1 a, num2 b) int{
+        - // body of function
+        - }
+    - Two main parts of functions
+      - function signature
+        - function signature refers to a func keyword, function name, arguments and return value. i.e.
+        - func <func_name>(<params>) return type
+      - function body
+        - whatever comes inside curely braces. i.e.
+          - {
+            - // function body
+          - }
     - 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
