@@ -332,7 +332,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - func <func_name>(<params>) return type{
         - // body of function
       - }
-      - func addNum(num1 a, num2 b) int{
+      - func addNum(num1 int, num2 int) int{
         - // body of function
         - }
     - Two main parts of functions
@@ -344,7 +344,13 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - {
             - // function body
           - }
-    - 
+    - parameters vs arguments
+      - parameters
+        - these are the names (or variables) that are defined in function definitaion (in function signature).i.e.
+          - func addNum(num1 int, num2 int ) -> these num1 and num2 are parameters
+      - arguments
+        - these are the real values we passed into function call. i.e.
+          - addNum(2,3) -> these 2 and 3 are called arguments.
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.

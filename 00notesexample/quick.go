@@ -291,12 +291,49 @@ func main() {
 
 	// -------------------------------
 	// Kodekloud lab quiz
-	arr := [10]string{"a", "b", "c"}
-	hashmap := make(map[string]int)
-	my_slice := arr[:]
-	fmt.Println(len(my_slice)) // 10 -> because length is defined in array
-	fmt.Println(cap(my_slice)) // 10 -> capacity is same as lenght in array
-	fmt.Println(len(hashmap))  // 0 -> because no any value added in map (hashmap)
+	// arr := [10]string{"a", "b", "c"}
+	// hashmap := make(map[string]int)
+	// my_slice := arr[:]
+	// fmt.Println(len(my_slice)) // 10 -> because length is defined in array
+	// fmt.Println(cap(my_slice)) // 10 -> capacity is same as lenght in array
+	// fmt.Println(len(hashmap))  // 0 -> because no any value added in map (hashmap)
 	// -------------------------------
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// - name of the function: `returnCube`
+	// - input parameters: `int`
+	// - output parameters: `int`
+
+	// the function calculates the cube of the number and returns it.
+
+	// (cube of n = n*n*n)
+	returnCube(5) // no output
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// var s string
+	// s = printDetails("Joe")
+	// fmt.Print(s) // Joe
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// x := printDetails("Joe") // throws an error : printDetails("Joe") (no value) used as valuecompiler(TooManyValues)
+	// fmt.Print(x)
+	// printDetails("Zeeshan") // Output: Zeeshan
+}
+
+func returnCube(n int) int {
+	return n * n * n
+
+}
+
+// func printDetails(s string) string {
+// 	return s
+
+// }
+
+func printDetails(s string) {
+	fmt.Println(s)
 
 }
