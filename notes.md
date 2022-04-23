@@ -351,6 +351,40 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - arguments
         - these are the real values we passed into function call. i.e.
           - addNum(2,3) -> these 2 and 3 are called arguments.
+    - Return types - Multiple, Named, Variadic
+      - Return type in function body should be matched with function signature. If the return type in function signature is int then in body it should also be int otherwise a "type mismatched" error will be thrown.
+      - Multiple
+        - We can return multiple values at the same time in function signature. But make sure the type is matched to avoid the error.
+          - func addAndDiff(num1 int, num2 int) (int, int) {
+            - sum =: num1 + num2
+            - diff =: num1 - num2
+            - return sum, diff 
+          - }
+      - Named
+        - We can define the name of return parameters in function signature. This is to enhance and readability the code.
+          - func addAndDiff(num1 int, num2 int) (sum int, diff int){
+            - sum = num1 + num2
+            - diff = num1 - num2
+            - return
+          - }
+        - Notice something in above code:
+          - sum int, diff int
+            - These are parameters (or variable) for return type
+          - sum = num1 + num2
+          - diff = num1 - num2
+            - We haven't used ":=" or var keyword here, because we've already defined variables in function signature so no need to mention it's keyword in function definitaion again.
+          - return
+            - We only mentioned "return" without any variable names because in function declaration we've already given the name of the parameters we want to return.
+      - Variadic function
+        - these are functions that accepts variable number of arguments.
+        - In simple words, it will contain varying amount of parameters in function signature and function call.
+        - Eillipse (... three dots) at the end of parameters will show that it is variadic function.
+        - Basic Syntax:
+          - func <func_name>(param1 type, param2 type, param3 type, ...type) <return_type>{}
+          - func sumNumbers(numbers ...int)int{}
+            - The function over here will accepts 0 or more integers and within the function the number variable will contains the slice of all the arguments.
+            - In simple terms, all the integer arguments passed will be stored in a slice called number.
+          - func varryingData(text string, numbers ...int) (string, int){}
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
