@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	// var grades int = 42
@@ -321,6 +324,24 @@ func main() {
 	// x := printDetails("Joe") // throws an error : printDetails("Joe") (no value) used as valuecompiler(TooManyValues)
 	// fmt.Print(x)
 	// printDetails("Zeeshan") // Output: Zeeshan
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// need to review
+	// nums := [3]int{10, 20, 15}
+	// fmt.Println(calcSquare(nums[:]))
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// need to review
+	// nums := [3]int{10, 20, 15}
+	// fmt.Println(calcSquare2(nums[:]))
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// need to review
+	printStrings("Hey there", "Joe", "Monica", "Gunther")
+
 }
 
 func returnCube(n int) int {
@@ -336,4 +357,42 @@ func returnCube(n int) int {
 func printDetails(s string) {
 	fmt.Println(s)
 
+}
+
+// return type quiz - need to review
+func calcSquare(numbers []int) []int {
+	squares := []int{}
+	for _, v := range numbers {
+		squares = append(squares, v*v)
+	}
+	return squares
+
+}
+
+// return type quiz - need to review
+
+func calcSquare2(numbers []int) ([]int, bool) {
+	squares := []int{}
+	for _, v := range numbers {
+		squares = append(squares, v*v)
+	}
+	return squares, true
+
+}
+
+// return type quiz - need to review
+func printStrings(s string, names ...string) {
+	fmt.Println(s)
+	for _, value := range names {
+		fmt.Printf("%s, ", value)
+	}
+
+}
+
+func printStrings2(names ...string) (names_c []string) {
+	names_c := []string{} // error because names_c is already declared in function signature so no need to use ":=" again
+	for _, value := range names {
+		names_c = append(names_c, strings.ToUpper(value))
+	}
+	return
 }
