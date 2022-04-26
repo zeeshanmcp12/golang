@@ -382,9 +382,10 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - Basic Syntax:
           - func <func_name>(param1 type, param2 type, param3 type, ...type) <return_type>{}
           - func sumNumbers(numbers ...int)int{}
-            - The function over here will accepts 0 or more integers and within the function the number variable will contains the slice of all the arguments.
+            - The function over here will accepts 0 or more integers and within the function the numbers variable will contain the slice of all the arguments.
             - In simple terms, all the integer arguments passed will be stored in a slice called number.
-          - func varryingData(text string, numbers ...int) (string, int){}
+          - func sumNumbers(text string, numbers ...int) (string, int){}
+            - Notice the variadic parameter is placed towards the end.
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.
