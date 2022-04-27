@@ -183,7 +183,9 @@ Notes are written for my own understanding so these may be inappropriate (or det
             - bitwiseRightShift := 22 >> 2
             - fmt.Println("bitwise right shift", bitwiseRightShift)
             - output -> 5
+
   - if-else statement (control flow)
+
   - switch-case
     - fallthrough
       - It is a keyword used in switch-case
@@ -196,7 +198,9 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - both are true
           - execution flow will stop when first case is executed as true.
           - program will exit from the switch block and we don't need to explicitely define break keyword.
+
   - looping with For
+
   - Array
     - An array is a collection of similar elements stored in a contigous memory location.
       - Similar elements means an array will contain int or string
@@ -245,6 +249,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - var arr = [3][2]int{{1,2},{10,4},{20,50}}
         - [3] -> {1,2},{10,4},{20,50}
         - [2] -> 1,2 | 10,4 | 20,50
+
   - Slice in golang
     - we can initialize and declare a slice using make function
     - An array is represented by three things in golang:
@@ -303,6 +308,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - slice := make([]<data_type>, length, capacity)
         - capacity is optional
         - slice := make([]int, 5, 10) -> here we declared a slice without any value hence it is nil and default value of nil integer is 0.
+
   - Maps
     - this is the key value pair similar to hash table in java and dictionary in python.
     - it provides efficient add, delete and update operations.
@@ -324,6 +330,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - declaring and initializing a map
     - add,update,delete key value pair in maps
     - looping through maps
+
   - functions in golang
     - Why we use functions:
       - Reuseability
@@ -386,6 +393,17 @@ Notes are written for my own understanding so these may be inappropriate (or det
             - In simple terms, all the integer arguments passed will be stored in a slice called number.
           - func sumNumbers(text string, numbers ...int) (string, int){}
             - Notice the variadic parameter is placed towards the end.
+    - Recursive function
+      - It is a concept where a function calls itself.
+      - Function keep calling until it reaches to base case.
+      - It is used to solve the problem where the solution is dependent on the smaller instance of the same problem.
+    - Anonymous functions
+      - These functions are defined without any named refer to it
+      - These function accepts input and return output similar to normaml functions
+      - It is mostly used for short term purpose.
+      - Go to [anonymous-func.go](00notesexample/anonymous-func.go) for examples.
+
+
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
     - But, sometimes we don't want to do that (like converting bytes into string) instead we want to consume the data as it is in JSON format.
   - Rune is an alias of int32. This emphasis that an integer represents to code point.

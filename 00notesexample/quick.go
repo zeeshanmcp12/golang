@@ -341,6 +341,7 @@ func main() {
 	// Kodekloud lab quiz
 	// need to review
 	printStrings("Hey there", "Joe", "Monica", "Gunther")
+	print(5)
 
 }
 
@@ -348,11 +349,6 @@ func returnCube(n int) int {
 	return n * n * n
 
 }
-
-// func printDetails(s string) string {
-// 	return s
-
-// }
 
 func printDetails(s string) {
 	fmt.Println(s)
@@ -390,9 +386,19 @@ func printStrings(s string, names ...string) {
 }
 
 func printStrings2(names ...string) (names_c []string) {
-	names_c := []string{} // error because names_c is already declared in function signature so no need to use ":=" again
+	// names_c := []string{} // error because names_c is already declared in function signature so no need to use ":=" again
 	for _, value := range names {
 		names_c = append(names_c, strings.ToUpper(value))
 	}
 	return
+}
+
+// return type quiz - need to review
+func print(n int) {
+	if n == 0 {
+		return
+	}
+	print(n - 1)
+	fmt.Print(n)
+
 }
