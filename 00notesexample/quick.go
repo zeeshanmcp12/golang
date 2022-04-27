@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -340,10 +341,33 @@ func main() {
 	// -------------------------------
 	// Kodekloud lab quiz
 	// need to review
-	printStrings("Hey there", "Joe", "Monica", "Gunther")
-	print(5)
+	// printStrings("Hey there", "Joe", "Monica", "Gunther")
+	// print(5)
+
+	// -------------------------------
+	// Kodekloud lab quiz
+	// It throws an error
+	// Anonymous function
+	// x := func(s string) {
+	// 	fmt.Println(strings.ToLower(s))
+	// }("RacheL")
+	// fmt.Printf("%T \n", x)
+
+	// -------------------------------
+	// Kodekloud lab quiz 5 in anonymous function
+	x := cube(8)
+	fmt.Printf("%T %v", x, x) // string 512
 
 }
+
+// -------------------------------
+// Kodekloud lab quiz 5 in anonymous function
+var (
+	cube = func(i int) string {
+		c := i * i * i
+		return strconv.Itoa(c)
+	}
+)
 
 func returnCube(n int) int {
 	return n * n * n
