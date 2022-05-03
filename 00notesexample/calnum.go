@@ -11,33 +11,60 @@ func main() {
 	fmt.Scanf("%d\n", &calNum)
 	fmt.Printf("Thank you for entering %d\n", calNum)
 
-	if calNum == 1 {
+	switch calNum {
+	case 1:
 		fmt.Printf("Enter two numbers to perform addition (Hit Enter): ")
 		fmt.Scanf("%d\n", &num1)
 		fmt.Scanf("%d\n", &num2)
 		fmt.Println(addTwoNum(num1, num2))
-
-	} else if calNum == 2 {
-		fmt.Printf("Enter two numbers to find the difference (Hit Enter): ")
+	case 2:
+		fmt.Printf("Enter two numbers to perform addition (Hit Enter): ")
 		fmt.Scanf("%d\n", &num1)
 		fmt.Scanf("%d\n", &num2)
-		fmt.Println(findDifference(num1, num2))
-
-	} else if calNum == 3 {
-		fmt.Printf("Enter two numbers to find product (Hit Enter): ")
+		fmt.Println(addTwoNum(num1, num2))
+	case 3:
+		fmt.Printf("Enter two numbers to perform addition (Hit Enter): ")
 		fmt.Scanf("%d\n", &num1)
 		fmt.Scanf("%d\n", &num2)
-		fmt.Println(findProduct(num1, num2))
-
-	} else if calNum == 4 {
-		fmt.Printf("Enter two numbers to perform division (Hit Enter): ")
+		fmt.Println(addTwoNum(num1, num2))
+	case 4:
+		fmt.Printf("Enter two numbers to perform addition (Hit Enter): ")
 		fmt.Scanf("%d\n", &num1)
 		fmt.Scanf("%d\n", &num2)
-		fmt.Println(div(num1, num2))
-
-	} else {
+		fmt.Println(addTwoNum(num1, num2))
+	default:
 		fmt.Println("Invalid Input")
 	}
+
+	/*
+		if calNum == 1 {
+			fmt.Printf("Enter two numbers to perform addition (Hit Enter): ")
+			fmt.Scanf("%d\n", &num1)
+			fmt.Scanf("%d\n", &num2)
+			fmt.Println(addTwoNum(num1, num2))
+
+		} else if calNum == 2 {
+			fmt.Printf("Enter two numbers to find the difference (Hit Enter): ")
+			fmt.Scanf("%d\n", &num1)
+			fmt.Scanf("%d\n", &num2)
+			fmt.Println(findDifference(num1, num2))
+
+		} else if calNum == 3 {
+			fmt.Printf("Enter two numbers to find product (Hit Enter): ")
+			fmt.Scanf("%d\n", &num1)
+			fmt.Scanf("%d\n", &num2)
+			fmt.Println(findProduct(num1, num2))
+
+		} else if calNum == 4 {
+			fmt.Printf("Enter two numbers to perform division (Hit Enter): ")
+			fmt.Scanf("%d\n", &num1)
+			fmt.Scanf("%d\n", &num2)
+			fmt.Println(div(num1, num2))
+
+		} else {
+			fmt.Println("Invalid Input")
+		}
+	*/
 }
 
 func addTwoNum(num1 int, num2 int) int {
