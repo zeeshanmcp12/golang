@@ -8,9 +8,6 @@ import "fmt"
 
 func main() {
 	var (
-		// area float64
-		// perimeter float64
-		// // diameter  float64
 		selection int
 		radius    float64
 	)
@@ -19,11 +16,11 @@ func main() {
 	fmt.Printf("Enter the radius of a circle: ")
 	fmt.Scanf("%f\n", &radius)
 
-	fmt.Printf("Select anyone to calculate the properties of a circle: \n1: Area of a Circle \n2: Perimeter of a Circle \n3: Diameter of a Circle\n")
+	fmt.Printf("Select: \n1: Area of a Circle \n2: Perimeter of a Circle \n3: Diameter of a Circle\n")
 	fmt.Scanf("%d\n", &selection)
 
 	if selection == 1 {
-		area := PI * float64(radius) * float64(radius)
+		area := PI * radius * radius
 		fmt.Println("The Area of a circle is", area)
 
 	} else if selection == 2 {
