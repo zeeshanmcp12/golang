@@ -1,36 +1,19 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
+	fmt.Println("revising golang concepts")
 
-	fmt.Println("Loops in golang!")
-	// var tableNum int
+	var tableNumber int
 
-	// fmt.Print("Enter any number: ")
-	// fmt.Scanf("%v\n", &tableNum)
+	fmt.Print("Enter any number: ")
+	fmt.Scanf("%v\n", &tableNumber)
 
-	// for i := 1; i < 10+1; i++ {
-	// 	fmt.Printf("%v x %v = %v\n", tableNum, i, i*tableNum)
+	fmt.Printf("Thank you for entering %v", tableNumber)
 
-	// }
-
-	var number int = 20
-
-	// time.Now().UnixNano()
-
-	for {
-		if number == 20 {
-			fmt.Println(number)
-		}
-		number++
-		fmt.Println(number)
-		if number >= 100 {
-			fmt.Println(number)
-			break
-		}
+	for i := 0; i < 10+1; i++ {
+		fmt.Printf("%v x %v = %v\n", tableNumber, i, tableNumber*i)
 
 	}
 
