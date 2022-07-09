@@ -23,17 +23,17 @@ func main() {
 	fmt.Println("Elements in weekend array: ", len(weekend))
 	fmt.Println("We are off on: ", weekend)
 
-	fmt.Printf("What days you take off, day1:")
+	fmt.Printf("What days you take off, day1: ")
 	fmt.Scanf("%s\n", &weekendDays1)
 
-	fmt.Printf("What days you take off, day2:")
+	fmt.Printf("What days you take off, day2: ")
 	fmt.Scanf("%s\n", &weekendDays2)
 
-	if weekendDays1 == "Saturday" || weekendDays2 == "Sunday" {
+	if weekendDays1 == "Saturday" && weekendDays2 == "Sunday" {
 		fmt.Println("Happy Weekend!")
 
 	} else {
-		fmt.Println("Incorrect Value!")
+		fmt.Println("These are alternate days, so Enjoy your off days!")
 	}
 
 }
