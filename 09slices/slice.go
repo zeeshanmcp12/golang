@@ -32,6 +32,8 @@ func main() {
 				todos = append(todos, f_text)
 				fmt.Println("Type 'done' or add another task: ")
 				continue
+			} else {
+				fmt.Println("Invalid input, type 'done' or add another task: ")
 			}
 		} else if f_text == "done" {
 			// fmt.Println("Todos updated: ", todos)
