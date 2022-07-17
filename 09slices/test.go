@@ -38,7 +38,7 @@ func main() {
 	// fmt.Println("item list updated after slice: ", items)
 
 	alphabets := make([]string, 4)
-	fmt.Printf("Type of highScores var is %T", alphabets)
+	fmt.Printf("Type of alphabets var is %T", alphabets)
 
 	alphabets = append(alphabets, "E", "C", "A", "B", "D")
 	fmt.Println(alphabets)
