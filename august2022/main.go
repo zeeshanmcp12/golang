@@ -20,11 +20,22 @@ func main() {
 		input, _ := reader.ReadString('\n')
 		f_txt := strings.TrimSpace(input)
 
-		if f_txt != 'done' {
+		if f_txt != "done" {
 			if f_txt != "" {
-				
+				tasks = append(tasks, f_txt)
+				fmt.Printf("Add task or type done: ")
+				continue
+			} else {
+				fmt.Printf("Invalid input, add task or type done: ")
 			}
-			
+		} else if f_txt == "done" {
+			fmt.Println("Thank you for adding tasks: ")
+			for j, todo := range tasks {
+				fmt.Printf("%v task: %v\n", j, todo)
+			}
+			break
+		} else {
+			fmt.Printf("Invalid Input!")
 		}
 
 	}
