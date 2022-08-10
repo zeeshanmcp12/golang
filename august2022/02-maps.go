@@ -33,6 +33,16 @@ func main() {
 	}
 	fmt.Println()
 	fmt.Scanf("%v", &stringToSel)
-	fmt.Printf("%v stands for %q", stringToSel, abbr[stringToSel])
+
+	_, ok := abbr[stringToSel]
+	fmt.Printf("%v key is %t", stringToSel, ok)
+	fmt.Println()
+
+	if ok == true {
+		fmt.Printf("%v stands for %q", stringToSel, abbr[stringToSel])
+
+	} else {
+		fmt.Println("Abbreviation doesn't match with data!")
+	}
 
 }
