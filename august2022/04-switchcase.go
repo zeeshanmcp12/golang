@@ -33,6 +33,7 @@ func main() {
 	}
 
 	reader := bufio.NewReader(os.Stdin)
+	fmt.Println()
 	fmt.Print("Press enter to continue...")
 	input, _ := reader.ReadString('\n')
 	fmt.Println(input)
