@@ -26,11 +26,6 @@ func main() {
 
 	}
 
-	// for j := range tasks {
-	// 	fmt.Printf("You selected %v: %v ", j, tasks[indexToDel])
-
-	// }
-
 	tasks = append(tasks[:indexToDel], tasks[indexToDel+1:]...)
 
 	fmt.Println("\n-------------------------")
