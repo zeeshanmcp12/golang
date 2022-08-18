@@ -12,6 +12,8 @@ func main() {
 	proRes := variadicFunc(3, 5, 6, 9)
 	fmt.Println("Pro result: ", proRes)
 
+	table(2)
+
 }
 
 func greeter() {
@@ -31,4 +33,11 @@ func variadicFunc(values ...int) int {
 	}
 	return total
 
+}
+
+func table(numOne int) {
+	for i := 0 + 1; i < 10+1; i++ {
+		fmt.Printf("%d x %d = %d\n", numOne, i, numOne*i)
+
+	}
 }
