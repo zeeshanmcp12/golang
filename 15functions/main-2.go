@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -23,7 +24,15 @@ func main() {
 
 	fmt.Printf("Type of text is %T\n", text)
 
-	fmt.Printf("Input: %v, Type: %T", strToInt(text), strToInt(text))
+	fmt.Printf("Input: %v, Type: %T\n", strToInt(text), strToInt(text))
+
+	task := []int{4, 2, 9, 7, 2, 3, 5, 4}
+
+	fmt.Println(task)
+
+	sort.Ints(task)
+
+	fmt.Println(task)
 
 }
 
