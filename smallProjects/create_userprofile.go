@@ -10,24 +10,9 @@ type User struct {
 	Concent  bool
 }
 
-func (u User) AddUser() {
-
-}
-
 func main() {
 	fmt.Println("Creating/Updating user profile!")
 
-	// userDetail()
-
-	platformUser := User{"randomeuser12", "Abdullah", "abc@go.dev", 28, true}
-	// fmt.Println(userDetail())
-
-	fmt.Printf("Type of struct is: %T", platformUser)
-
-}
-
-// string, string, string, int, bool
-func userDetail(string, string, string, int, bool) {
 	var (
 		username, name, email string
 		age                   int
@@ -49,8 +34,19 @@ func userDetail(string, string, string, int, bool) {
 	fmt.Print("Are you agree (true/false): ")
 	fmt.Scanf("%t\n", &isAgreed)
 
-	// platformUser := User{username, name, email, age, isAgreed}
+	platformUser := User{username, name, email, age, isAgreed}
 
-	return username, name, email, age, isAgreed
+	fmt.Printf("Type of struct is: %T\n", platformUser)
+
+	fmt.Printf("%+v", platformUser)
+
+}
+
+func (u User) AddUser() {
+
+}
+
+// string, string, string, int, bool
+func userDetail() {
 
 }
