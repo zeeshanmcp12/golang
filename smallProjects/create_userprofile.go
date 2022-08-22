@@ -39,8 +39,6 @@ func main() {
 
 	platformUser := User{username, name, email, age, isAgreed}
 
-	// fmt.Printf("Type of struct is: %T\n", platformUser)
-
 	fmt.Printf("%+v\n", platformUser)
 
 	fmt.Print("Enter 'yes' if you want to update the email: ")
@@ -51,7 +49,8 @@ func main() {
 		fmt.Scanf("%v", &userInput)
 
 		platformUser.UpdateUser()
-		// fmt.Printf("Email has been updated: %v", platformUser.Email)
+	} else if updateEmailConsent == "no" {
+		fmt.Println("Thank you for registeration!")
 	} else {
 		fmt.Printf("Invalid input!")
 	}
