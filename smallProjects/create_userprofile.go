@@ -34,7 +34,7 @@ func main() {
 	fmt.Print("Enter age: ")
 	fmt.Scanf("%d\n", &age)
 
-	fmt.Print("Are you agree (true/false): ")
+	fmt.Print("Do you agree (true/false): ")
 	fmt.Scanf("%t\n", &isAgreed)
 
 	platformUser := User{username, name, email, age, isAgreed}

@@ -14,10 +14,10 @@ func main() {
 
 	// greeter(f_text)
 
-	platformUser := StringData{}
+	input := GetInput()
+	p := StringData{input}
 
-	// platformUser.GetDataFromStruct(GetInput("Zeeshan"))
-	platformUser.GetDataFromStruct("Zeeshan")
+	fmt.Print("Name: ", p.Name)
 
 }
 
@@ -37,15 +37,9 @@ type StringData struct {
 	// Age   int
 }
 
-func (s StringData) GetDataFromStruct(input string) string {
-	fmt.Print("Enter anything: ", GetInput(input))
-	return s.Name
-
-}
-
-func GetInput(input string) string {
-	// var text string
+func GetInput() string {
+	var input string
+	fmt.Print("Enter anything: ")
 	fmt.Scanf("%v", &input)
 	return input
-
 }
