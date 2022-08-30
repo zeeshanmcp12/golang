@@ -36,6 +36,8 @@ func main() {
 	fmt.Printf("Your Profile:\n%+v\n%+v\n%d\n%t\n", platformUser.Name, platformUser.Email, platformUser.Age, platformUser.isLoggedIn)
 	fmt.Println("------------------------")
 
+	fmt.Println(platformUser.UpdateEmail())
+
 }
 
 // Define structure (or struct)
@@ -44,4 +46,12 @@ type User struct {
 	Email      string
 	Age        int
 	isLoggedIn bool
+}
+
+func (u User) UpdateEmail() string {
+
+	updatedEmail := "updatedemail@go.dev"
+
+	return updatedEmail
+
 }
