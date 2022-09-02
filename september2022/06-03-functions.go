@@ -28,6 +28,13 @@ func main() {
 	fmt.Println("Sum is", result)
 
 	fmt.Println()
+	fmt.Println("Executing anonymous function v2!")
+	anonymFunc := func(num1, num2 int) int {
+		sum := num1 + num2
+		return sum
+	}
+	fmt.Printf("Type of func: %T\n", anonymFunc)
+	fmt.Println("Sum is: ", anonymFunc(20, 30))
 
 }
 
