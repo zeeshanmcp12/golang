@@ -402,6 +402,13 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - These function accepts input and return output similar to normaml functions
       - It is mostly used for short term purpose.
       - Go to [anonymous-func.go](00notesexample/anonymous-func.go) for examples.
+    - High Order function
+      - It use for composition
+      - It use to define smaller function and use those smaller function in complex logic
+      - It use for better readability of code.
+      - It can accept function as an input
+      - It can accept function as an output i.e. in high order function we can use function in return statement.
+      - Go to [06-06-functions.go](september2022/06-06-functions.go) for examples.
 
 
   - Whenever any data comes from the web it's actually in the byte format and we have to wrap it around string, so in that case, we are just converting the byte into string.
