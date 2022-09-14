@@ -39,7 +39,7 @@ type StringData struct {
 
 func GetInput() string {
 	var input string
-	fmt.Print("Enter anything: ")
+	fmt.Print("Enter any text: ")
 	fmt.Scanf("%v", &input)
 	return input
 }
