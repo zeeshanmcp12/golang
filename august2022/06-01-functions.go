@@ -36,7 +36,7 @@ func addNum(num1, num2 int) (string, int) {
 }
 
 // Variadic functions
-// Here in function signature, argument (numbers) will be slice
+// Here in function signature, argument (numbers) will be of type slice
 func variadicFunc(numbers ...int) int {
 	sum := 0
 	for _, value := range numbers {

@@ -18,16 +18,17 @@ func main() {
 	fmt.Print("Enter any number: ")
 	fmt.Scanf("%v", &number)
 
-	// fmt.Println(number)
-
-	for i := 1; i < 10+1; i++ {
-		fmt.Printf("%v x %v = %v\n", number, i, number*i)
-
-	}
+	fmt.Println("Table of", number)
+	tableOfNum(number)
 
 }
 
 func greeter(input string) {
 	fmt.Printf("Hello %v! Thank you for joining us today.", input)
+}
 
+func tableOfNum(num int) {
+	for i := 1; i < 10+1; i++ {
+		fmt.Printf("%v x %v = %v\n", num, i, num*i)
+	}
 }
