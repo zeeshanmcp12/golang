@@ -23,7 +23,14 @@ func main() {
 	userData := User{name, age, isConfirmed}
 
 	// fmt.Println("Hi", userData.Name, "glad to know you are", userData.Age, "years old.")
-	fmt.Printf("Hi %q, glad to know you are %v years old.", userData.Name, userData.Age)
+
+	if userData.isLoggedIn {
+		fmt.Println("It is from if", userData.isLoggedIn)
+	} else {
+		fmt.Println("It is from else", userData.isLoggedIn)
+	}
+
+	// fmt.Printf("Hi %q, glad to know you are %v years old.", userData.Name, userData.Age)
 
 	// fmt.Printf("Type of struct is %T", userData)
 }
