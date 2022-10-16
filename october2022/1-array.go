@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	fmt.Println("Array in golang!")
 
+	var newIteminArr string
+
 	arr := [4]string{"Zeeshan", "32", "abc@go.dev"}
 
 	// fmt.Println(len(arr))
@@ -13,7 +15,9 @@ func main() {
 		fmt.Printf("Index: %v, Value: %v\n", i, arr[i])
 
 		if arr[i] == "" {
-			arr[i] = "Registered"
+			fmt.Print("One item is empty, please add new: ")
+			fmt.Scanf("%v", &newIteminArr)
+			arr[i] = newIteminArr
 			fmt.Printf("New Item added dynamically: %v\n", arr[i])
 		}
 	}
