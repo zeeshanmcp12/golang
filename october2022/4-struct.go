@@ -24,8 +24,9 @@ func main() {
 	userData := User{name, email, age}
 
 	fmt.Printf("Hey %v, your email address is: %v\n", userData.Name, userData.Email)
-	fmt.Printf("Glad to know that you are %v years old.", userData.Age)
+	fmt.Printf("Glad to know that you are %v years old.\n", userData.Age)
 
+	fmt.Printf("Data in details: %+v", userData)
 	// fmt.Println(userData.Name)
 
 }
