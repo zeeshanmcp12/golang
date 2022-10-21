@@ -20,6 +20,19 @@ func main() {
 		fmt.Printf("Index -> %v, Value -> %v\n", j, val)
 	}
 
-	// fmt.Println("------------- loop with continue -------------")
+	fmt.Println("------------- loop with continue -------------")
+	number := 1
+
+	for number < 10 {
+
+		if number == 5 {
+			number++
+			continue
+
+		}
+
+		fmt.Println(number)
+		number++
+	}
 
 }
