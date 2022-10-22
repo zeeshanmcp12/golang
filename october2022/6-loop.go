@@ -23,9 +23,9 @@ func main() {
 	fmt.Println("------------- loop with continue -------------")
 	number := 1
 
-	for number < 10 {
+	for number < 5 {
 
-		if number == 5 {
+		if number == 3 {
 			number++
 			continue
 
@@ -33,6 +33,18 @@ func main() {
 
 		fmt.Println(number)
 		number++
+	}
+
+	fmt.Println("------------- loop with break -------------")
+	secondNumber := 1
+
+	for secondNumber < 10 {
+		if secondNumber == 5 {
+			break
+		}
+		fmt.Println(secondNumber)
+		secondNumber++
+
 	}
 
 }
