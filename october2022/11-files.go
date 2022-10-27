@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 )
 
@@ -16,17 +17,30 @@ func main() {
 	// ioutil.ReadFile
 
 	// First, content
-	content := "Working with files in golang!"
+	content := "This content needs to be added/updated in txt file!"
 
 	// Create file
 	file, err := os.Create("./10-files-txt-file.txt")
 	checkNilErr(err)
 
 	// Write string into file
-	io.WriteString(file, content)
+	length, err := io.WriteString(file, content)
+	checkNilErr(err)
+
+	fmt.Println("Length of content is", length)
 
 	// Make sure to close the file after writing/reading
 	defer file.Close()
+
+	// Function call to read the file
+	readFile("./10-files-txt-file.txt")
+
+}
+
+// Reading file
+func readFile(filename string) {
+	data, _ := ioutil.ReadFile(filename)
+	fmt.Println("Content is \n", string(data))
 
 }
 
