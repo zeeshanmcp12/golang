@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 )
 
@@ -18,6 +19,15 @@ func main() {
 
 	defer file.Close()
 
+	readFile("./11-file.txt")
+
+}
+
+func readFile(filename string) {
+	fmt.Println("Please find below the text: ")
+	data, err := ioutil.ReadFile(filename)
+	checkNilErr(err)
+	fmt.Println(string(data))
 }
 
 func checkNilErr(err error) {
