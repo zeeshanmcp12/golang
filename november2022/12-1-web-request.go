@@ -22,11 +22,11 @@ func getStatus(url string) {
 	responseStatus, err := http.Get(url)
 	checkNilErr(err)
 
-	fmt.Printf("Type of responseStatus is %T\n", responseStatus)
+	// fmt.Printf("Type of responseStatus is %T\n", responseStatus)
 	defer responseStatus.Body.Close()
 
-	status := responseStatus.StatusCode
-	fmt.Printf("Type of status: %T\n", status)
+	// status := responseStatus.StatusCode
+	fmt.Printf("Type of status: %T\n", responseStatus.StatusCode)
 	fmt.Println("Status code:", responseStatus.StatusCode)
 
 }
