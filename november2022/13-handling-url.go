@@ -41,10 +41,10 @@ func main() {
 	// Constructing url
 
 	newUrl := &url.URL{
-		Scheme: "https",
-		Host:   "acloudtechie.com",
-		Path:   "/blog",
-		// RawPath: "category=azure", id does not construct. Will check later on
+		Scheme:   "https",
+		Host:     "acloudtechie.com",
+		Path:     "blog",
+		RawQuery: "category=azure",
 	}
 
 	fmt.Println("Url: ", newUrl.String())
