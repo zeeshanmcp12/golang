@@ -28,6 +28,7 @@ func main() {
 	// We want to extract any of the query parameter and use accordingly.
 	// Query() function can help us to achieve the scenario
 
+	// Parsing query parameters
 	qparams := result.Query()
 	fmt.Printf("Type of qparams is %T\n", qparams)
 
@@ -36,5 +37,16 @@ func main() {
 	for j, val := range qparams {
 		fmt.Printf("key -> %v, value -> %v\n", j, val)
 	}
+
+	// Constructing url
+
+	newUrl := &url.URL{
+		Scheme: "https",
+		Host:   "acloudtechie.com",
+		Path:   "/blog",
+		// RawPath: "category=azure", id does not construct. Will check later on
+	}
+
+	fmt.Println("Url: ", newUrl.String())
 
 }
