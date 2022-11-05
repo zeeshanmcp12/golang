@@ -45,14 +45,6 @@ func main() {
 
 	defer response.Body.Close()
 
-	newUrl := &url.URL{
-		Scheme: "http",
-		Host:   "localhost",
-		Path:   "13-2-webpage.html",
-	}
-
-	fmt.Println("Click here ", newUrl.String())
-
 	// getBody(url)
 
 }
