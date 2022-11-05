@@ -20,7 +20,7 @@ func main() {
 	fmt.Println(response.StatusCode)
 	fmt.Printf("Type of response:%T\n", response.StatusCode)
 
-	file := "./13-2-webpage.txt"
+	file := "./13-2-webpage.html"
 
 	if response.StatusCode == 200 {
 		fmt.Println("Site is working!")
@@ -44,6 +44,14 @@ func main() {
 	}
 
 	defer response.Body.Close()
+
+	newUrl := &url.URL{
+		Scheme: "http",
+		Host:   "localhost",
+		Path:   "13-2-webpage.html",
+	}
+
+	fmt.Println("Click here ", newUrl.String())
 
 	// getBody(url)
 
