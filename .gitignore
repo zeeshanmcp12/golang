@@ -3,3 +3,4 @@
 **/*.txt
 **/*.json
 **/*.html
+**/node_modules/**
