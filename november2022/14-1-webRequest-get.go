@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 const siteUrl = "http://localhost:8000/"
@@ -23,7 +24,13 @@ func GetRequest(siteUrl string) {
 	defer response.Body.Close()
 	content, _ := ioutil.ReadAll(response.Body)
 
-	fmt.Println(string(content))
+	// One way of wrapping up response body into string format
+	// fmt.Println(string(content))
+
+	// Another way of wrapping up response body into string format is using string builder.
+	var responseBuilder strings.Builder
+	responseBuilder.Write(content)
+	fmt.Println(responseBuilder.String())
 
 }
 
