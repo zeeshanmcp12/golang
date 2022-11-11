@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 // While working with JSON, these are the points
 // Create structure
@@ -18,6 +21,7 @@ type kitten struct {
 
 func main() {
 	fmt.Println("Working with JSON!")
+	EncodeJson()
 }
 
 func EncodeJson() {
@@ -25,5 +29,17 @@ func EncodeJson() {
 	ourKitten := []kitten{
 		{"Ruby", 60, "Brownish", "Good Hunter", []string{"Fluffy", "Canned Food"}},
 		{"Max", 60, "White", "Keen observer", []string{"Fluffy", "Good food"}},
+	}
+
+	// fmt.Println(ourKitten[1])
+	data, err := json.Marshal(ourKitten)
+	CheckNilErr(err)
+
+	fmt.Printf("%s\n", string(data))
+}
+
+func CheckNilErr(err error) {
+	if err != nil {
+		panic(err)
 	}
 }
