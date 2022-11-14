@@ -6,10 +6,12 @@ import (
 )
 
 type Kitten struct {
-	Name  string   `"json:petName"`
-	Age   int      `"json:age"`
-	Color string   `"json:color"`
-	Food  []string `json:petFood"`
+	Name  string   `json:"petName"`
+	Age   int      `json:"age"`
+	Color string   `json:"color"`
+	Food  []string `json:"petFood"`
+	Skill []string `json:"skills,omitempty"`
+	// Skill string
 }
 
 func main() {
@@ -20,14 +22,15 @@ func main() {
 func EncodeJson() {
 
 	myKitten := []Kitten{
-		{"Ruby", 2, "Brownish", []string{"Fluffy", "Treat"}},
-		{"Max", 2, "White", []string{"Fluffy"}},
+		{"Ruby", 2, "Brownish", []string{"Fluffy", "Treat"}, nil},
+		{"Max", 2, "White", []string{"Fluffy, Nothing New"}, []string{"hunting", "keen observer"}},
 	}
 
 	encodedData, err := json.MarshalIndent(myKitten, "", "\t")
 	CheckNilErr(err)
 
 	fmt.Printf("%s\n", encodedData)
+
 }
 
 func CheckNilErr(err error) {
