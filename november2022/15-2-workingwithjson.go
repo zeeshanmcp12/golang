@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"os"
 )
 
 type User struct {
@@ -33,6 +35,25 @@ func encodeJsonData() {
 
 	fmt.Printf("%s\n", encodedData)
 
+	// Converting json encoded data to string so we can use it in createFile function
+	// Because io.WriteString only accepts string as an argument
+	convertToString := string(encodedData)
+
+	file := "./test.json"
+
+	// Calling createFile function
+	createFile(file, convertToString)
+
+}
+
+// Generate json file
+func createFile(filename string, jsondata string) {
+	file, err := os.Create(filename)
+	CheckNilErr(err)
+
+	io.WriteString(file, jsondata)
+
+	defer file.Close()
 }
 
 func CheckNilErr(err error) {
