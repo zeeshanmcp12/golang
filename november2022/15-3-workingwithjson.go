@@ -51,6 +51,7 @@ func readFile(filename []byte) {
 	fileData, err := ioutil.ReadFile(string(filename))
 
 	checkNilErr(err)
+
 }
 
 func checkNilErr(err error) {
