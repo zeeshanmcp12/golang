@@ -6,10 +6,10 @@ import (
 )
 
 type User struct {
-	Name   string
-	Age    int
-	Email  string
-	Skills []string
+	Name   string   `json:"name"`
+	Age    int      `json:"age"`
+	Email  string   `json:"email"`
+	Skills []string `json:"skills,omitempty"`
 }
 
 func main() {
@@ -22,7 +22,7 @@ func encodeJson() {
 
 	userData := []User{
 		{"Abdullah", 29, "abd@go.dev", []string{"Scrum", "Agile Process"}},
-		{"Asim", 26, "asm@go.dev", []string{"Dev"}},
+		{"Asim", 26, "asm@go.dev", []string{}},
 	}
 
 	encodedData, err := json.MarshalIndent(userData, "", "\t")
