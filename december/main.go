@@ -51,10 +51,21 @@ func main() {
 	fruitList[2] = "Banana"
 	fruitList[3] = "Orange"
 
-	fmt.Println("Elements in an array: ", fruitList)
-	fmt.Println("Elements in an array: ", fruitList[1])
+	// fmt.Println("Elements in an array: ", fruitList)
+	// fmt.Println("Elements in an array: ", fruitList[1])
 
 	for i := range fruitList {
-		fmt.Printf("%v%v\n", i, fruitList[i])
+		fmt.Printf("%v -> %v\n", i, fruitList[i])
+	}
+
+	// var fruitNum int
+	// fmt.Printf("Type number to select your favorite food: ")
+	// // fmt.Println()
+	// fmt.Scanf("%v", &fruitNum)
+	// fmt.Println(fruitNum)
+
+	for i := 0; i < len(fruitList); i++ {
+		fmt.Printf("%v -> %v\n", i, fruitList[i])
+
 	}
 }
