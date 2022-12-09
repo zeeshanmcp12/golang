@@ -5,7 +5,9 @@ import "fmt"
 func main() {
 	fmt.Println("Hello World")
 
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
+	var name string = "Sakina"
+
+	for i, j := range name {
+		fmt.Printf("%v%c\n", i, j)
 	}
 }
