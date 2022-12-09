@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // func main() {
 // 	fmt.Println("Hello World")
 
@@ -38,3 +40,21 @@ package main
 // 		panic(err)
 // 	}
 // }
+
+func main() {
+	fmt.Println("Array in golang!")
+
+	var fruitList [4]string
+
+	fruitList[0] = "Apple"
+	fruitList[1] = "Mango"
+	fruitList[2] = "Banana"
+	fruitList[3] = "Orange"
+
+	fmt.Println("Elements in an array: ", fruitList)
+	fmt.Println("Elements in an array: ", fruitList[1])
+
+	for i := range fruitList {
+		fmt.Printf("%v%v\n", i, fruitList[i])
+	}
+}
