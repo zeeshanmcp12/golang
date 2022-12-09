@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -41,31 +46,70 @@ import "fmt"
 // 	}
 // }
 
+// func main() {
+// 	fmt.Println("Array in golang!")
+
+// 	var fruitList [4]string
+
+// 	fruitList[0] = "Apple"
+// 	fruitList[1] = "Mango"
+// 	fruitList[2] = "Banana"
+// 	fruitList[3] = "Orange"
+
+// 	fmt.Println("Elements in an array: ", fruitList)
+// 	// fmt.Println("Elements in an array: ", fruitList[1])
+
+// 	// for i := range fruitList {
+// 	// 	fmt.Printf("%v -> %v\n", i, fruitList[i])
+// 	// }
+
+// 	// var fruitNum int
+// 	// fmt.Printf("Type number to select your favorite food: ")
+// 	// // fmt.Println()
+// 	// fmt.Scanf("%v", &fruitNum)
+// 	// fmt.Println(fruitNum)
+
+// 	// for i := 0; i < len(fruitList); i++ {
+// 	// 	fmt.Printf("%v -> %v\n", i, fruitList[i])
+
+// 	// }
+
+// 	var anotherList = [3]string{"oneItem", "twoItem", "threeItem"}
+
+// 	for i := range anotherList {
+// 		fmt.Printf("%v -> %v\n", i, anotherList[i])
+// 	}
+// }
+
 func main() {
-	fmt.Println("Array in golang!")
+	fmt.Println("Slice in golang!")
 
-	var fruitList [4]string
+	var todos = []string{}
 
-	fruitList[0] = "Apple"
-	fruitList[1] = "Mango"
-	fruitList[2] = "Banana"
-	fruitList[3] = "Orange"
+	fmt.Printf("Enter your task: ")
 
-	// fmt.Println("Elements in an array: ", fruitList)
-	// fmt.Println("Elements in an array: ", fruitList[1])
+	for true {
 
-	for i := range fruitList {
-		fmt.Printf("%v -> %v\n", i, fruitList[i])
-	}
+		reader := bufio.NewReader(os.Stdin)
+		input, _ := reader.ReadString('\n')
+		todoTxt := strings.TrimSpace(input)
 
-	// var fruitNum int
-	// fmt.Printf("Type number to select your favorite food: ")
-	// // fmt.Println()
-	// fmt.Scanf("%v", &fruitNum)
-	// fmt.Println(fruitNum)
-
-	for i := 0; i < len(fruitList); i++ {
-		fmt.Printf("%v -> %v\n", i, fruitList[i])
-
+		if todoTxt != "done" {
+			if todoTxt != "" {
+				todos = append(todos, todoTxt)
+				fmt.Printf("Enter task or type done: ")
+			} else {
+				fmt.Printf("Invalid input! Enter task or type done: ")
+			}
+			continue
+		} else if todoTxt == "done" {
+			fmt.Println("Thank you for adding task. Here is the list: ")
+			for i := range todos {
+				fmt.Printf("%v -> %v\n", i+1, todos[i])
+			}
+		} else {
+			fmt.Println("Invalid input!, Try again")
+		}
+		break
 	}
 }
