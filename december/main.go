@@ -1,10 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strings"
 )
 
 // func main() {
@@ -81,35 +78,64 @@ import (
 // 	}
 // }
 
+// func main() {
+// 	fmt.Println("Slice in golang!")
+
+// 	var todos = []string{}
+
+// 	fmt.Printf("Enter your task: ")
+
+// 	for true {
+
+// 		reader := bufio.NewReader(os.Stdin)
+// 		input, _ := reader.ReadString('\n')
+// 		todoTxt := strings.TrimSpace(input)
+
+// 		if todoTxt != "done" {
+// 			if todoTxt != "" {
+// 				todos = append(todos, todoTxt)
+// 				fmt.Printf("Enter task or type done: ")
+// 			} else {
+// 				fmt.Printf("Invalid input! Enter task or type done: ")
+// 			}
+// 			continue
+// 		} else if todoTxt == "done" {
+// 			fmt.Println("Thank you for adding task. Here is the list: ")
+// 			for i, item := range todos {
+// 				fmt.Printf("%v -> %v\n", i+1, item)
+// 			}
+// 		} else {
+// 			fmt.Println("Invalid input!, Try again")
+// 		}
+// 		break
+// 	}
+// }
+
 func main() {
-	fmt.Println("Slice in golang!")
+	fmt.Println("Retrieve item based on index number!")
 
-	var todos = []string{}
+	var list = make([]string, 4)
+	list[0] = "WFH"
+	list[1] = "OOO"
+	list[2] = "BRB"
+	list[3] = "SL"
 
-	fmt.Printf("Enter your task: ")
+	fmt.Println("-------- Before append -------- ")
+	fmt.Println(list)
 
-	for true {
+	list = append(list, "PFA", "PFB", "AL")
+	fmt.Println("-------- After append -------- ")
+	fmt.Println(list)
 
-		reader := bufio.NewReader(os.Stdin)
-		input, _ := reader.ReadString('\n')
-		todoTxt := strings.TrimSpace(input)
+	var newSlice = append(list[2:6])
+	fmt.Println("-------- New Slice -------- ")
+	fmt.Println(newSlice)
 
-		if todoTxt != "done" {
-			if todoTxt != "" {
-				todos = append(todos, todoTxt)
-				fmt.Printf("Enter task or type done: ")
-			} else {
-				fmt.Printf("Invalid input! Enter task or type done: ")
-			}
-			continue
-		} else if todoTxt == "done" {
-			fmt.Println("Thank you for adding task. Here is the list: ")
-			for i := range todos {
-				fmt.Printf("%v -> %v\n", i+1, todos[i])
-			}
-		} else {
-			fmt.Println("Invalid input!, Try again")
-		}
-		break
-	}
+	fmt.Println("-------- Remove Slice based on index number -------- ")
+	var indexNum int = 3
+
+	var removeItemSlice = append(list[:indexNum], list[indexNum+1:]...)
+	fmt.Println("-------- Selected item has been removed -------- ")
+	fmt.Println(removeItemSlice)
+
 }
