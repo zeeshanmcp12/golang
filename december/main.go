@@ -111,31 +111,61 @@ import (
 // 	}
 // }
 
+// func main() {
+// 	fmt.Println("Retrieve item based on index number!")
+
+// 	var list = make([]string, 4)
+// 	list[0] = "WFH"
+// 	list[1] = "OOO"
+// 	list[2] = "BRB"
+// 	list[3] = "SL"
+
+// 	fmt.Println("-------- Before append -------- ")
+// 	fmt.Println(list)
+
+// 	list = append(list, "PFA", "PFB", "AL")
+// 	fmt.Println("-------- After append -------- ")
+// 	fmt.Println(list)
+
+// 	var newSlice = append(list[2:6])
+// 	fmt.Println("-------- New Slice -------- ")
+// 	fmt.Println(newSlice)
+
+// 	fmt.Println("-------- Remove Slice based on index number -------- ")
+// 	var indexNum int = 3
+
+// 	var removeItemSlice = append(list[:indexNum], list[indexNum+1:]...)
+// 	fmt.Println("-------- Selected item has been removed -------- ")
+// 	fmt.Println(removeItemSlice)
+
+// }
+
+// func main() {
+// 	fmt.Println("Maps (key value pair) in golang!")
+// 	var abbr = make(map[string]string)
+
+// 	abbr["OOO"] = "Out Of Office"
+// 	abbr["SL"] = "Sick Leave"
+// 	abbr["WFH"] = "Work From Home"
+// 	abbr["AL"] = "Annual Leave"
+
+// 	for i, item := range abbr {
+// 		fmt.Printf("%v -> %v \n", i, item)
+// 	}
+// }
+
+type User struct {
+	Name  string `json:"name"`
+	Age   int    `json:"age"`
+	Email string `json:"emailAddress"`
+}
+
 func main() {
-	fmt.Println("Retrieve item based on index number!")
+	fmt.Println("Struct in golang!")
 
-	var list = make([]string, 4)
-	list[0] = "WFH"
-	list[1] = "OOO"
-	list[2] = "BRB"
-	list[3] = "SL"
+	userData := User{"Abdullah", 30, "abc@go.dev"}
 
-	fmt.Println("-------- Before append -------- ")
-	fmt.Println(list)
-
-	list = append(list, "PFA", "PFB", "AL")
-	fmt.Println("-------- After append -------- ")
-	fmt.Println(list)
-
-	var newSlice = append(list[2:6])
-	fmt.Println("-------- New Slice -------- ")
-	fmt.Println(newSlice)
-
-	fmt.Println("-------- Remove Slice based on index number -------- ")
-	var indexNum int = 3
-
-	var removeItemSlice = append(list[:indexNum], list[indexNum+1:]...)
-	fmt.Println("-------- Selected item has been removed -------- ")
-	fmt.Println(removeItemSlice)
-
+	fmt.Println(userData)
+	fmt.Println(userData.Name)
+	fmt.Printf("%+v\n", userData)
 }
