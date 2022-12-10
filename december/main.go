@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -154,34 +152,55 @@ import (
 // 	}
 // }
 
+// func main() {
+// 	fmt.Println("Working with Maps!")
+
+// 	var abbr = make(map[string]string)
+
+// 	abbr["JS"] = "JavaScript"
+// 	abbr["RB"] = "Ruby"
+// 	abbr["GO"] = "Golang"
+
+// 	for key, item := range abbr {
+// 		fmt.Printf("%v -> %v\n", key, item)
+// 	}
+
+// 	var strToSelect string
+
+// 	fmt.Printf("Select letter to find out it's abbreviation: ")
+// 	fmt.Scanf("%v", &strToSelect)
+
+// 	_, ok := abbr[strToSelect]
+
+// 	fmt.Printf("Type of ok is %T\n", ok)
+// 	fmt.Println(ok)
+
+// 	if ok == true {
+// 		fmt.Println("Abbreviation found against your provided keyword:", strToSelect)
+// 		fmt.Printf("%v stands for %v", strToSelect, abbr[strToSelect])
+// 	} else {
+// 		fmt.Println("Abbreviation not found. Try again!")
+// 	}
+
+// }
+
 func main() {
-	fmt.Println("Working with Maps!")
+	fmt.Println("Switch case in golang!")
 
-	var abbr = make(map[string]string)
+	var name string
 
-	abbr["JS"] = "JavaScript"
-	abbr["RB"] = "Ruby"
-	abbr["GO"] = "Golang"
+	fmt.Printf("Enter any name: ")
+	fmt.Scanf("%v", &name)
 
-	for key, item := range abbr {
-		fmt.Printf("%v -> %v\n", key, item)
-	}
+	fmt.Println(name)
 
-	var strToSelect string
-
-	fmt.Printf("Select letter to find out it's abbreviation: ")
-	fmt.Scanf("%v", &strToSelect)
-
-	_, ok := abbr[strToSelect]
-
-	fmt.Printf("Type of ok is %T\n", ok)
-	fmt.Println(ok)
-
-	if ok == true {
-		fmt.Println("Abbreviation found against your provided keyword:", strToSelect)
-		fmt.Printf("%v stands for %v", strToSelect, abbr[strToSelect])
-	} else {
-		fmt.Println("Abbreviation not found. Try again!")
+	switch name {
+	case "Abdullah":
+		fmt.Println("Abdullah is working as Data Scientist")
+	case "Ahmed":
+		fmt.Println("A passionate .Net developer")
+	default:
+		fmt.Println("No data found!")
 	}
 
 }
