@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -184,24 +188,37 @@ import "fmt"
 
 // }
 
+// func main() {
+// 	fmt.Println("Switch case in golang!")
+
+// 	var name string
+
+// 	fmt.Printf("Enter any name: ")
+// 	fmt.Scanf("%v", &name)
+
+// 	fmt.Println(name)
+
+// 	switch name {
+// 	case "Abdullah":
+// 		fmt.Println("Abdullah is working as Data Scientist")
+// 	case "Ahmed":
+// 		fmt.Println("A passionate .Net developer")
+// 	default:
+// 		fmt.Println("No data found!")
+// 	}
+
+// }
+
 func main() {
-	fmt.Println("Switch case in golang!")
+	fmt.Println("Try your luck!")
+	rand.Seed(time.Now().UnixNano())
+	number := rand.Intn(10)
 
-	var name string
-
-	fmt.Printf("Enter any name: ")
-	fmt.Scanf("%v", &name)
-
-	fmt.Println(name)
-
-	switch name {
-	case "Abdullah":
-		fmt.Println("Abdullah is working as Data Scientist")
-	case "Ahmed":
-		fmt.Println("A passionate .Net developer")
-	default:
-		fmt.Println("No data found!")
-	}
+	var ourNum int
+	fmt.Printf("Enter any number to try your luck: ")
+	fmt.Scanf("%v", &ourNum)
+	fmt.Println("Your number: ", ourNum)
+	fmt.Println("Random number: ", number)
 
 }
 
