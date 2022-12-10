@@ -154,18 +154,50 @@ import (
 // 	}
 // }
 
-type User struct {
-	Name  string `json:"name"`
-	Age   int    `json:"age"`
-	Email string `json:"emailAddress"`
-}
-
 func main() {
-	fmt.Println("Struct in golang!")
+	fmt.Println("Working with Maps!")
 
-	userData := User{"Abdullah", 30, "abc@go.dev"}
+	var abbr = make(map[string]string)
 
-	fmt.Println(userData)
-	fmt.Println(userData.Name)
-	fmt.Printf("%+v\n", userData)
+	abbr["JS"] = "JavaScript"
+	abbr["RB"] = "Ruby"
+	abbr["GO"] = "Golang"
+
+	for key, item := range abbr {
+		fmt.Printf("%v -> %v\n", key, item)
+	}
+
+	var strToSelect string
+
+	fmt.Printf("Select letter to find out it's abbreviation: ")
+	fmt.Scanf("%v", &strToSelect)
+
+	_, ok := abbr[strToSelect]
+
+	fmt.Printf("Type of ok is %T\n", ok)
+	fmt.Println(ok)
+
+	if ok == true {
+		fmt.Println("Abbreviation found against your provided keyword:", strToSelect)
+		fmt.Printf("%v stands for %v", strToSelect, abbr[strToSelect])
+	} else {
+		fmt.Println("Abbreviation not found. Try again!")
+	}
+
 }
+
+// type User struct {
+// 	Name  string `json:"name"`
+// 	Age   int    `json:"age"`
+// 	Email string `json:"emailAddress"`
+// }
+
+// func main() {
+// 	fmt.Println("Struct in golang!")
+
+// 	userData := User{"Abdullah", 30, "abc@go.dev"}
+
+// 	fmt.Println(userData)
+// 	fmt.Println(userData.Name)
+// 	fmt.Printf("%+v\n", userData)
+// }
