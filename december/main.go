@@ -212,13 +212,20 @@ import (
 func main() {
 	fmt.Println("Try your luck!")
 	rand.Seed(time.Now().UnixNano())
-	number := rand.Intn(10)
+	number := rand.Intn(10 + 1)
 
 	var ourNum int
 	fmt.Printf("Enter any number to try your luck: ")
 	fmt.Scanf("%v", &ourNum)
 	fmt.Println("Your number: ", ourNum)
 	fmt.Println("Random number: ", number)
+
+	switch number {
+	case ourNum:
+		fmt.Printf("Congratulations! Your no %v is matched with random no %v ", ourNum, number)
+	default:
+		fmt.Printf("No Luck, Try again!")
+	}
 
 }
 
