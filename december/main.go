@@ -249,9 +249,14 @@ func main() {
 	result := addNum(5, 10)
 	fmt.Println(result)
 
+	fmt.Println(addNum(10, 20))
+
 	fmt.Println("Calling subNum simple function with return statement")
 	subtract := subNum(10, 5)
 	fmt.Println(subtract)
+
+	// Calling variadic function as described below
+	fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
 
 }
 
@@ -261,4 +266,18 @@ func addNum(num1 int, num2 int) int {
 
 func subNum(num1, num2 int) int {
 	return num1 - num2
+}
+
+func variadicFunc(numbers ...int) int {
+	// Declared and initialized a variable with 0
+	total := 0
+
+	// loop through numbers variable (parameter which refer to variadic vaule)
+	for _, val := range numbers {
+		// Increament a number to val which is a placeholder for values that will be coming from numbers when we call this function
+		// After increament, assign the value to 'total' variable
+		total += val
+	}
+	// Return the result (of total)
+	return total
 }
