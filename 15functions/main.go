@@ -49,8 +49,8 @@ func main() {
 
 }*/
 
-// labele our return values
-// lbl1 -> is the lable for our return value
+// label our return values
+// lbl1 -> is the label for our return value
 /*func sub(num1, num2 int) (lbl1 int) {
 	lbl1 = num1 - num2
 	return

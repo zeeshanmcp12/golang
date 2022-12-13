@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
+import "fmt"
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -209,27 +205,27 @@ import (
 
 // }
 
-func main() {
+// func main() {
 
-	fmt.Println("Try your luck!")
-	var ourNum int
-	fmt.Printf("Enter any number to try your luck: ")
-	fmt.Scanf("%v", &ourNum)
+// 	fmt.Println("Try your luck!")
+// 	var ourNum int
+// 	fmt.Printf("Enter any number to try your luck: ")
+// 	fmt.Scanf("%v", &ourNum)
 
-	rand.Seed(time.Now().UnixNano())
-	number := rand.Intn(10 + 1)
+// 	rand.Seed(time.Now().UnixNano())
+// 	number := rand.Intn(10 + 1)
 
-	fmt.Println("Your number: ", ourNum)
-	fmt.Println("Random number: ", number)
+// 	fmt.Println("Your number: ", ourNum)
+// 	fmt.Println("Random number: ", number)
 
-	switch number {
-	case ourNum:
-		fmt.Printf("Congratulations! Your no %v has matched with random no %v ", ourNum, number)
-	default:
-		fmt.Printf("No Luck, Try again!")
-	}
+// 	switch number {
+// 	case ourNum:
+// 		fmt.Printf("Congratulations! Your no %v has matched with random no %v ", ourNum, number)
+// 	default:
+// 		fmt.Printf("No Luck, Try again!")
+// 	}
 
-}
+// }
 
 // type User struct {
 // 	Name  string `json:"name"`
@@ -246,3 +242,23 @@ func main() {
 // 	fmt.Println(userData.Name)
 // 	fmt.Printf("%+v\n", userData)
 // }
+
+func main() {
+	fmt.Println("Function in golang!")
+	fmt.Println("Calling addNum simple function with return statement")
+	result := addNum(5, 10)
+	fmt.Println(result)
+
+	fmt.Println("Calling subNum simple function with return statement")
+	subtract := subNum(10, 5)
+	fmt.Println(subtract)
+
+}
+
+func addNum(num1 int, num2 int) int {
+	return num1 + num2
+}
+
+func subNum(num1, num2 int) int {
+	return num1 - num2
+}
