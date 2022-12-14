@@ -264,9 +264,11 @@ func addNum(num1 int, num2 int) int {
 	return num1 + num2
 }
 
-func subNum(num1, num2 int) int {
-	return num1 - num2
-}
+// Still working on it
+// func subNum(name string, age int) (string, int) {
+// 	greeting := "Hello", name, "You are ", age, "years old."
+// 	return greeting
+// }
 
 func variadicFunc(numbers ...int) int {
 	// Declared and initialized a variable with 0
