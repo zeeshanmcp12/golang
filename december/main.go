@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -259,6 +261,9 @@ func main() {
 	fmt.Println()
 	// Function with named (return) values
 	namedValue("Zeeshan", 31)
+
+	fmt.Println()
+
 	// Calling variadic function as described below
 	// fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
 
