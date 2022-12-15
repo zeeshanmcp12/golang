@@ -252,26 +252,34 @@ func main() {
 	// Simple function call with return statement
 	fmt.Println(addNum(10, 20))
 
+	// Simple function call with multiple return
 	addition, subtraction := multipleReturnType(10, 5)
-	fmt.Println(addition, subtraction)
+	fmt.Printf("Sum is %v , Difference is %v", addition, subtraction)
 
-	// fmt.Println("Calling subNum simple function with return statement")
-	// subtract := subNum(10, 5)
-	// fmt.Println(subtract)
-
+	fmt.Println()
+	// Function with named (return) values
+	namedValue("Zeeshan", 31)
 	// Calling variadic function as described below
 	// fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
 
 }
 
+// Simple function with return
 func addNum(num1 int, num2 int) int {
 	return num1 + num2
 }
 
+// Function with multiple return type
 func multipleReturnType(num1, num2 int) (int, int) {
 	sum := num1 + num2
 	diff := num1 - num2
 	return sum, diff
+}
+
+func namedValue(text string, num int) (string, int) {
+
+	fmt.Printf("Hi %v, You are %v years old!", text, num)
+	return text, num
 }
 
 // func variadicFunc(numbers ...int) int {
