@@ -249,14 +249,18 @@ func main() {
 	result := addNum(5, 10)
 	fmt.Println(result)
 
+	// Simple function call with return statement
 	fmt.Println(addNum(10, 20))
 
-	fmt.Println("Calling subNum simple function with return statement")
-	subtract := subNum(10, 5)
-	fmt.Println(subtract)
+	addition, subtraction := multipleReturnType(10, 5)
+	fmt.Println(addition, subtraction)
+
+	// fmt.Println("Calling subNum simple function with return statement")
+	// subtract := subNum(10, 5)
+	// fmt.Println(subtract)
 
 	// Calling variadic function as described below
-	fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
+	// fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
 
 }
 
@@ -264,22 +268,22 @@ func addNum(num1 int, num2 int) int {
 	return num1 + num2
 }
 
-// Still working on it
-// func subNum(name string, age int) (string, int) {
-// 	greeting := "Hello", name, "You are ", age, "years old."
-// 	return greeting
-// }
-
-func variadicFunc(numbers ...int) int {
-	// Declared and initialized a variable with 0
-	total := 0
-
-	// loop through numbers variable (parameter which refer to variadic vaule)
-	for _, val := range numbers {
-		// Increament a number to val which is a placeholder for values that will be coming from numbers when we call this function
-		// After increament, assign the value to 'total' variable
-		total += val
-	}
-	// Return the result (of total)
-	return total
+func multipleReturnType(num1, num2 int) (int, int) {
+	sum := num1 + num2
+	diff := num1 - num2
+	return sum, diff
 }
+
+// func variadicFunc(numbers ...int) int {
+// 	// Declared and initialized a variable with 0
+// 	total := 0
+
+// 	// loop through numbers variable (parameter which refer to variadic vaule)
+// 	for _, val := range numbers {
+// 		// Increament a number to val which is a placeholder for values that will be coming from numbers when we call this function
+// 		// After increament, assign the value to 'total' variable
+// 		total += val
+// 	}
+// 	// Return the result (of total)
+// 	return total
+// }
