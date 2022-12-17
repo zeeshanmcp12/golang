@@ -259,10 +259,6 @@ func main() {
 	fmt.Printf("Sum is %v , Difference is %v", addition, subtraction)
 
 	fmt.Println()
-	// Function with named (return) values
-	namedValue("Zeeshan", 31)
-
-	fmt.Println()
 
 	// Calling variadic function as described below
 	// fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
@@ -277,6 +273,11 @@ func main() {
 	fmt.Scanf("%v \n", &age)
 	fmt.Println()
 	userData(name, age)
+
+	fmt.Printf("\n------------------------------- \n")
+	// Function with named (return) values
+	sum, product := namedValue(2, 5)
+	fmt.Printf("Sum of two numbers: %v, Product of two numbers: %v", sum, product)
 
 }
 
@@ -297,10 +298,11 @@ func userData(name string, age int) (string, int) {
 	return name, age
 }
 
-func namedValue(text string, num int) (string, int) {
+func namedValue(num1 int, num2 int) (sum int, product int) {
 
-	fmt.Printf("Hi %v, You are %v years old!", text, num)
-	return text, num
+	sum = num1 + num2
+	product = num1 * num2
+	return
 }
 
 // func variadicFunc(numbers ...int) int {
