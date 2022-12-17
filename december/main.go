@@ -247,12 +247,15 @@ import (
 
 func main() {
 	fmt.Println("Function in golang!")
-	fmt.Println("Calling addNum simple function with return statement")
+	fmt.Printf("\n ---------- Calling simple function with return values ---------- \n")
+	// fmt.Println("Calling addNum simple function with return statement")
 	result := addNum(5, 10)
 	fmt.Println(result)
 
 	// Simple function call with return statement
 	fmt.Println(addNum(10, 20))
+
+	fmt.Printf("\n ---------- Calling function with multiple return values ---------- \n")
 
 	// Simple function call with multiple return
 	addition, subtraction := multipleReturnType(10, 5)
@@ -260,8 +263,7 @@ func main() {
 
 	fmt.Println()
 
-	// Calling variadic function as described below
-	// fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
+	fmt.Printf("\n ---------- Calling function with multiple return values ---------- \n")
 
 	var (
 		name string
@@ -274,10 +276,17 @@ func main() {
 	fmt.Println()
 	userData(name, age)
 
-	fmt.Printf("\n------------------------------- \n")
+	fmt.Printf("\n ---------- Calling function with named values ---------- \n")
 	// Function with named (return) values
 	sum, product := namedValue(2, 5)
 	fmt.Printf("Sum of two numbers: %v, Product of two numbers: %v", sum, product)
+
+	// Calling variadic function as described below
+
+	fmt.Printf("\n ---------- Calling Variadic function ---------- \n")
+	fmt.Println(variadicFunc(0))
+	fmt.Println(variadicFunc(1, 2))
+	fmt.Println(variadicFunc(3, 4, 5))
 
 }
 
@@ -303,6 +312,15 @@ func namedValue(num1 int, num2 int) (sum int, product int) {
 	sum = num1 + num2
 	product = num1 * num2
 	return
+}
+
+func variadicFunc(numbers ...int) int {
+	total := 0
+
+	for _, val := range numbers {
+		total += val
+	}
+	return total
 }
 
 // func variadicFunc(numbers ...int) int {
