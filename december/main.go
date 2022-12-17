@@ -283,10 +283,21 @@ func main() {
 
 	// Calling variadic function as described below
 
-	fmt.Printf("\n ---------- Calling Variadic function ---------- \n")
-	fmt.Println(variadicFunc(0))
+	fmt.Printf("\n ---------- Calling Variadic function - Example 1 ---------- \n")
+	fmt.Println(variadicFunc()) // in this case, slice will be empty
 	fmt.Println(variadicFunc(1, 2))
 	fmt.Println(variadicFunc(3, 4, 5))
+
+	// Calling variadic function as described below
+	fmt.Printf("\n ---------- Calling Variadic function - Example 2 ---------- \n")
+	studentDetails(name, "Physics", "Computer")
+
+	fmt.Printf("\n ---------- Calling function with blank identifier ---------- \n")
+	num1, num2 := f()
+	fmt.Println(num1, num2)
+
+	onlyNum1, _ := f()
+	fmt.Println("Using only 1 value and skipping 2nd using blank identifier: ", onlyNum1)
 
 }
 
@@ -336,3 +347,15 @@ func variadicFunc(numbers ...int) int {
 // 	// Return the result (of total)
 // 	return total
 // }
+
+func studentDetails(name string, subjects ...string) {
+	fmt.Printf("Hey %v, Here are your subjects - \n", name)
+	for _, sub := range subjects {
+		fmt.Printf("%s, ", sub)
+	}
+}
+
+// Function for blank identifier
+func f() (int, int) {
+	return 40, 45
+}
