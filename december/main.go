@@ -267,6 +267,17 @@ func main() {
 	// Calling variadic function as described below
 	// fmt.Println("Calling variadic function:", variadicFunc(1, 2, 3))
 
+	var (
+		name string
+		age  int
+	)
+	fmt.Printf("Enter your name: ")
+	fmt.Scanf("%v \n", &name)
+	fmt.Printf("Enter your age: ")
+	fmt.Scanf("%v \n", &age)
+	fmt.Println()
+	userData(name, age)
+
 }
 
 // Simple function with return
@@ -279,6 +290,11 @@ func multipleReturnType(num1, num2 int) (int, int) {
 	sum := num1 + num2
 	diff := num1 - num2
 	return sum, diff
+}
+
+func userData(name string, age int) (string, int) {
+	fmt.Printf("Hey %v, glad you are %v years old!", name, age)
+	return name, age
 }
 
 func namedValue(text string, num int) (string, int) {
