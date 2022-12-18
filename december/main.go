@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -245,94 +243,96 @@ import (
 // 	fmt.Printf("%+v\n", userData)
 // }
 
-func main() {
-	fmt.Println("Function in golang!")
-	fmt.Printf("\n ---------- Calling simple function with return values ---------- \n")
-	// fmt.Println("Calling addNum simple function with return statement")
-	result := addNum(5, 10)
-	fmt.Println(result)
+// All about functions
 
-	// Simple function call with return statement
-	fmt.Println(addNum(10, 20))
+// func main() {
+// 	fmt.Println("Function in golang!")
+// 	fmt.Printf("\n ---------- Calling simple function with return values ---------- \n")
+// 	// fmt.Println("Calling addNum simple function with return statement")
+// 	result := addNum(5, 10)
+// 	fmt.Println(result)
 
-	fmt.Printf("\n ---------- Calling function with multiple return values ---------- \n")
+// 	// Simple function call with return statement
+// 	fmt.Println(addNum(10, 20))
 
-	// Simple function call with multiple return
-	addition, subtraction := multipleReturnType(10, 5)
-	fmt.Printf("Sum is %v , Difference is %v", addition, subtraction)
+// 	fmt.Printf("\n ---------- Calling function with multiple return values ---------- \n")
 
-	fmt.Println()
+// 	// Simple function call with multiple return
+// 	addition, subtraction := multipleReturnType(10, 5)
+// 	fmt.Printf("Sum is %v , Difference is %v", addition, subtraction)
 
-	fmt.Printf("\n ---------- Calling function with multiple return values ---------- \n")
+// 	fmt.Println()
 
-	var (
-		name string
-		age  int
-	)
-	fmt.Printf("Enter your name: ")
-	fmt.Scanf("%v \n", &name)
-	fmt.Printf("Enter your age: ")
-	fmt.Scanf("%v \n", &age)
-	fmt.Println()
-	userData(name, age)
+// 	fmt.Printf("\n ---------- Calling function with multiple return values ---------- \n")
 
-	fmt.Printf("\n ---------- Calling function with named values ---------- \n")
-	// Function with named (return) values
-	sum, product := namedValue(2, 5)
-	fmt.Printf("Sum of two numbers: %v, Product of two numbers: %v", sum, product)
+// 	var (
+// 		name string
+// 		age  int
+// 	)
+// 	fmt.Printf("Enter your name: ")
+// 	fmt.Scanf("%v \n", &name)
+// 	fmt.Printf("Enter your age: ")
+// 	fmt.Scanf("%v \n", &age)
+// 	fmt.Println()
+// 	userData(name, age)
 
-	// Calling variadic function as described below
+// 	fmt.Printf("\n ---------- Calling function with named values ---------- \n")
+// 	// Function with named (return) values
+// 	sum, product := namedValue(2, 5)
+// 	fmt.Printf("Sum of two numbers: %v, Product of two numbers: %v", sum, product)
 
-	fmt.Printf("\n ---------- Calling Variadic function - Example 1 ---------- \n")
-	fmt.Println(variadicFunc()) // in this case, slice will be empty
-	fmt.Println(variadicFunc(1, 2))
-	fmt.Println(variadicFunc(3, 4, 5))
+// 	// Calling variadic function as described below
 
-	// Calling variadic function as described below
-	fmt.Printf("\n ---------- Calling Variadic function - Example 2 ---------- \n")
-	studentDetails(name, "Physics", "Computer")
+// 	fmt.Printf("\n ---------- Calling Variadic function - Example 1 ---------- \n")
+// 	fmt.Println(variadicFunc()) // in this case, slice will be empty
+// 	fmt.Println(variadicFunc(1, 2))
+// 	fmt.Println(variadicFunc(3, 4, 5))
 
-	fmt.Printf("\n ---------- Calling function with blank identifier ---------- \n")
-	num1, num2 := f()
-	fmt.Println(num1, num2)
+// 	// Calling variadic function as described below
+// 	fmt.Printf("\n ---------- Calling Variadic function - Example 2 ---------- \n")
+// 	studentDetails(name, "Physics", "Computer")
 
-	onlyNum1, _ := f()
-	fmt.Println("Using only 1 value and skipping 2nd using blank identifier: ", onlyNum1)
+// 	fmt.Printf("\n ---------- Calling function with blank identifier ---------- \n")
+// 	num1, num2 := f()
+// 	fmt.Println(num1, num2)
 
-}
+// 	onlyNum1, _ := f()
+// 	fmt.Println("Using only 1 value and skipping 2nd using blank identifier: ", onlyNum1)
 
-// Simple function with return
-func addNum(num1 int, num2 int) int {
-	return num1 + num2
-}
+// }
 
-// Function with multiple return type
-func multipleReturnType(num1, num2 int) (int, int) {
-	sum := num1 + num2
-	diff := num1 - num2
-	return sum, diff
-}
+// // Simple function with return
+// func addNum(num1 int, num2 int) int {
+// 	return num1 + num2
+// }
 
-func userData(name string, age int) (string, int) {
-	fmt.Printf("Hey %v, glad you are %v years old!", name, age)
-	return name, age
-}
+// // Function with multiple return type
+// func multipleReturnType(num1, num2 int) (int, int) {
+// 	sum := num1 + num2
+// 	diff := num1 - num2
+// 	return sum, diff
+// }
 
-func namedValue(num1 int, num2 int) (sum int, product int) {
+// func userData(name string, age int) (string, int) {
+// 	fmt.Printf("Hey %v, glad you are %v years old!", name, age)
+// 	return name, age
+// }
 
-	sum = num1 + num2
-	product = num1 * num2
-	return
-}
+// func namedValue(num1 int, num2 int) (sum int, product int) {
 
-func variadicFunc(numbers ...int) int {
-	total := 0
+// 	sum = num1 + num2
+// 	product = num1 * num2
+// 	return
+// }
 
-	for _, val := range numbers {
-		total += val
-	}
-	return total
-}
+// func variadicFunc(numbers ...int) int {
+// 	total := 0
+
+// 	for _, val := range numbers {
+// 		total += val
+// 	}
+// 	return total
+// }
 
 // func variadicFunc(numbers ...int) int {
 // 	// Declared and initialized a variable with 0
@@ -348,14 +348,46 @@ func variadicFunc(numbers ...int) int {
 // 	return total
 // }
 
-func studentDetails(name string, subjects ...string) {
-	fmt.Printf("Hey %v, Here are your subjects - \n", name)
-	for _, sub := range subjects {
-		fmt.Printf("%s, ", sub)
-	}
-}
+// func studentDetails(name string, subjects ...string) {
+// 	fmt.Printf("Hey %v, Here are your subjects - \n", name)
+// 	for _, sub := range subjects {
+// 		fmt.Printf("%s, ", sub)
+// 	}
+// }
 
-// Function for blank identifier
-func f() (int, int) {
-	return 40, 45
+// // Function for blank identifier
+// func f() (int, int) {
+// 	return 40, 45
+// }
+
+// Anonymous function
+// Function that declares without any name
+// It uses for short term uses etc
+func main() {
+	fmt.Println("Anonymous function!")
+
+	anonymFunc := func(num1, num2 int) int {
+		return num1 + num2
+	}
+
+	fmt.Println(" ---------- Anonymous function while saving the function in a variable ---------- ")
+	fmt.Printf("Type of anonymFunc is %T\n", anonymFunc)
+	fmt.Printf("Sum of two numbers are: %v", anonymFunc(10, 20))
+	fmt.Println()
+
+	anonymFunc2 := func(num1, num2 int) int {
+		return num1 + num2
+	}(10, 20)
+
+	fmt.Println(" ---------- Anonymous function without saving the function in a variable ---------- ")
+	fmt.Printf("Type of anonymFunc is %T\n", anonymFunc2)
+	fmt.Printf("Sum of two numbers are: %v", anonymFunc2)
+
+	// Need to define two variables if we are returning two values
+	anonymFunc3, anonymFunc4 := func(name string, age int) (string, int) {
+		return name, age
+	}("Zeeshan", 32)
+	fmt.Println(" ---------- Anonymous function 3 without saving the function in a variable ---------- ")
+	fmt.Printf("Type of anonymFunc is %T and %T\n", anonymFunc3, anonymFunc4)
+	fmt.Printf("Result %v %v", anonymFunc3, anonymFunc4)
 }
