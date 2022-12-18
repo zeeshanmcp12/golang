@@ -363,31 +363,76 @@ import "fmt"
 // Anonymous function
 // Function that declares without any name
 // It uses for short term uses etc
+// func main() {
+// 	fmt.Println("Anonymous function!")
+
+// 	anonymFunc := func(num1, num2 int) int {
+// 		return num1 + num2
+// 	}
+
+// 	fmt.Println(" ---------- Anonymous function while saving the function in a variable ---------- ")
+// 	fmt.Printf("Type of anonymFunc is %T\n", anonymFunc)
+// 	fmt.Printf("Sum of two numbers are: %v", anonymFunc(10, 20))
+// 	fmt.Println()
+
+// 	anonymFunc2 := func(num1, num2 int) int {
+// 		return num1 + num2
+// 	}(10, 20)
+
+// 	fmt.Println(" ---------- Anonymous function without saving the function in a variable ---------- ")
+// 	fmt.Printf("Type of anonymFunc is %T\n", anonymFunc2)
+// 	fmt.Printf("Sum of two numbers are: %v", anonymFunc2)
+
+// 	// Need to define two variables if we are returning two values
+// 	anonymFunc3, anonymFunc4 := func(name string, age int) (string, int) {
+// 		return name, age
+// 	}("Zeeshan", 32)
+// 	fmt.Println(" ---------- Anonymous function 3 without saving the function in a variable ---------- ")
+// 	fmt.Printf("Type of anonymFunc is %T and %T\n", anonymFunc3, anonymFunc4)
+// 	fmt.Printf("Result %v %v", anonymFunc3, anonymFunc4)
+// }
+
+// Formulas to calculate the things of a circle
+// 3.14 * r * r -> to calculate the area
+// 2 * 3.14 * r -> to calculate the perimeter of a circle
+// 2 * r -> to calculate the diameter of a circle
+
+// Input should be radius (float type)
+// Output should be in float type
+
+func calcArea(radius float64) float64 {
+	return 3.14 * radius * radius
+}
+
+func calcPerimeter(radius float64) float64 {
+	return 2 * 3.14 * radius
+}
+
+func calcDiameter(radius float64) float64 {
+	return 2 * radius
+}
+
+// Regular function instead of High order functions
 func main() {
-	fmt.Println("Anonymous function!")
+	fmt.Println("Calculate the property of a Circle!")
 
-	anonymFunc := func(num1, num2 int) int {
-		return num1 + num2
+	var (
+		radius float64
+		query  int
+	)
+
+	fmt.Printf("Enter any number to select - \n 1- Area\n 2- Perimeter\n 3- Diameter: ")
+	fmt.Scanf("%d\n", &query)
+	fmt.Printf("Enter radius: ")
+	fmt.Scanf("%f\n", &radius)
+
+	if query == 1 {
+		fmt.Printf("Area of a Circle: %v", calcArea(radius))
+	} else if query == 2 {
+		fmt.Printf("Perimeter of a Circle: %v", calcPerimeter(radius))
+	} else if query == 3 {
+		fmt.Printf("Diameter of a Circle: %v", calcDiameter(radius))
+	} else {
+		fmt.Println("Invalid input, Try again!")
 	}
-
-	fmt.Println(" ---------- Anonymous function while saving the function in a variable ---------- ")
-	fmt.Printf("Type of anonymFunc is %T\n", anonymFunc)
-	fmt.Printf("Sum of two numbers are: %v", anonymFunc(10, 20))
-	fmt.Println()
-
-	anonymFunc2 := func(num1, num2 int) int {
-		return num1 + num2
-	}(10, 20)
-
-	fmt.Println(" ---------- Anonymous function without saving the function in a variable ---------- ")
-	fmt.Printf("Type of anonymFunc is %T\n", anonymFunc2)
-	fmt.Printf("Sum of two numbers are: %v", anonymFunc2)
-
-	// Need to define two variables if we are returning two values
-	anonymFunc3, anonymFunc4 := func(name string, age int) (string, int) {
-		return name, age
-	}("Zeeshan", 32)
-	fmt.Println(" ---------- Anonymous function 3 without saving the function in a variable ---------- ")
-	fmt.Printf("Type of anonymFunc is %T and %T\n", anonymFunc3, anonymFunc4)
-	fmt.Printf("Result %v %v", anonymFunc3, anonymFunc4)
 }
