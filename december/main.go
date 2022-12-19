@@ -1,11 +1,6 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strings"
-)
+import "fmt"
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -442,34 +437,66 @@ func calcDiameter(radius float64) float64 {
 // 	}
 // }
 
+// func main() {
+// 	fmt.Println("Todo app logic in golang!")
+
+// 	tasks := []string{}
+
+// 	fmt.Printf("Add tasks: ")
+
+// 	for true {
+// 		reader := bufio.NewReader(os.Stdin)
+// 		input, _ := reader.ReadString('\n')
+// 		f_txt := strings.TrimSpace(input)
+
+// 		if f_txt != "done" {
+// 			if f_txt != "" {
+// 				tasks = append(tasks, f_txt)
+// 				fmt.Printf("Type done or Press Enter: ")
+// 			} else {
+// 				fmt.Printf("Invalid input! Type done or Press Enter: ")
+// 				continue
+// 			}
+// 		} else if f_txt == "done" {
+// 			fmt.Printf("Thank you for adding tasks:\n")
+// 			for i, val := range tasks {
+// 				fmt.Printf("%v -> %v\n", i, val)
+// 			}
+// 			break
+// 		} else {
+// 			fmt.Printf("Invalid input! Try again.")
+// 		}
+// 	}
+// }
+
 func main() {
-	fmt.Println("Todo app logic in golang!")
+	fmt.Println("High Order function!")
 
-	tasks := []string{}
+	var (
+		radius float64
+		query  int
+	)
 
-	fmt.Printf("Add tasks: ")
+	fmt.Printf("Enter \n 1- Area\n 2- Perimeter\n 3- Diameter: ")
+	fmt.Scanf("%d\n", &query)
+	fmt.Printf("Enter radius: ")
+	fmt.Scanf("%f\n", &radius)
+	printResult(radius, getFunction(query))
 
-	for true {
-		reader := bufio.NewReader(os.Stdin)
-		input, _ := reader.ReadString('\n')
-		f_txt := strings.TrimSpace(input)
+}
 
-		if f_txt != "done" {
-			if f_txt != "" {
-				tasks = append(tasks, f_txt)
-				fmt.Printf("Type done or Press Enter: ")
-			} else {
-				fmt.Printf("Invalid input! Type done or Press Enter: ")
-				continue
-			}
-		} else if f_txt == "done" {
-			fmt.Printf("Thank you for adding tasks:\n")
-			for i, val := range tasks {
-				fmt.Printf("%v -> %v\n", i, val)
-			}
-			break
-		} else {
-			fmt.Printf("Invalid input! Try again.")
-		}
+func printResult(radius float64, calculateFunc func(r float64) float64) {
+	result := calculateFunc(radius)
+	fmt.Printf("Result: %v\n", result)
+	fmt.Printf("Thank you!")
+}
+
+func getFunction(query int) func(r float64) float64 {
+
+	query_to_func := map[int]func(r float64) float64{
+		1: calcArea,
+		2: calcPerimeter,
+		3: calcDiameter,
 	}
+	return query_to_func[query]
 }
