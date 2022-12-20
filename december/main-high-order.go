@@ -12,6 +12,8 @@ func main() {
 
 	tasks := []string{}
 
+	var query int
+
 	fmt.Printf("Add tasks: ")
 
 	fmt.Printf("Enter \n 1- Add Task\n 2- Show Task")
@@ -73,4 +75,8 @@ func showTask(tasks ...string) {
 	for i, val := range tasks {
 		fmt.Printf("%v -> %v\n", i, val)
 	}
+}
+
+func getFunction(query int) func(tasks ...string) {
+
 }
