@@ -12,11 +12,14 @@ func main() {
 
 	var query int
 
-	// fmt.Printf("Enter \n 1- Show Task\n 2- Add Task: ")
-	fmt.Printf("Enter \n 1- Addition\n 2- Subtraction: ")
+	fmt.Printf("Enter \n 1- Show Task\n 2- Add Task: ")
+	// fmt.Printf("Enter \n 1- Addition\n 2- Subtraction: ")
 	fmt.Scanf("%d\n", &query)
+	// tasks := []string{}
 
-	getFunction(query)
+	// getFunction(query)
+	// printResult(tasks, getFunction(query))
+	printResult(getFunction(query))
 
 	// addTask(tasks...)
 
@@ -59,32 +62,18 @@ func showTask(tasks ...string) {
 	}
 }
 
-func addition(num1, num2 int) {
-	fmt.Println(num1 + num2)
-	// return result
+func printResult(calculateFunc func(item ...string)) {
+	result := calculateFunc
+	fmt.Printf("Result: %v\n", result)
+	fmt.Printf("Thank you!")
 }
 
-func subtraction(num1, num2 int) {
-	fmt.Println(num1 - num2)
-	// return result
-}
+func getFunction(query int) func(item ...string) {
 
-func getFunction(query int) func(int) {
-
-	query_to_func := map[int]func(int){
-		1: addition,
-		2: subtraction,
+	query_to_func := map[int]func(item ...string){
+		1: addTask,
+		2: showTask,
 	}
 	return query_to_func[query]
 
 }
-
-// func getFunction(query int) func(r float64) float64 {
-
-// 	query_to_func := map[int]func(r float64) float64{
-// 		1: calcArea,
-// 		2: calcPerimeter,
-// 		3: calcDiameter,
-// 	}
-// 	return query_to_func[query]
-// }
