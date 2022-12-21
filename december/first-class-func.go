@@ -7,6 +7,11 @@ func main() {
 
 	firstClassFunction()
 
+	// It is also possible to pass arguments to anonymous function
+	func(n string) {
+		fmt.Println("Hello", n)
+	}("Zeeshan")
+
 }
 
 func firstClassFunction() {
