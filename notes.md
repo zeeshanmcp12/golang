@@ -796,6 +796,16 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - return
       - }
       - In this case, I dont need to write something like this: return num1 + num2 because we've labled our return variable.
+  - High order function
+    - A function that accepts function as an argument or return function as an output
+    - we use these function for:
+      - code readability
+      - composite
+      - write smaller function
+    - we can use high order functions in:
+      - maps
+      - for loop with range keyword. See example here [high-order-func.go file](/december/high-order-func.go)
+      - structs etc
 - Difference between Method and function
   - function -> when we do regular things and waraped up that is called function.
   - Method -> Since golang does not have classes so when these functions go into the classes (or struct in golang) then it is called method.
