@@ -12,6 +12,15 @@ func main() {
 		fmt.Println("Hello", n)
 	}("Zeeshan")
 
+	// Another way to define function
+	debugFunc := func(text string) string {
+		return text
+	}
+	s := debugFunc
+	fmt.Printf("Type of debugFunc: %T\n", debugFunc)
+	fmt.Printf("Type of s: %T\n", s)
+	fmt.Println(s("Hello world from simple func"))
+
 }
 
 func firstClassFunction() {
