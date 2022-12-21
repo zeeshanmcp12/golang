@@ -21,15 +21,15 @@ func main() {
 	// fmt.Println(result, result1)
 
 	fmt.Println("---------- Calling first class function ----------")
-	firtClassFunc(addition)
-	firtClassFunc(subtraction)
-	firtClassFunc(addition, subtraction, multiplication)
-	firtClassFunc(division)
+	highOrderFunc(addition)
+	highOrderFunc(subtraction)
+	highOrderFunc(addition, subtraction, multiplication)
+	highOrderFunc(division)
 
 }
 
 // Variadic function - passing function as an input
-func firtClassFunc(calculateFunc ...func(int, int) int) {
+func highOrderFunc(calculateFunc ...func(int, int) int) {
 
 	for _, val := range calculateFunc {
 		fmt.Printf("%v\n", val(5, 2))
