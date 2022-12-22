@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io"
+	"io/ioutil"
+	"os"
+)
 
 // func main() {
 // 	fmt.Println("Hello World")
@@ -469,21 +474,21 @@ func calcDiameter(radius float64) float64 {
 // 	}
 // }
 
-func main() {
-	fmt.Println("High Order function!")
+// func main() {
+// 	fmt.Println("High Order function!")
 
-	var (
-		radius float64
-		query  int
-	)
+// 	var (
+// 		radius float64
+// 		query  int
+// 	)
 
-	fmt.Printf("Enter \n 1- Area\n 2- Perimeter\n 3- Diameter: ")
-	fmt.Scanf("%d\n", &query)
-	fmt.Printf("Enter radius: ")
-	fmt.Scanf("%f\n", &radius)
-	printResult(radius, getFunction(query))
+// 	fmt.Printf("Enter \n 1- Area\n 2- Perimeter\n 3- Diameter: ")
+// 	fmt.Scanf("%d\n", &query)
+// 	fmt.Printf("Enter radius: ")
+// 	fmt.Scanf("%f\n", &radius)
+// 	printResult(radius, getFunction(query))
 
-}
+// }
 
 func printResult(radius float64, calculateFunc func(r float64) float64) {
 	result := calculateFunc(radius)
@@ -499,4 +504,36 @@ func getFunction(query int) func(r float64) float64 {
 		3: calcDiameter,
 	}
 	return query_to_func[query]
+}
+
+func main() {
+	fmt.Println("Working with files!")
+	content := "Hello world"
+
+	file, err := os.Create("./testFile.txt")
+
+	checkNilErr(err)
+
+	io.WriteString(file, content)
+	fmt.Println("File has been written!")
+
+	defer file.Close()
+
+	readFile(file.Name())
+
+}
+
+func readFile(filename string) {
+	data, err := ioutil.ReadFile(filename)
+
+	checkNilErr(err)
+
+	fmt.Println("::: Reading data from file :::")
+	fmt.Println(string(data))
+}
+
+func checkNilErr(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
