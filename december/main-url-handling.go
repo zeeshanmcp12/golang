@@ -26,6 +26,8 @@ func main() {
 		fmt.Printf("%v = %v\n", i, val)
 	}
 
+	fmt.Println("Category is -> ", result["category"])
+
 }
 
 func checkNilErr(err error) {
