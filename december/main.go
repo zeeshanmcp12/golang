@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
+	"os"
 )
 
 // func main() {
@@ -537,7 +539,9 @@ func checkNilErr(err error) {
 	}
 }
 
-const url = "https://acloudtechie.com"
+const url = "https://acloudtechie.com/about"
+
+// const url = "https://google.com"
 
 func main() {
 	fmt.Println("Handling web request in golang!")
@@ -546,7 +550,26 @@ func main() {
 	checkNilErr(err)
 
 	fmt.Printf("Type of response is %T\n", response)
-	fmt.Printf("Response code is: %v", response.Status)
-	response.Body.Close()
+	fmt.Printf("Response code is: %v\n", response.Status)
+	defer response.Body.Close()
 
+	resBody, err := ioutil.ReadAll(response.Body)
+	checkNilErr(err)
+
+	fmt.Printf("Type of body: %T\n", resBody)
+	// fmt.Println(string(resBody))
+
+	var htmlPage string = "./index.html"
+
+	createFile(htmlPage, string(resBody))
+
+}
+
+func createFile(filename, content string) {
+	file, err := os.Create(filename)
+	checkNilErr(err)
+
+	io.WriteString(file, content)
+
+	defer file.Close()
 }
