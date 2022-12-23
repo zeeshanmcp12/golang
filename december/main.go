@@ -539,9 +539,10 @@ func checkNilErr(err error) {
 	}
 }
 
-const url = "https://acloudtechie.com/about"
+// const url = "https://acloudtechie.com/about"
 
 // const url = "https://google.com"
+const url = "https://example.com"
 
 func main() {
 	fmt.Println("Handling web request in golang!")
