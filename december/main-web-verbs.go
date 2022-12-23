@@ -44,14 +44,11 @@ func PerformPostRequest() {
 			"blog":"http://acloudtechie.com"
 		}
 	`)
-
 	response, err := http.Post(myUrl, "application/json", jsonData)
-
 	checkNilErr(err)
 	defer response.Body.Close()
 
 	content, _ := ioutil.ReadAll(response.Body)
-
 	fmt.Println(string(content))
 
 }
