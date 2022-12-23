@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"io/ioutil"
-	"os"
+	"net/http"
 )
 
 // func main() {
@@ -506,22 +505,22 @@ func getFunction(query int) func(r float64) float64 {
 	return query_to_func[query]
 }
 
-func main() {
-	fmt.Println("Working with files!")
-	content := "Hello world"
+// func main() {
+// 	fmt.Println("Working with files!")
+// 	content := "Hello world"
 
-	file, err := os.Create("./testFile.txt")
+// 	file, err := os.Create("./testFile.txt")
 
-	checkNilErr(err)
+// 	checkNilErr(err)
 
-	io.WriteString(file, content)
-	fmt.Println("File has been written!")
+// 	io.WriteString(file, content)
+// 	fmt.Println("File has been written!")
 
-	defer file.Close()
+// 	defer file.Close()
 
-	readFile(file.Name())
+// 	readFile(file.Name())
 
-}
+// }
 
 func readFile(filename string) {
 	data, err := ioutil.ReadFile(filename)
@@ -536,4 +535,18 @@ func checkNilErr(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+const url = "https://acloudtechie.com"
+
+func main() {
+	fmt.Println("Handling web request in golang!")
+
+	response, err := http.Get(url)
+	checkNilErr(err)
+
+	fmt.Printf("Type of response is %T\n", response)
+	fmt.Printf("Response code is: %v", response.Status)
+	response.Body.Close()
+
 }
