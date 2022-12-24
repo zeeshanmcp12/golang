@@ -985,7 +985,11 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - fmt.Printf("%#v\n", struct)
       - %#v -> this is special format to print struct's value that is coming from structure
   - Important
-    - Whenver we are creating map to get the JSON data, we always know that first value (or key) will be string but for second value, we don't know because either it could be an array, integer or string etc.
+    - Whenver we are creating map to get the JSON data, we always know that first value (or key) will be string but for second value, we don't know because it could be an array, integer or string etc.
+    - It is not a gurantee that value (in key value pair) will be only string. It could be string, integer or array etc.
+    - That is why we use interface keyword while defining map for json data. For example
+      - map[string]interface{}
+        - interface{} -> this interface represents to the value and it could be anything (string, int, array etc)
 - Go modules
   - Workspaces have almost gone from golang, if there is any legacy application then it's a good time to change it with Module system in golang. go mod is here to do that.
   - go mod is a tooling

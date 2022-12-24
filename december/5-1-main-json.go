@@ -10,7 +10,11 @@ import (
 func main() {
 	fmt.Println("User Input and JSON formatting!")
 
-	EncodeJson()
+	// Encode data to JSON
+	// EncodeJson()
+
+	//Decode data to JSON
+	DecodeJson()
 
 }
 
@@ -31,6 +35,40 @@ func EncodeJson() {
 	checkNilErr(err)
 
 	createFile(jsonData)
+
+}
+
+func DecodeJson() {
+	jsonDataFromWeb := []byte(`
+	{
+		"username": "Zeeshan",
+		"emailaddress": "zee@go.dev",
+		"skills": ["Azure","Terraform","Kubernetes"]
+	}
+	`)
+
+	var userData User
+
+	// one way to decode the json
+	isJsonValid := json.Valid(jsonDataFromWeb)
+
+	if isJsonValid {
+		fmt.Println("JSON is Valid")
+		json.Unmarshal(jsonDataFromWeb, &userData)
+		fmt.Printf("%#v\n", userData)
+	} else {
+		fmt.Println("JSON WAS NOT VALID!")
+	}
+
+	// another way to decode the json
+	// In some cases we would only want to add data to key value
+	var onlineData map[string]interface{}
+	json.Unmarshal(jsonDataFromWeb, &onlineData)
+	fmt.Printf("%#v\n", onlineData)
+
+	for k, val := range onlineData {
+		fmt.Printf("Key -> %v, Value -> %v, Type -> %T\n", k, val, val)
+	}
 
 }
 
