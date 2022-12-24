@@ -14,10 +14,10 @@ func main() {
 
 // First we need to create structure
 type User struct {
-	Name  string
-	Age   int
-	Email string
-	Skill []string
+	Name  string   `json:"username"`
+	Age   int      `json:"age"`
+	Email string   `json:"emailaddress"`
+	Skill []string `json:"skills,omitempty"`
 }
 
 // Second we need to write function to encode JSON
@@ -27,7 +27,7 @@ func EncodeJson() {
 	userData := []User{
 		{"Zeeshan", 31, "zee@go.dev", []string{"Azure", "Terraform", "Kubernetes"}},
 		{"Abdullah", 30, "abd@go.dev", []string{"AWS", "Terraform", "Jenkins"}},
-		{"Noor", 25, "nor@go.dev", nil},
+		{"Ahmed", 25, "ahm@go.dev", nil},
 	}
 
 	// Forth we need to encode the data into JSON
