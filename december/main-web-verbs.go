@@ -12,6 +12,9 @@ import (
 // http
 // 	http.Get
 // 	http.Post
+// 	http.PostForm
+// url
+// 	url.Values
 // ioutil
 // 	ioutil.ReadAll
 // strings
