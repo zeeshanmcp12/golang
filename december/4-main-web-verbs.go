@@ -83,7 +83,8 @@ func PerformPostFormRequest() {
 
 	content, _ := ioutil.ReadAll(response.Body)
 
-	fmt.Println(string(content))
+	// fmt.Println(string(content))
+	fmt.Printf("Type of content: %T", content)
 
 }
 
