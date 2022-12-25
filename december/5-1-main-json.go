@@ -15,9 +15,10 @@ func main() {
 	// EncodeJson()
 
 	//Decode data to JSON
-	// DecodeJson()
+	DecodeJson()
 
-	readFile("./user.json")
+	// Read data from json file using unmarshal is not working
+	// readFile("./user.json")
 
 }
 
@@ -93,7 +94,7 @@ func readFile(filename string) {
 
 	fmt.Printf("Type of data %T\n", data)
 	fmt.Println("----- Data from file -----")
-	// fmt.Printf("%v", string(data))
+	// fmt.Printf("%v\n", string(data))
 
 	isValid := json.Valid(data)
 
