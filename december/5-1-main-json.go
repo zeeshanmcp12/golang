@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 )
 
@@ -14,7 +15,9 @@ func main() {
 	// EncodeJson()
 
 	//Decode data to JSON
-	DecodeJson()
+	// DecodeJson()
+
+	readFile("./user.json")
 
 }
 
@@ -80,6 +83,37 @@ func createFile(data []byte) {
 	io.WriteString(file, string(data))
 
 	defer file.Close()
+
+}
+
+func readFile(filename string) {
+	data, err := ioutil.ReadFile(filename)
+
+	checkNilErr(err)
+
+	fmt.Printf("Type of data %T\n", data)
+	fmt.Println("----- Data from file -----")
+	// fmt.Printf("%v", string(data))
+
+	isValid := json.Valid(data)
+
+	var userData User
+
+	if isValid {
+		fmt.Println("JSON is VALID!")
+		json.Unmarshal(data, &userData)
+		fmt.Printf("%#v\n", userData)
+	} else {
+		fmt.Println("JSON is NOT VALID!")
+	}
+
+	var onlineData map[string]interface{}
+	json.Unmarshal(data, &onlineData)
+	fmt.Printf("%#v\n", onlineData)
+
+	for k, val := range onlineData {
+		fmt.Printf("Key -> %v, Value -> %v, Type -> %T\n", k, val, val)
+	}
 
 }
 

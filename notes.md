@@ -990,6 +990,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - That is why we use interface keyword while defining map for json data. For example
       - map[string]interface{}
         - interface{} -> this interface represents to the value and it could be anything (string, int, array etc)
+    - Now, we are ready that, if any data comes up from the web, we know it is going to be in the byte ([]byte) format. We can either convert it to string or create a structure to handle the data into json or just loop through it.
 - Go modules
   - Workspaces have almost gone from golang, if there is any legacy application then it's a good time to change it with Module system in golang. go mod is here to do that.
   - go mod is a tooling
