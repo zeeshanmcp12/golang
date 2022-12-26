@@ -1007,6 +1007,9 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - go mod verify
     - go list all -> it will show (or list down) all the packages that are installed in local system.
     - go list -m all -> it will only show the package that we are using in our code.
+    - go list -m -versions github.com/gorilla/mux -> this will show all available versions for gorilla/mux package
+    - go mod why github.com/gorilla/mux -> shows which module this package is dependent on?
+      - In my case, we are using gorilla/mux package inside our github.com/gorilla-mux module
   - Important:
     - make sure that every operation with "go mod" is very expensives so remember it when working with CICD etc
     - go mod graph -> it will print in a way which package is dependent on which pagkage
@@ -1014,6 +1017,10 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - go mod edit -go 1.16 -> to change the go version
       - go mod edit -module 1.16
     - go mod vendor
+      - it will bring everything from cache
+      - create the folder
+      - keep all module, packages related files in that vendor folder
+      - It's an advise from teacher that don't use this go vendor tool instead use go mod or go get to bring up everything we need
     - go run -mod=vendor main.go
   - Where packages goes in filesystem?
     - It does not go into the workspace (or working directory of code). It goes to another directory which we can see by executing go env command and see GOPATH variable.
