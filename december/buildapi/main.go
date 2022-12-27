@@ -3,11 +3,21 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
 	fmt.Println("Build an API in golang!")
+	greeter()
+
+	r := mux.NewRouter()
+	r.HandleFunc("/", serveHome).Methods("GET")
+	r.HandleFunc("/getallcourses", getAllCourses).Methods("GET")
+
+	log.Fatal(http.ListenAndServe(":4000", r))
 }
 
 // Steps to create an API in golang!
@@ -41,6 +51,10 @@ func (c *Course) isEmpty() bool {
 	return c.CourseId == "" && c.CourseName == ""
 }
 
+func greeter() {
+	fmt.Println("Listening on http://localhost:4000")
+}
+
 // Create controllers - this will also go inside separate file
 // Controller 1 - serveHome
 func serveHome(w http.ResponseWriter, r *http.Request) {
@@ -56,6 +70,7 @@ func getAllCourses(w http.ResponseWriter, r *http.Request) {
 
 	// Here, we encoding data into json. So NewEncoder requires response write which is w in our case
 	// .Encode is a method which will encode data into json format whatever we will send in our response
+	// w -> is response writer - whatever the response we will be sending to request.
 	// courses -> is a slice of type Course
 	json.NewEncoder(w).Encode(courses)
 
