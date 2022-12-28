@@ -597,10 +597,17 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - Pointer gives us the gurantee that the operation will be performed on Actual value.
   - __In More Simple words__
     - There are two operators
-      - & (amperson)
-      - * (asterik)
+      - & (amperson) - also called "address of" operator
+      - * (asterik) - also called "dereferencing" operator
     - & (amperson) gives us the address (where the variable is store in memory location)
     - * (asterik) gives us the value stored at an address when we have the address
+      - * (asterik) uses in two different ways
+        - *<type> i.e. *int -> if it's in front of type name then the whole thing including the asterik represents the type.
+          - It is a pointer type where int is the base.
+        - *<variable> i.e. *p -> If asterik is in front of the variable which is a pointer type, the asterik acts as an operator and returns the value that a pointer is pointing to. See this screenshot: [asterik-pointer](./00assets/asterik-pointer-pointing-to-value.png)
+          - We also called this as dereferencing
+  - Why we need pointers?
+    - We can create variable one time and use anywhere in code by just referencing and changing it's value.
 - Array
   - Syntax
     - var fruitList [4]string
