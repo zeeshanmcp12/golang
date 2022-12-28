@@ -48,7 +48,7 @@ type Author struct {
 var courses []Course
 
 // Helper method that will check if course name and id is unique
-func (c Course) isEmpty() bool {
+func (c *Course) isEmpty() bool {
 	return c.CourseId == "" && c.CourseName == ""
 }
 

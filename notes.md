@@ -595,6 +595,12 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - I was able to fill that by adding a reference to &myNumber.
         - *ptr means it's not memory address. It's an actual value inside of it which is 26 in our case.
   - Pointer gives us the gurantee that the operation will be performed on Actual value.
+  - __In More Simple words__
+    - There are two operators
+      - & (amperson)
+      - * (asterik)
+    - & (amperson) gives us the address (where the variable is store in memory location)
+    - * (asterik) gives us the value stored at an address when we have the address
 - Array
   - Syntax
     - var fruitList [4]string
