@@ -26,7 +26,7 @@ type Author struct {
 var courses []Course
 
 // middleware, helper - file
-func (c Course) isEmpty() bool {
+func (c *Course) isEmpty() bool {
 	return c.Courseid == "" && c.Coursename == ""
 
 }
