@@ -63,7 +63,12 @@ var courses []Course
 // These methods usually go inside a separate file
 // We are passing pointer of course here that's why wrote like this *Courses
 func (c *Course) isEmpty() bool {
-	return c.CourseId == "" && c.CourseName == ""
+	// return c.CourseId == "" && c.CourseName == ""
+
+	// Previously we were returning true and false if course id and course name is empty
+	// But now we are only returning course name
+	// Because we want to generate the course id ourselve and not let user generate this
+	return c.CourseName == ""
 }
 
 func greeter() {
@@ -146,21 +151,39 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Create one course")
 	w.Header().Set("Content-Type", "application/json")
 
+	// Check if request body is empty
+	// r.Body -> r is request which has access on Body.
 	if r.Body == nil {
+		// If body is empty then send response back
 		json.NewEncoder(w).Encode("Body is Empty")
 	}
 
+	// Create course variable of type Course - The type (or struct) that we created before
 	var course Course
+
+	// Decode JSON to see what's coming in (request of) JSON body.
 	_ = json.NewDecoder(r.Body).Decode(&course)
 
+	// Check if JSON body has no data
 	if course.isEmpty() {
+		// If body is empty then send response back
 		json.NewEncoder(w).Encode("No data in JSON body!")
 		return
 	}
 
+	// Generate unique id
+	// Generate random numbers
 	rand.Seed(time.Now().UnixNano())
+
+	// Convert generated numbers from int to string using strconv package
 	course.CourseId = strconv.Itoa(rand.Intn(100))
+
+	// append data (course) into courses -> this 'courses' is a slice we created at line number 60
+	// this will be new course that will add into courses (slice)
 	courses = append(courses, course)
+
+	// Send response that new course has been added into courses
+	fmt.Println("New Course has been added")
 	json.NewEncoder(w).Encode(course)
 	return
 
