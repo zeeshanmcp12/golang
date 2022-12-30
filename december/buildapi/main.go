@@ -159,6 +159,7 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Create course variable of type Course - The type (or struct) that we created before
+	// This variable is to create an object so we can pass reference of it below
 	var course Course
 
 	// Decode JSON to see what's coming in (request of) JSON body.
@@ -187,4 +188,45 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(course)
 	return
 
+}
+
+// Controller 4 - updateOneCourse
+// Action plan
+// 1- Set Header
+// 2- Grab course id(s) because to find out the course that has to be updated we need an id of that course
+// 3- Loop through the courses
+// 4- Match the requested course id with all courses
+// 5- Remove the course id when found
+// 6- Update the course with my id (which is requested in request)
+// 7- Send the response back
+
+func updateOneCourse(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Update one course")
+	w.Header().Set("Content-Type", "application/json")
+
+	// Grab the course id
+	params := mux.Vars(r)
+
+	// Loop through all courses
+	for index, course := range courses {
+		// Find the requested id (Match the course id)
+		if course.CourseId == params["id"] {
+			// Remove the course when course is found against provided id
+			courses = append(courses[:index], courses[index+1:]...)
+
+			// Create new object
+			var course Course
+			// Decode JSON to see what is coming inside JSON body
+			_ = json.NewDecoder(r.Body).Decode(&course)
+
+			// Update the course with new id
+			course.CourseId = params["id"]
+
+			// When course id updated then append it to all courses
+			courses = append(courses, course)
+			json.NewEncoder(w).Encode(course)
+			return
+		}
+	}
+	// TODO: send a response when id is not found
 }
