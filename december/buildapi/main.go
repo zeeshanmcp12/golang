@@ -4,7 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
+	"strconv"
+	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -122,6 +125,43 @@ func getOneCourse(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	json.NewEncoder(w).Encode("No course found with given id %v", params["id"])
+	return
+
+}
+
+// Controller 3 - createOneCourse
+// Action plan
+// 1- Set Header
+// 2- Check if body is empty
+// 3- Create course variable of type Course
+// 4- Decode JSON to check if there is some data or only blank curly braces
+// 5- Check if json is empty and having only {} "curly braces"
+// 6- Generate unique id (course id)
+// 7- Convert int to string using string.itoa
+// 8- Seed the data in database which is Course fake db in our case
+// 		8.1- Append the course in Course fake db
+
+func createOneCourse(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Println("Create one course")
+	w.Header().Set("Content-Type", "application/json")
+
+	if r.Body == nil {
+		json.NewEncoder(w).Encode("Body is Empty")
+	}
+
+	var course Course
+	_ = json.NewDecoder(r.Body).Decode(&course)
+
+	if course.isEmpty() {
+		json.NewEncoder(w).Encode("No data in JSON body!")
+		return
+	}
+
+	rand.Seed(time.Now().UnixNano())
+	course.CourseId = strconv.Itoa(rand.Intn(100))
+	courses = append(courses, course)
+	json.NewEncoder(w).Encode(course)
 	return
 
 }
