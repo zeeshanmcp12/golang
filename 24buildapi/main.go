@@ -81,7 +81,7 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("<h1>Welcome to acloudtechie.com</h1>"))
 }
 
-// Controller 1 - getAllCourses
+// Controller 2 - getAllCourses
 func getAllCourses(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Get all courses")
 
@@ -96,7 +96,7 @@ func getAllCourses(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// Controller 2 - getOneCourse
+// Controller 3 - getOneCourse
 
 func getOneCourse(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Get one course")
@@ -134,7 +134,7 @@ func getOneCourse(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// Controller 3 - createOneCourse
+// Controller 4 - createOneCourse
 // Action plan
 // 1- Set Header
 // 2- Check if body is empty
@@ -190,7 +190,7 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// Controller 4 - updateOneCourse
+// Controller 5 - updateOneCourse
 // Action plan
 // 1- Set Header
 // 2- Grab course id(s) because to find out the course that has to be updated we need an id of that course
@@ -198,7 +198,7 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 // 4- Match the requested course id with all courses
 // 5- Remove the course id when found
 // 6- Update the course with my id (which is requested in request)
-// 7- Send the response back
+// 7- Send the response back (OR Craft the response using json.NewEncoder())
 
 func updateOneCourse(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Update one course")
@@ -229,4 +229,27 @@ func updateOneCourse(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	// TODO: send a response when id is not found
+}
+
+// Controller 6 - deleteOneCourse
+// Action plan
+// 1- Set Header
+// 2- Grab course id(s) because to find out the course that has to be updated we need an id of that course
+// 3- Loop through the courses
+// 4- Match the requested course id with all courses
+// 5- Remove the course id when found
+// 6- Craft the response using json.NewEncoder()
+func deleteOneCourse(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Delete one course")
+	w.Header().Set("Content-Type", "application/json")
+
+	params := mux.Vars(r)
+
+	for index, course := range courses {
+		if course.CourseId == params["id"] {
+			courses = append(courses[:index], courses[index+1:]...)
+			json.NewEncoder(w).Encode("Course has been REMOVED!")
+			break
+		}
+	}
 }
