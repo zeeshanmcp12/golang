@@ -25,7 +25,9 @@ func main() {
 	r.HandleFunc("/", serveHome).Methods("GET")
 	r.HandleFunc("/courses", getAllCourses).Methods("GET")
 	r.HandleFunc("/course/{id}", getOneCourse).Methods("GET")
-	r.HandleFunc("/course/{id}", createOneCourse).Methods("POST")
+	r.HandleFunc("/course", createOneCourse).Methods("POST")
+	r.HandleFunc("/course/{id}", updateOneCourse).Methods("PUT")
+	r.HandleFunc("/course/{id}", deleteOneCourse).Methods("DELETE")
 
 	// Listen to port 4000
 	log.Fatal(http.ListenAndServe(":4000", r))
@@ -137,7 +139,7 @@ func getOneCourse(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	json.NewEncoder(w).Encode("No course found with given id %v", params["id"])
+	json.NewEncoder(w).Encode("No course found with given id")
 	return
 
 }
