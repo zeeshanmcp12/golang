@@ -182,6 +182,9 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// TODO: check only if title is dupliate
+	// Loop, title matches with course.coursename, JSON
+
 	// Generate unique id
 	// Generate random numbers
 	rand.Seed(time.Now().UnixNano())
