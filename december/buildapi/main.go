@@ -16,10 +16,18 @@ func main() {
 	fmt.Println("Build an API in golang!")
 	greeter()
 
+	// Seeding database
+	courses = append(courses, Course{CourseId: "2", CourseName: "JavaScript", CoursePrice: 1000, Author: &Author{FullName: "Abdullah", Website: "abc.com"}})
+	courses = append(courses, Course{CourseId: "3", CourseName: "Golang Series", CoursePrice: 1500, Author: &Author{FullName: "Ahmed", Website: "xyz.com"}})
+
+	// Setup routers
 	r := mux.NewRouter()
 	r.HandleFunc("/", serveHome).Methods("GET")
-	r.HandleFunc("/getallcourses", getAllCourses).Methods("GET")
+	r.HandleFunc("/courses", getAllCourses).Methods("GET")
+	r.HandleFunc("/course/{id}", getOneCourse).Methods("GET")
+	r.HandleFunc("/course/{id}", createOneCourse).Methods("POST")
 
+	// Listen to port 4000
 	log.Fatal(http.ListenAndServe(":4000", r))
 }
 
