@@ -1075,3 +1075,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - Contollers always goes into separate files but at this stage, we are going to define in same file.
       - controller here means, a router which will serve request and response (or do whatever we will say to) for example if the request is for "/" then response back with "Welcome to acloudtechie.com"
       - ....in progress
+- Working with Mongo db in golang
+  - bson
+    - BSON is a binary serialization format used to store documents and make remote procedure calls in MongoDB. The BSON specification is located at bsonspec.org
+    - We need to import this package in our model (model.go) file to work with mongo db
