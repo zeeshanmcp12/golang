@@ -1077,5 +1077,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - ....in progress
 - Working with Mongo db in golang
   - bson
+    - Whenever we use mongodb, it gives us the ID which mongo db generates automatically.
+    - These are not just IDs, these are of "_id" type. They are kind of a bson structure similar to json with some extended fields added to it.
     - BSON is a binary serialization format used to store documents and make remote procedure calls in MongoDB. The BSON specification is located at bsonspec.org
     - We need to import this package in our model (model.go) file to work with mongo db
