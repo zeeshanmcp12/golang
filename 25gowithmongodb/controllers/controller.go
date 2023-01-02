@@ -1,6 +1,10 @@
 package controllers
 
-import "go.mongodb.org/mongo-driver/mongo"
+import (
+	"context"
+
+	"go.mongodb.org/mongo-driver/mongo"
+)
 
 // Goal -> Make a database connection
 // Steps:
@@ -8,6 +12,10 @@ import "go.mongodb.org/mongo-driver/mongo"
 // 		1.1 Connection string
 // 		1.2 DB name
 // 		1.3 Collection name -> that's how mongodb works
+
+const connectionString string = ""
+const dbName string = "golangMongoDB"
+const collectionName string = "golangMongoDBCollection"
 
 // Most Important
 // 2- We need to define collection variable and pass the reference of mongo db. for example
@@ -22,5 +30,9 @@ var collection *mongo.Collection
 // 		Also called "initialization method"
 func init() {
 	// 1- First thing which we need to provide is "client" options.
+	clientOption := mongo.Client().ApplyURI(connectionString)
+
+	// Connect to mongo db
+	mongo.Connect(context.TODO(), clientOption)
 
 }
