@@ -1081,3 +1081,21 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - These are not just IDs, these are of "_id" type. They are kind of a bson structure similar to json with some extended fields added to it.
     - BSON is a binary serialization format used to store documents and make remote procedure calls in MongoDB. The BSON specification is located at bsonspec.org
     - We need to import this package in our model (model.go) file to work with mongo db
+  - Make a connection to mongodb
+    - mongo.Connect(context.TODO(), clientOption)
+      - We are using this TODO type (struct) because we are not sure which context we want to use.
+      - In most of the cases, when we want to connect to mongo db and perform crud operations, we use Backgroud type
+      - Find more details below about context
+      - context
+        - context -> is a package in golang
+        - In most of the cases, databases are outside of the web server (or we can say in another machine)
+        - When this web server (or API) communicates to database, it requires a context in which both (API/Web server and database) can work together
+        - In this case, we need to provide the context,For example,
+          - for how long we can make a request
+          - does our connection still established, if it is, then there should be a context in which we can work on with.
+          - is there any issue with the connection (failed or something else)
+        - So, these kind of things should be done in any context
+        - There are different types (struct) of context
+          - Background
+          - TODO -> this type (of context) is used when we are not clear that when to use which context
+          - WithValue
