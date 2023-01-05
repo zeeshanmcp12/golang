@@ -40,6 +40,7 @@ func init() {
 	// Connect to mongo db
 	client, err := mongo.Connect(context.TODO(), clientOption) // We are using this TODO type (struct) because we are not sure which context we want to use.
 	// In most of the cases, when we want to connect to mongo db and perform crud operations, we use Backgroud type
+	// This client is now completely capable of connecting with the database.
 	// Find more details below about context
 
 	// context
@@ -61,5 +62,15 @@ func init() {
 	}
 
 	fmt.Println("MongoDb connection successful!")
+	// ---------------------------- We have done database connection --------------------------------------------
+
+	// ---------------------------- Now, we will need to go inside the database and it's collection -------------
+	// To do this, we need to provide the reference of collection so we don't need to define values again and again.
+	collection = client.Database(dbName).Collection(collectionName)
+	fmt.Println("Collection instance is ready!")
 
 }
+
+// In this init() function, we've connected to database and went inside the db and collection.
+// Now here is the action plan
+// 1- Insert the data in mongodb

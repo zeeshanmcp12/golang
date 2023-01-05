@@ -1099,3 +1099,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - Background
           - TODO -> this type (of context) is used when we are not clear that when to use which context
           - WithValue
+  - Insert data in mongodb in golang
+    - Execute go get go.mongodb.org/mongo-driver/mongo to see if this resolved package import in files and red squiggley lines
+    - Press Ctrl + Shift + P
+      - Type -> go install/update tools
+      - Select go tools which you want to download
