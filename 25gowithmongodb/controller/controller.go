@@ -18,7 +18,7 @@ import (
 // 		1.3 Collection name -> that's how mongodb works
 
 const connectionString string = ""
-const dbName string = "golangMongoDB"
+const dbName string = "cs-go"
 const collectionName string = "golangMongoDBCollection"
 
 // Most Important
@@ -30,7 +30,7 @@ var collection *mongo.Collection
 // 3- Now connect with mongo db
 // 		This is going to be a method
 // 		This will not be the main method but init(). For example:
-// 		This init() is a specialized method
+// 		This init() is a specialized method in golang which runs only at the very first time this entire application is going to execute.
 // 		This method runs only first time and only one at a time.
 // 		Also called "initialization method"
 func init() {
