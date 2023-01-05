@@ -74,3 +74,29 @@ func init() {
 // In this init() function, we've connected to database and went inside the db and collection.
 // Now here is the action plan
 // 1- Insert the data in mongodb
+// 		1.1 Define two methods
+// 			1.1.1 Mongodb helper method
+// 					This method will insert the data in db
+// 			1.1.2 Method to receive the data from request body
+// 					This will receive the data from request body
+// 					Perform all checks
+// 					Call mongodb helper method to insert the data
+
+// Create mongodb helper method
+// Insert One Record
+
+func insertOneRecord(movie model.Netflix) {
+
+	inserted, err := collection.InsertOne(context.Background(), movie)
+
+	checkNilErr(err)
+
+	fmt.Println("Inserted one record in db ", inserted.InsertedID)
+
+}
+
+func checkNilErr(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
