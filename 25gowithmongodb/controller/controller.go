@@ -6,6 +6,7 @@ import (
 	"log"
 	"model"
 
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/x/mongo/driver/mongocrypt/options"
@@ -93,6 +94,19 @@ func insertOneRecord(movie model.Netflix) {
 	checkNilErr(err)
 
 	fmt.Println("Inserted one record in db ", inserted.InsertedID)
+
+}
+
+func updateOneRecord(movieId string) {
+	id, _ := primitive.ObjectIdFromHex(movieId)
+	filter := bson.M{"_id": id}
+	update := bson.M{"$set": bson.M{"watched": true}}
+
+	result, err := collection.UpdateOne(context.Background(), filter, update)
+
+	checkNilErr(err)
+
+	fmt.Println("Modified count: ", result.ModifiedCount)
 
 }
 
