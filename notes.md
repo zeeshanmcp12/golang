@@ -594,13 +594,13 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - How I was able to fill that?
         - I was able to fill that by adding a reference to &myNumber.
         - *ptr means it's not memory address. It's an actual value inside of it which is 26 in our case.
-  - Pointer gives us the gurantee that the operation will be performed on Actual value.
+  - Pointer gives us the guarantee that the operation will be performed on Actual value.
   - __In More Simple words__
     - There are two operators
       - & (amperson) - also called "address of" operator
       - * (asterik) - also called "dereferencing" operator
     - & (amperson) gives us the address (where the variable is store in memory location)
-    - * (asterik) gives us the value stored at an address when we have the address
+    - * (asterik) gives us the value stored at that address (which pointer is pointing to)
       - * (asterik) uses in two different ways
         - *<type> i.e. *int -> if it's in front of type name then the whole thing including the asterik represents the type.
           - It is a pointer type where int is the base.
