@@ -40,4 +40,8 @@ func main() {
 	fmt.Println(" ----- Now after performing changes -----")
 	fmt.Printf("Value of i -> %v and j -> %v.\n", i, j)
 
+	fmt.Println("--------------------------------------")
+	fmt.Println(" ---------- Why do we need pointers ???---------- ")
+	fmt.Printf("When we can write j = j / 73\ninstead of *p = *p /73")
+
 }
