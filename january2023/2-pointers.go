@@ -14,7 +14,7 @@ func main() {
 	fmt.Println("--------------------------------------")
 	fmt.Println("--------------------------------------")
 
-	var p = &i
+	p := &i
 	fmt.Println("New variable p -> (var p = &i)")
 
 	fmt.Printf("Value of p -> %v is the address of i and value of *p is the value at that address -> %v\n", p, *p)
@@ -27,6 +27,17 @@ func main() {
 
 	fmt.Println("--------------------------------------")
 	fmt.Println("--------------------------------------")
-	fmt.Println("Let's change the value of ")
+	p = &j
+	fmt.Println("New variable (var p = &j)")
+	fmt.Println("Let's change the value of j by assigning it to p (var)!")
+
+	*p = *p / 73
+	fmt.Println("*p = *p / 73")
+	fmt.Println("*p = *p (value at j -> 2701) / 73")
+	fmt.Printf("Value of j -> %v, hence the value of j has changed \n", j)
+
+	fmt.Println("--------------------------------------")
+	fmt.Println(" ----- Now after performing changes -----")
+	fmt.Printf("Value of i -> %v and j -> %v.\n", i, j)
 
 }
