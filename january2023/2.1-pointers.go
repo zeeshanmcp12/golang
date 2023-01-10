@@ -14,6 +14,11 @@ func main() {
 	fmt.Printf("Value at the address of num1 -> %v\n", *p)
 	fmt.Println("Let's change the value of num1 through p")
 	*p = 50
-	fmt.Printf("Now, the value at the address of num1 -> %v", num1)
+	fmt.Printf("Now, the value at the address of num1 -> %v\n", num1)
+	p = &num2
+	fmt.Printf("Value at the address of num2 -> %v\n", *p)
+	fmt.Println("Let's change the value of num2 through p")
+	*p = *p / 73
+	fmt.Printf("Now, the value at the address of num2 -> %v...\nBecause, 2701 / 73 = %v", num2, num2)
 
 }
