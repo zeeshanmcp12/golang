@@ -42,6 +42,8 @@ func main() {
 
 	fmt.Println("--------------------------------------")
 	fmt.Println(" ---------- Why do we need pointers ???---------- ")
-	fmt.Printf("When we can write j = j / 73\ninstead of *p = *p /73")
+	fmt.Printf("When we can write j = j / 73\ninstead of *p = *p / 73...\n")
+	fmt.Printf("It's important to store variable at one place and use here and there (or wherever we want to use and modify)\n")
+	fmt.Printf("We can share the variable and update it in multiple places instead of copy the variable everytime we need to use or update it.")
 
 }
