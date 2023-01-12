@@ -1110,11 +1110,12 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - Thread
       - Managed by OS
       - Thread size 1m (min)
+      - We can increase the threads by sharing memory but by default it is the minimum thread available.
     - Goroutines
       - Managed by runtime
       - Thread size 2Kb
       - go runtime can fire up more thread without even taking permission from OS.
       - This is correct that, OS will give permission but in this case, go runtime has more control over CPU thread.
-      - That's why it is the favourite language to be used in cloud.
+      - That's why it is the favourite language to be used in cloud. Because cloud has no shortage of threads.
   - Slogan being used in go community alot
     - Do not communicate by sharing memory; instead, share memory by communicating.
