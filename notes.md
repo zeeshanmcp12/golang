@@ -1119,3 +1119,5 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - That's why it is the favourite language to be used in cloud. Because cloud has no shortage of threads.
   - Slogan being used in go community alot
     - Do not communicate by sharing memory; instead, share memory by communicating.
+  - concurrency is dealing with a lot of things at the same time.
+  - paralellism is doing a lot of things at the same time.
