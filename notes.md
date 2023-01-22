@@ -1104,6 +1104,24 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - Press Ctrl + Shift + P
       - Type -> go install/update tools
       - Select go tools which you want to download
+- Concurrency
+  - CPU Cores
+    - These cores are based on our system hardware.
+    - There are two types of core:
+      - Logical cores
+      - Physical cores
+    - If hyperthreading is enabled then each core will be multiple
+  - Threads
+    - Thread is box (or block) of 1 or more tasks.
+    - There could be many threads in one CPU based on core size.
+    - If one task is blocked (or stuck) in one thread, then the whole thread is blocked
+    - There are two types of threads. For example:
+      - User level threads
+        - These threads are iniated by services or processes created by any User. For example golang application
+      - OS level threads
+        - These are OS level threads on which we do not have access on system level.
+  - Kernal
+    - Kernal is kind of middle man between our (or OS) application/service and Operating system.
 - goroutines
   - goroutines is the way how you achieve parallelism.
   - goroutines sometimes compares with "Thread".
@@ -1121,3 +1139,4 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - Do not communicate by sharing memory; instead, share memory by communicating.
   - concurrency is dealing with a lot of things at the same time.
   - paralellism is doing a lot of things at the same time.
+  - 
