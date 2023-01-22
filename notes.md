@@ -1122,6 +1122,28 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - These are OS level threads on which we do not have access on system level.
   - Kernal
     - Kernal is kind of middle man between our (or OS) application/service and Operating system.
+  - What is Concurrency and What is Parallelism?
+    - concurrency is dealing with a lot of things at the same time.
+    - parallelism is doing a lot of things at the same time.
+  - Theoretical example of `Concurrency`:
+    - Concurrency is dealing with a lot of things at the same time:
+      - We have 4 tasks in one thread
+      - We don't know how much time each task will take to complete.
+      - Let's consider the time taken as below for each task:
+        - task 1 -> 1s
+        - task 2 -> 0.2s
+        - task 3 -> 0s
+        - task 4 -> 0.1s
+      - We also don't know how CPU will execute the task (individually) in that thread?
+        - In above case, there will be a ticker (an initial time of 5milisecond)
+        - This ticker will see which task can be completed before. So below will be the case:
+          - `ticker 5m` -> task 3 -> 0s
+          - `ticker 5m` -> task 4 -> 0.1s
+          - `ticker 5m` -> task 2 -> 0.2s
+          - `ticker 5m` -> task 3 -> 1s
+      - This is called concurrency. When CPU will be dealing with lot of things at the same time.
+      - In this case, because of ticker (5millisecond), CPU will complete the task which can done before.
+      - See this screenshot: [concurrency-dealing](./00assets/concurrency-dealing-with-things-at-same-time.png)
 - goroutines
   - goroutines is the way how you achieve parallelism.
   - goroutines sometimes compares with "Thread".
@@ -1137,6 +1159,5 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - That's why it is the favourite language to be used in cloud. Because cloud has no shortage of threads.
   - Slogan being used in go community alot
     - Do not communicate by sharing memory; instead, share memory by communicating.
-  - concurrency is dealing with a lot of things at the same time.
-  - paralellism is doing a lot of things at the same time.
+
   - 
