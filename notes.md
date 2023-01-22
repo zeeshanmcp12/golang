@@ -1134,7 +1134,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - task 2 -> 0.2s
         - task 3 -> 0s
         - task 4 -> 0.1s
-      - We also don't know how CPU will execute the task (individually) in that thread?
+      - Now, how the CPU will behave in this kind of situation:
+        - It will have some kind of ticker. Let's say the ticker will execute every 5ms in a while
         - In above case, there will be a ticker (an initial time of 5milisecond)
         - This ticker will see which task can be completed before. So below will be the case:
           - `ticker 5m` -> task 3 -> 0s
