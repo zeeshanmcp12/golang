@@ -608,6 +608,10 @@ Notes are written for my own understanding so these may be inappropriate (or det
           - We also called this as dereferencing
   - Why we need pointers?
     - We can create variable one time and use anywhere in code by just referencing and changing it's value.
+  - Passing by value in Functions
+  - Passing by Reference in Functions
+    - slices and maps are `passed by reference` by default.
+      - This happens because a slice itself is referenced to an underlying array.
 - Array
   - Syntax
     - var fruitList [4]string
