@@ -14,6 +14,7 @@ import "fmt"
 // }
 
 // // Why 20
+// Because above we are using `Pass by value to function` which does not change/modify the actual value because it's being copied to another location
 
 // func main() {
 // 	y := [3]int{10, 20, 30}
@@ -21,6 +22,14 @@ import "fmt"
 // 	(*&y)[0] = 100
 // 	fmt.Printf("%v \n", y)
 // }
+// In above and below example, it changes the value at 0th index to 100
+
+func main() {
+	y := [3]int{10, 20, 30}
+	fmt.Printf("%v \n", y)
+	y[0] = 100
+	fmt.Printf("%v \n", y)
+}
 
 // func main() {
 // 	var y int
@@ -85,13 +94,13 @@ import "fmt"
 
 // Ex 4
 
-func modify(s map[string]int) {
-	s["A"] = 100
-}
-func main() {
-	ascii_codes := map[string]int{}
-	ascii_codes["A"] = 65
-	fmt.Println(ascii_codes)
-	modify(ascii_codes)
-	fmt.Println(ascii_codes)
-}
+// func modify(s map[string]int) {
+// 	s["A"] = 100
+// }
+// func main() {
+// 	ascii_codes := map[string]int{}
+// 	ascii_codes["A"] = 65
+// 	fmt.Println(ascii_codes)
+// 	modify(ascii_codes)
+// 	fmt.Println(ascii_codes)
+// }
