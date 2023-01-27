@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 // func modify(y int) int {
 // 	y += 15
@@ -46,15 +43,15 @@ import (
 // 0
 // Because y variable is declared with no value, and ptr contains the value at the address of y that's why it's output is 0
 
-func main() {
-	s := "hello"
-	var ptr *string = &s
-	// var s_p string
-	fmt.Println(s)
-	fmt.Println(*ptr)
-	*ptr += strings.ToUpper(s)
-	fmt.Println(s)
-}
+// func main() {
+// 	s := "hello"
+// 	var ptr *string = &s
+// 	// var s_p string
+// 	fmt.Println(s)
+// 	fmt.Println(*ptr)
+// 	*ptr += strings.ToUpper(s)
+// 	fmt.Println(s)
+// }
 
 // Output
 // hello
@@ -65,17 +62,28 @@ func main() {
 
 // Passing by value/reference to a function Lab
 // Ex 1
-// func modify(numbers ...int) {
-// 	for i := range numbers {
-// 		numbers[i] -= 5
-// 	}
-// }
-// func main() {
-// 	arr := []int{10, 20, 30}
-// 	fmt.Println(arr)
-// 	modify(arr...)
-// 	fmt.Println(arr)
-// }
+func modify(numbers ...int) {
+	// for i := range numbers {
+	// 	numbers[i] -= 5
+	// }
+
+	// Another way of writing loop
+	for i := 0; i < len(numbers); i++ {
+		// numbers[i] -= 5
+		numbers[i] = numbers[i] - 5
+	}
+}
+func main() {
+	arr := []int{10, 20, 30}
+	fmt.Println(arr)
+	modify(arr...)
+	fmt.Println(arr)
+}
+
+// Output
+// [10 20 30]
+// [5 15 25]
+// Slice and maps are "Passed by reference to function" by default
 
 // ------------------------------------------------
 // Ex 2
