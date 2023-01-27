@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // func modify(y int) int {
 // 	y += 15
@@ -24,12 +27,12 @@ import "fmt"
 // }
 // In above and below example, it changes the value at 0th index to 100
 
-func main() {
-	y := [3]int{10, 20, 30}
-	fmt.Printf("%v \n", y)
-	y[0] = 100
-	fmt.Printf("%v \n", y)
-}
+// func main() {
+// 	y := [3]int{10, 20, 30}
+// 	fmt.Printf("%v \n", y)
+// 	y[0] = 100
+// 	fmt.Printf("%v \n", y)
+// }
 
 // func main() {
 // 	var y int
@@ -38,13 +41,27 @@ func main() {
 // 	fmt.Println(*ptr)
 // }
 
-// func main() {
-// 	s := "hello"
-// 	var ptr *string = &s
-// 	fmt.Println(s)
-// 	*ptr += strings.ToUpper(s)
-// 	fmt.Println(s)
-// }
+// Output
+// 0
+// 0
+// Because y variable is declared with no value, and ptr contains the value at the address of y that's why it's output is 0
+
+func main() {
+	s := "hello"
+	var ptr *string = &s
+	// var s_p string
+	fmt.Println(s)
+	fmt.Println(*ptr)
+	*ptr += strings.ToUpper(s)
+	fmt.Println(s)
+}
+
+// Output
+// hello
+// helloHello
+// hello is printed at line 53
+// helloHELLO -> *ptr contains the value at the address of s which is hello (with small letters)
+// HELLO -> strings.ToUpper(s) contains this capital HELLO.
 
 // Passing by value/reference to a function Lab
 // Ex 1
