@@ -47,6 +47,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - %t is used for boolean value
       - %c is used for character
       - %q is used to format quoted string
+      - %+v is a special format specifier that we used to debug and view the values of struct. Because it's very usefull tip for debugging and viewing the values of struct using fmt package, so in this package we have this (+v) format specifier.
   - Variable scope:
     - Outer vs inner block
       - Outer block cannot access variable that is defined in inner block, hence a variable defined in inner block cannot be accessd via outer block.
@@ -690,6 +691,7 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - Syntax:
     - delete(abbreviations, "JS") -> it requires only key to remove the pair from map.
 - Structs in golang
+  - Structs is nothing but a user defined data type.
   - Structs is an alternative of class because golang doesn't have classes.
   - No inheritance in golang.
   - No parent child concept do exist in golang.
