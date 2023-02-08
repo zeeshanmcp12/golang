@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Struct1 struct {
 	number int
 }
@@ -26,4 +28,10 @@ func main() {
 	str2 := Struct1{number: 6}
 	str3 := Struct1{number: 5}
 
+	if str1 != str2 {
+		fmt.Println("str1 and str2 have no similarity")
+	}
+	if str1 == str3 {
+		fmt.Println("str1 and str3 are same!")
+	}
 }

@@ -707,6 +707,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - Make sure the following:
     - There is no inheritance in golang
     - The first letter of element in structure should be upper-case (with capital letters) so it can be exported and accessed by anyone.
+  - We can pass struct by reference
+  - struct itself is a type hence two structs are different, so It will give compile time error if we type like in file [4-compare-struct.go](./february2023/4-compare-struct.go)
 - If/Else in golang
   - We can write if/else logic on the go. 
   - for example:
