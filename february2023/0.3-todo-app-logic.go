@@ -36,9 +36,7 @@ func main() {
 			fmt.Println("Invalid input. Try Again!")
 		}
 		break
-
 	}
-
 }
 
 func checkNilErr(err error) {
