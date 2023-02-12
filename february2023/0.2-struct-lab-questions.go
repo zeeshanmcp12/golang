@@ -20,13 +20,26 @@ func increaseRating(m *Movie) {
 
 }
 
+// func main() {
+// 	fmt.Println("sturct and pass struct by reference")
+// 	mov := getMovie("nothing", 4.0)
+// 	// fmt.Printf("Movie data is %+v", mov)
+
+// 	fmt.Printf("%+v\n", mov)
+// 	increaseRating(&mov)
+// 	fmt.Printf("%+v", &mov)
+
+// }
+
 func main() {
-	fmt.Println("sturct and pass struct by reference")
-	mov := getMovie("nothing", 4.0)
-	// fmt.Printf("Movie data is %+v", mov)
+	mov := getMovie("xyz", 2.1)
+	mov1 := getMovie("abc", 3.3)
+	movies := make([]Movie, 6)
+	movies = append(movies, mov)
+	movies = append(movies, mov1)
+	for i, value := range movies {
+		fmt.Println(i, value)
+	}
 
-	fmt.Printf("%+v\n", mov)
-	increaseRating(&mov)
-	fmt.Printf("%+v", &mov)
-
+	fmt.Println(movies)
 }
