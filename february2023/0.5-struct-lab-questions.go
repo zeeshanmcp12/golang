@@ -20,11 +20,28 @@ func increaseRating(v *Video) {
 
 }
 
+func modifyName(v *Video) {
+	(*v).name = "Something new"
+}
+
 func main() {
 	fmt.Println("Struct Lab Questions!")
 	vid := getVideo("nothing", 3.4)
-	fmt.Printf("%+v", vid)
+	fmt.Printf("%+v\n", vid)
+
+	// Update only rating using function (or Pass struct by reference)
 	increaseRating(&vid)
-	fmt.Printf("\n%+v", vid)
+	fmt.Printf("%+v\n", vid)
+
+	mov := &Video{"abc", 5.5}
+	fmt.Println(mov)
+
+	// Update only name using dereferencing
+	(*mov).name = "bcd"
+	fmt.Println(mov)
+
+	// Update only name using function (or Pass struct by reference)
+	modifyName(&vid)
+	fmt.Printf("%+v\n", vid)
 
 }
