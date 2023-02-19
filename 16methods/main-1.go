@@ -10,9 +10,9 @@ type Circle struct {
 func main() {
 	fmt.Println("Method in golang!")
 	circle := Circle{radius: 5}
-	fmt.Printf("%+v", circle)
+	fmt.Printf("%+v\n", circle)
 	circle.areaOfCircle()
-	fmt.Printf("%+v", circle)
+	fmt.Printf("%+v\n", circle)
 
 	// fmt.Println(circle)
 }

@@ -836,16 +836,20 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - function -> when we do regular things and waraped up that is called function.
   - Method -> Since golang does not have classes so when these functions go into the classes (or struct in golang) then it is called method.
 - Methods in golang
+  - When there is a relationship between function and struct, it is called "Method".
+  - Argument that comes after `func` keyword also called receiver.
   - Because of not having classes in golang, we need to bring our functions into structs so we can call them methods.
   - to create a method we should have sturct that we can pass on to method as object. for example:
   - func (u User) method_name(){}
     - u -> representing to an object (or struct) which is User
-    - User -> is a struc we've defined in 11structs file.
+    - User -> is a struc we've defined in 11structs file.  
   - Basic syntax
     - see line 19 in [16method.go file](/16methods/main.go)
   - Important notes
     - Whenever we pass on these objects (or structs) it actually passes on a copy, here comes the concept of pointers in golang
     - So to pass the original object, we should be passing up the reference of it (or a pointer to that).
+- Method sets
+  - Method set is nothing but a set of method that are available to data type.
 - Defer in golang
   - defer means "to postpone" or in Urdu "Muakhar karna"
   - code executes line by line in golang
