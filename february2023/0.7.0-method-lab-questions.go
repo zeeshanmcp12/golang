@@ -40,11 +40,55 @@ func (r *Rectangle) incLength(n int) {
 	}
 }
 
+// func main() {
+// 	r := Rectangle{breadth: 10, length: 5}
+// 	fmt.Println(r.area())
+// 	fmt.Printf("%+v\n", r)
+// 	r.incLength(6)
+// 	fmt.Println(r.area())
+// 	fmt.Printf("%+v", r)
+// }
+
+// Next Question
+// type Employee struct {
+// 	eid int
+// 	id  int
+// }
+
+// func main() {
+// 	employees := make([]Employee, 5)
+// 	for i := range employees {
+// 		employees[i] = Employee{i, i + 10}
+// 		fmt.Println(employees[i])
+// 	}
+// }
+
+/* Output
+{0 10}
+{1 11}
+{2 12}
+{3 13}
+{4 14}
+*/
+
+// Next Question
+type Employee struct {
+	eid int
+	id  int
+}
+
+func (e Employee) get_id() int {
+	return e.eid + 10
+}
+
 func main() {
-	r := Rectangle{breadth: 10, length: 5}
-	fmt.Println(r.area())
-	fmt.Printf("%+v\n", r)
-	r.incLength(6)
-	fmt.Println(r.area())
-	fmt.Printf("%+v", r)
+	employees := make([]Employee, 5)
+	for i := range employees {
+		employees[i] = Employee{eid: i}
+		// fmt.Printf("%+v\n", employees)
+		employees[i].id = employees[i].get_id()
+		// fmt.Printf("%+v\n", employees[i])
+		fmt.Printf("%+v\n", employees[i])
+
+	}
 }
