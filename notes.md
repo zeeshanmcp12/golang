@@ -864,6 +864,11 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - In reverse order, it works like "LIFO" (last in first out)
   - More examples and notes added in [17defer.go file](/17defer/main.go)
   - As soon as we see 'defer' then execution of it will get little delay.
+- Interface in golang!
+  - Interface is a protocol - a Contract
+  - Interface is an abstract type.
+  - It only describes the expected behavior from a type.
+  - It only defines the behavior and do nothing.
 - Working with files in golang
   - Using built-in packages, we can only read txt file in golang
   - to read/write csv file, we need external package
