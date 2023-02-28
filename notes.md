@@ -869,6 +869,17 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - Interface is an abstract type.
   - It only describes the expected behavior from a type.
   - It only defines the behavior and do nothing.
+- Create your own *type*
+  - We can create our own "type" in golang. Similar to other type. For example
+    - var num int
+      - We created a variable (num) of type int
+    - type OwnType int
+    - var myType OwnType
+      - Here, we defined "myType" variable of type "OwnType"
+- Type Conversion or Casting
+  - In golang it is called conversion and not casting
+  - In following example, we converted myType variable to int:
+    - num = int(myType)
 - Working with files in golang
   - Using built-in packages, we can only read txt file in golang
   - to read/write csv file, we need external package
