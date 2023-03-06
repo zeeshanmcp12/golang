@@ -25,6 +25,8 @@ func main() {
 
 	s := fmt.Sprintf("x -> %d, y -> %s, z -> %t", x, y, z)
 
+	fmt.Printf("Type of s variable is %T\n", s)
+
 	fmt.Println(s)
 
 }
