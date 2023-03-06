@@ -1189,4 +1189,5 @@ Notes are written for my own understanding so these may be inappropriate (or det
   - Slogan being used in go community alot
     - Do not communicate by sharing memory; instead, share memory by communicating.
 
-  - 
+- What is "idiomatic Go code"?
+  - An "idiom" is a pattern of speech for a certain region, people, or language. In Go programming "idiomatic" code is code that adheres to the convention of the language.
