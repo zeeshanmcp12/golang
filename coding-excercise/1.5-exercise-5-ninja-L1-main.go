@@ -39,7 +39,7 @@ func main() {
 	fmt.Println(x)
 	fmt.Printf("Address of y %v\n", &y)
 
-	y := int(x)
+	y = int(x)
 	fmt.Printf("New Address of y %v\n", &y)
 
 	fmt.Println(y)
