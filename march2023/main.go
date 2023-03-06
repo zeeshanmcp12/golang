@@ -16,6 +16,8 @@ import "fmt"
 
 // }
 
+var myVar int
+
 func main() {
 	var num1, num2, sum int
 	fmt.Printf("Enter two numbers to perform addition: ")
