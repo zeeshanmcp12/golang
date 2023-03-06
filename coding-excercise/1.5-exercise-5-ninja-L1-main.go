@@ -37,9 +37,12 @@ func main() {
 	fmt.Printf("Type of x -> %T\n", x)
 	x = 42
 	fmt.Println(x)
+	fmt.Printf("Address of y %v\n", &y)
 
-	y = int(x)
+	y := int(x)
+	fmt.Printf("New Address of y %v\n", &y)
+
 	fmt.Println(y)
-	fmt.Printf("Type of y -> %T", y)
+	fmt.Printf("Type of y -> %T\n", y)
 
 }
