@@ -10,9 +10,19 @@ func main() {
 	// result := num1 & num2
 
 	// bitwise OR
-	result := num1 | num2
+	// result := num1 | num2
+
+	// bitwise XOR
+	// bitwiseXOR := num1 ^ num2
+
+	// bitwise left-shift
+	bitwiseLeftShift := num1 << num2
+
 	fmt.Printf("%b\n%b\n", num1, num2)
-	fmt.Println(result)
+	// fmt.Println(result)
+	// fmt.Println(bitwiseXOR)
+	fmt.Println(bitwiseLeftShift)
+
 }
 
 /*

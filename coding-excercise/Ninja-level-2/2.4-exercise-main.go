@@ -18,5 +18,15 @@ func main() {
 
 	intNumber = 42
 
-	fmt.Printf("Binary -> %b\t Decimal -> %d\t Hex -> %#x", intNumber, intNumber, intNumber)
+	fmt.Printf("Binary -> %b\t Decimal -> %d\t Hex -> %#x\n", intNumber, intNumber, intNumber)
+
+	intNumberLeftShifted := intNumber << 1
+	fmt.Printf("Binary -> %b\t Decimal -> %d\t Hex -> %#x", intNumberLeftShifted, intNumberLeftShifted, intNumberLeftShifted)
+
 }
+
+/*
+ 101010
+1010100
+64+16+4=84
+*/
