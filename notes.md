@@ -47,6 +47,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - %t is used for boolean value
       - %c is used for character
       - %q is used to format quoted string
+      - %b is used to display number in binary format
+      - %#x is used to display number in hexadecimal format
       - %+v is a special format specifier that we used to debug and view the values of struct. Because it's very usefull tip for debugging and viewing the values of struct using fmt package, so in this package we have this (+v) format specifier.
   - Variable scope:
     - Outer vs inner block
@@ -61,6 +63,11 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - for example [main.go](00notesexample/main.go)
   - zero values
     - when we declare any variable but not initialzed it. This comes with default value which is known as zero value.
+  - string
+    - raw string literal
+      - when we type string inside back tick it is called "raw string literal"
+        - name := `"Muhammad Abdullah"`
+      - Using "raw string literal" we have a flexibility to create string as we want. For example multi-line, with whitespaces etc
   - User Input
     - Scanf
       - this function is part of fmt package.
