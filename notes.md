@@ -68,6 +68,11 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - when we type string inside back tick it is called "raw string literal"
         - name := `"Muhammad Abdullah"`
       - Using "raw string literal" we have a flexibility to create string as we want. For example multi-line, with whitespaces etc
+    - string is made up of "slice of byte"
+      - []byte
+      - we can convert our string to slice of byte
+      - name := "hello"
+      - stringToSliceOfByte := []byte(name)
   - User Input
     - Scanf
       - this function is part of fmt package.
