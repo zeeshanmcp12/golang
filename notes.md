@@ -73,6 +73,8 @@ Notes are written for my own understanding so these may be inappropriate (or det
       - we can convert our string to slice of byte
       - name := "hello"
       - stringToSliceOfByte := []byte(name)
+    - Strings are immutable means we can't change the value but we can assign the new value to the variable that holds that string.
+    - All the code we write in golang in encoded in UTF-8 but that doesn't mean all of our strings is gonna be UTF8 code points. We could have bytes in there which don't corresponds to code point.
   - User Input
     - Scanf
       - this function is part of fmt package.

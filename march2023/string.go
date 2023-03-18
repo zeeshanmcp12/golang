@@ -17,9 +17,14 @@ func main() {
 	fmt.Printf("Type of byteString var -> %T\n", byteString)
 	fmt.Println(byteString)
 
-	for _, val := range byteString {
-		// fmt.Println(i, val)
-		fmt.Printf(" -> %d -> %b\n", val, val)
+	// for _, val := range byteString {
+	// 	// fmt.Println(i, val)
+	// 	fmt.Printf(" -> %d -> %b\n", val, val)
+	// }
+
+	// Format string in normal, base 10 (byte), binary, and hex
+	for i := 0; i < len(myName); i++ {
+		fmt.Printf("%v -> %d -> %b -> %#U \n", string(myName[i]), myName[i], myName[i], myName[i])
 	}
 }
 
