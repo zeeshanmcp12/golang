@@ -37,6 +37,9 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - It is also called loosly type. JavaScript, Python and PHP comes under this category
   - Golang as static and dynamic
     - golang works with static typed but sometimes it also refers to as dynamic type.
+  - iota
+    - Need to understand
+    - It works to add incremental numbers (need to check)
   - Format specifier
     - It tell golang about how to format different types of data types.
       - %v is used to format the value in a default format.
