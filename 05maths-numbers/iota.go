@@ -6,12 +6,12 @@ const (
 	a = iota + 1
 	b
 	c
-	d = iota + 2
-	e
-	f
-	g = iota + 1
-	h
-	i
+)
+
+const (
+	x = 2 * iota // The value of iota starts at 0 so 2 * 0 = 0
+	y            // iota increments the value to 1 to 2 * 1 = 2
+	z            // iota increments the value to 1 to 2 * 2 = 4
 )
 
 func main() {
@@ -20,14 +20,8 @@ func main() {
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
-	fmt.Println(d)
-	fmt.Println(e)
-	fmt.Println(f)
-	fmt.Println(g)
-	fmt.Println(h)
-	fmt.Println(i)
-	// fmt.Printf("%T\n", a)
-	// fmt.Printf("%T\n", b)
-	// fmt.Printf("%T\n", c)
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(z)
 
 }

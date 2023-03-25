@@ -34,12 +34,14 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - C++, C, Java comes under this category.
   - dynamic typed
     - We don't need to define it's data type for example int, string or bool etc
-    - It is also called loosly type. JavaScript, Python and PHP comes under this category
+    - It is also called loosely type. JavaScript, Python and PHP comes under this category
   - Golang as static and dynamic
     - golang works with static typed but sometimes it also refers to as dynamic type.
   - iota
-    - Need to understand
-    - It works to add incremental numbers (need to check)
+    - iota can be defined only as constant
+    - It works to add incremental numbers, create sequence and bitmask (need to check)
+    - For example [iota.go](./05maths-numbers/iota.go)
+    <!-- - mbk for example [main.go](00notesexample/main.go) -->
   - Format specifier
     - It tell golang about how to format different types of data types.
       - %v is used to format the value in a default format.
