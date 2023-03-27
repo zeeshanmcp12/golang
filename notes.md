@@ -233,71 +233,79 @@ Notes are written for my own understanding so these may be inappropriate (or det
         - fmt.Println("bitwise right shift", bitwiseRightShift)
         - output -> 5
 
-  - if-else statement (control flow)
+### If-Else Statement
 
-  - switch-case
-    - fallthrough
-      - It is a keyword used in switch-case
-      - It forces the execution flow to fall through the successive case block.
-        - jis case k sath ye keyword hoga wo next case block ko execute kardega...ye isi tarah chalta rahega until it found "default" keyword or not found fallthrough keyword.
-    - break keyword
-      - In golang we don't even worry about explicitely define break keyword.
-        - For example, 
-          - we have two cases in switch block.
-          - both are true
-          - execution flow will stop when first case is executed as true.
-          - program will exit from the switch block and we don't need to explicitely define break keyword.
+- if-else statement (control flow)
 
-  - looping with For
+### Switch-Case
 
-  - Array
-    - An array is a collection of similar elements stored in a contigous memory location.
-      - Similar elements means an array will contain int or string
-    - elements in array stored in contigous memory location. for example:
-      - [1,2,3,4]
-        - 1 -> memory location 200
-        - 2 -> memory location 204 -> why 204? because integer takes 4 bytes
-        - 3 -> memory location 208
-        - 4 -> memory location 212
-    - We cannot keep different data types in one single array.
-    - Arrays are fixed length.
-      - Values cannot be added once the length is defined in for array.
-    - elements should be of the same data type
-    - Array has a property named "length" and "capacity".
-      - length -> denotes to the elements stored in array
-      - capacity -> denotes to the elements that could contain in an array.
-    - length and capacity is same but the difference will be when it comes to slice.
+- switch-case
+  - fallthrough
+    - It is a keyword used in switch-case
+    - It forces the execution flow to fall through the successive case block.
+      - jis case k sath ye keyword hoga wo next case block ko execute kardega...ye isi tarah chalta rahega until it found "default" keyword or not found fallthrough keyword.
+  - break keyword
+    - In golang we don't even worry about explicitly define break keyword.
+      - For example
+        - we have two cases in switch block.
+        - both are true
+        - execution flow will stop when first case is executed as true.
+        - program will exit from the switch block and we don't need to explicitly define break keyword.
+
+### Looping with For
+
+- looping with For
+
+### Array
+
+- Array
+  - An array is a collection of similar elements stored in a contiguous memory location.
+    - Similar elements means an array will contain int or string
+  - elements in array stored in contiguous memory location. for example:
+    - [1,2,3,4]
+      - 1 -> memory location 200
+      - 2 -> memory location 204 -> why 204? because integer takes 4 bytes
+      - 3 -> memory location 208
+      - 4 -> memory location 212
+  - We cannot keep different data types in one single array.
+  - Arrays are fixed length.
+    - Values cannot be added once the length is defined in for array.
+  - elements should be of the same data type
+  - Array has a property named "length" and "capacity".
+    - length -> denotes to the elements stored in array
+    - capacity -> denotes to the elements that could contain in an array.
+  - length and capacity is same but the difference will be when it comes to slice.
+  - Syntax:
+    - var <array name> [<size of the array>] <data type>
+    - var grades 5 int
+    - var fuites 3 string
+  - array initialization
+    - var grades [3]int = [3]int{20,22,25}
+  - shorthand declaration
+    - grades := [3]int{20,22,35}
+  - array initialization using elepsis
+    - grades := [...]int{20,22,25}
+      - these 3 dots are called elepsis
+      - in this case, we did not define the lenght hence the compiler will implicitely calculate the length of an array based on the number of elements that we've specified.
+  - len()
+    - we can find the length of an array using built-in function named "len()"
+    - len(grades)
+  - array indexing
+    - elements in array are numbered. Which means every element has a number starts from 0
+    - grades[1]
+    - grades[3]
+    - if we called an index which is not available in array then compiler will throw "out of range" error.
+    - We can also change the value of array using index
+    - grades := [4]int{20,30,40}
+    - grades[1] = 35 
+  - multidimensional array
+    - array inside array
+    - array that contains another array as an element
     - Syntax:
-      - var <array name> [<size of the array>] <data type>
-      - var grades 5 int
-      - var fuites 3 string
-    - array initialization
-      - var grades [3]int = [3]int{20,22,25}
-    - shorthand declaration
-      - grades := [3]int{20,22,35}
-    - array initialization using elepsis
-      - grades := [...]int{20,22,25}
-        - these 3 dots are called elepsis
-        - in this case, we did not define the lenght hence the compiler will implicitely calculate the length of an array based on the number of elements that we've specified.
-    - len()
-      - we can find the length of an array using built-in function named "len()"
-      - len(grades)
-    - array indexing
-      - elements in array are numbered. Which means every element has a number starts from 0
-      - grades[1]
-      - grades[3]
-      - if we called an index which is not available in array then compiler will throw "out of range" error.
-      - We can also change the value of array using index
-      - grades := [4]int{20,30,40}
-      - grades[1] = 35 
-    - multidimensional array
-      - array inside array
-      - array that contains another array as an element
-      - Syntax:
-        - var <array name> = [array][elements in array]int{{},{},{}}
-        - var arr = [3][2]int{{1,2},{10,4},{20,50}}
-        - [3] -> {1,2},{10,4},{20,50}
-        - [2] -> 1,2 | 10,4 | 20,50
+      - var <array name> = [array][elements in array]int{{},{},{}}
+      - var arr = [3][2]int{{1,2},{10,4},{20,50}}
+      - [3] -> {1,2},{10,4},{20,50}
+      - [2] -> 1,2 | 10,4 | 20,50
 
   - Slice in golang
     - we can initialize and declare a slice using make function
