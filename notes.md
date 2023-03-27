@@ -1,6 +1,6 @@
 # Notes
 
-Notes are written for my own understanding so these may be inappropriate (or detailed) for others. However, I tried to write in a way so any begineer can understand.
+Notes are written for my own understanding so these may be inappropriate (or detailed) for others. However, I tried to write in a way so any beginner can understand.
 
 ## 01Intro
 
@@ -27,10 +27,10 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - bool
     - byte
     - rune
-  - constants cant use the := (short) declaration syntax.
-    - the value can't be changed once it has been declared.
+  - constants cant use the := (short hand) declaration syntax.
+    - the value of constant can't be changed once it is declared.
   - static typed
-    - In static typed, we compiler throws an error when data is mismatched with type. for example, we defined two integers and then called one from them as integer and another as string.
+    - In static typed, compiler throws an error when data is mismatched with type. for example, we defined two integers and then called one of them as integer and another as string.
     - C++, C, Java comes under this category.
   - dynamic typed
     - We don't need to define it's data type for example int, string or bool etc
@@ -42,167 +42,196 @@ Notes are written for my own understanding so these may be inappropriate (or det
     - It works to add incremental numbers, create sequence and bitmask (need to check)
     - For example [iota.go](./05maths-numbers/iota.go)
     <!-- - mbk for example [main.go](00notesexample/main.go) -->
-  - Format specifier
-    - It tell golang about how to format different types of data types.
-      - %v is used to format the value in a default format.
-      - %d is used to format decimal integers var grades int = 42; fmt.Printf("Marks are %d", grades)
-      - %s is used for normal string
-      - %T is used for type of the value
-      - %f is used for floating number
-      - %t is used for boolean value
-      - %c is used for character
-      - %q is used to format quoted string
-      - %b is used to display number in binary format
-      - %#x is used to display number in hexadecimal format
-      - %+v is a special format specifier that we used to debug and view the values of struct. Because it's very usefull tip for debugging and viewing the values of struct using fmt package, so in this package we have this (+v) format specifier.
-  - Variable scope:
-    - Outer vs inner block
-      - Outer block cannot access variable that is defined in inner block, hence a variable defined in inner block cannot be accessd via outer block.
-      - for example [main.go](00notesexample/main.go)
-  - Local vs Global variables
-    - Local
-      - those variables that are declared inside a function or block is termed as local variable.
-      - those variables are not accessible outside of block of function
-      - those can be used and declared in loops and conditions
-    - Global
-      - for example [main.go](00notesexample/main.go)
-  - zero values
-    - when we declare any variable but not initialzed it. This comes with default value which is known as zero value.
-  - string
-    - raw string literal
-      - when we type string inside back tick it is called "raw string literal"
-        - name := `"Muhammad Abdullah"`
-      - Using "raw string literal" we have a flexibility to create string as we want. For example multi-line, with whitespaces etc
-    - string is made up of "slice of byte"
-      - []byte
-      - we can convert our string to slice of byte
-      - name := "hello"
-      - stringToSliceOfByte := []byte(name)
-    - Strings are immutable means we can't change the value but we can assign the new value to the variable that holds that string.
-    - All the code we write in golang in encoded in UTF-8 but that doesn't mean all of our strings is gonna be UTF8 code points. We could have bytes in there which don't corresponds to code point.
-  - User Input
-    - Scanf
-      - this function is part of fmt package.
-      - It takes input according to variable, it's data type and format specifier.
-      - this function requires input sequentially. for example, if .1st variable is int and second is string then in function call we must keep the same sequence.
-      - variable in scanf statment must be with & (& sign) which is a reference to make sure the actual value is being stored in variable.
-        - fmt.Scanf("%f\n", &weight)
-        - to take input from multiple lines, i.e. by pressing enter then define the syntax as below:
-          - fmt.Scanf("%s\n", &variableName)
-          - "\n" will send the cursor to next line
-      - Scanf function requires two arguements, count and err
-        - count - will return the count of successful execution
-        - err - will throw an error (if any)
-        - rerfer to this file [main.go](00notesexample/scanf.go)
-  - Find data type
-    - %T
-      - this is a format specifier that is used to find the type of variable
-      - fmt.Printf("Type of variable is %T",variable)
-    - reflect.TypeOf()
-      - this function returns the type of both value and it's variable
-  - Constants
-    - typed
-      - when we explicitly assign a type to constant, for example const name string = "Zeeshan"
-    - untyped
-      - when the type is infered by compiler at runtime. for example const age = 32
-    - A value cannot be changed once it is initialiezed with constant.
-    - We cannot declare constant without value hence Zero or null value does not apply here
-    - We cannot declare constant with shothand syntax such that const name := "Zeeshan". It will throw an error
 
-  - Operators in golang
-    - comparison
-      - == != < => <= >
-    - arithmetic
-      - addition(+) subtraction(-) multiplication(*) division(/) modulus(%) increament(++) decreament(--)
-      - We can use addition operator on string.
-      - We cannot use subtraction operator on string as it will throw an error.
-      - Subtraction works well with number.
-      - division operator returns the qoutient when left operand is divided by right operand. var a,b int = 24,2 (we get the qoutient as 12 because 24 is divided by 12)
-      - modulus returns the "reminder" when the left operand is divided by right operand.
-      - increment operator is a unary operator. Unary operators are the operators that act upon a single operand to produce a new value. var i int = 1; i++
-    - logical
-      - This checks the logic between two expressions.
-      - && (logical and), || (logical OR), ! (logical not)
-      - && returns true when both left and right side are true
-      - || returns true when one of them is true and return false when both sides are false
-      - ! reverse the results. For example if expression returns true then it will reverse it to false.
-    - assignment
-      - = -> assign
-        - var number int = 10
-      - += -> add and assign
-        - it assigns left operand with the addition result.
-        - x+= y means, x = x + y
-      - -= -> substract and assign
-        - x-= y means, x = x - y
-      - *= -> multiply and assign
-        - x*= y means, x = x * y
-      - /= -> divide and assign qoutient
-        - x/= y means, x = x / y
-      - %= -> divide and assign modulus
-        - x%= y means, x = x % y
-    - bitwise
-      - It is different than other operators
-      - It works at bit level
-      - It performs bit by bit operations
-        - & (bitwise AND)
-          - It takes two numbers as operand and does AND operations on every bit of two numbers.
-          - In simple words, this operations performs on binary format because it works at bit level.
-          - In AND case, it checks the bit of one number and the corresponding bit of second number.
-            - We get 1 if both bit of two operands is 1.
-            - We get 0 If one of the bit of two operands is 0 or 1.
-            - Example:
-              - var num1, num2 = 10,22
-              - 0 0 0 0 1 0 1 0 -> binary representation
-	            - 0 0 0 1 0 1 1 0 -> binary representation
-              - result := num1 & num2
-              - fmt.Println(result)
-              - output -> 2
-        - | (bitwise OR)
-          - It takes two numbers as operand and perform OR operations on every bit of two numbers.
-          - We get 1 with even if one bit of two operands is 1.
-          - We get 0 when both bit of two operands are 0.
-            - Example:
-              - var num1, num2 int = 10, 22
-	            - 0 0 0 0 1 0 1 0
-	            - 0 0 0 1 0 1 1 0
-	            - bitwiseAND := num1 & num2
-	            - bitwiseOR := num1 | num2
-	            - fmt.Println(bitwiseOR)
-	            - output -> 30
-        - ^ (bitwise XOR)
-          - It takes two numbers as operand and perform XOR operations on every bit of two numbers.
-          - We get 1 if two bits are opposite
-          - We get 0 if both of the two bits are same.
-            - Example:
-              - var num1, num2 int = 10, 22
-              - 0 0 0 0 1 0 1 0
-              - 0 0 0 1 0 1 1 0
-              - bitwiseXOR := num1 ^ num2
-              - fmt.Println(bitwiseXOR)
-              - output -> 28
-        - << (left shift)
-          - It shifts all bits towards left by a certain number of specified bits.
-            - For example, we have 212 = 11010100
-            - when we shift all bits towards left by 1 then it will be:
-              -  11010100 -> 212
-              - 110101000 -> 424
-          - The bit positions that have been vacated by the left shift operator are filled with 0.
-          - example is in the [bitwise.go](00notesexample/bitwise.go)
-          - Example:
-            - var num1, num2 int = 10, 22
-            - bitwiseXOR := num1 ^ num2
-            - fmt.Println(bitwiseXOR)
-            - bitwiseLeftShift := bitwiseXOR << 1
-            - fmt.Println(bitwiseLeftShift)
-            - output -> 56
-        - >> (right shift)
-          - It shift all bits towards right by a certain number of specified bits.
-          - excess bits shifted off to the right are discarded.
-          - Example:
-            - 0 0 0 1 0 1 1 0 -> 22
-            - bitwiseRightShift := 22 >> 2
-            - fmt.Println("bitwise right shift", bitwiseRightShift)
-            - output -> 5
+### Format Specifier
+
+- Format specifier
+  - We use these to format different types of data.
+    - %v is used to format the value in a default format.
+    - %d is used to format decimal integers var grades int = 42; fmt.Printf("Marks are %d", grades)
+    - %s is used for normal string
+    - %T is used to find out the type of variable
+    - %f is used for floating number
+    - %t is used for boolean value
+    - %c is used for character
+    - %q is used to format quoted string
+    - %b is used to display number in binary format
+    - %#x is used to display number in hexadecimal format
+    - %+v is a special format specifier that we used to debug and view the values of struct. Because it's very useful tip for debugging and viewing the values of struct using fmt package, so in this package we have this (+v) format specifier.
+
+### Variable Scope
+
+- Variable scope:
+  - Outer vs inner block
+    - Outer block cannot access variable that is defined in inner block but a variable defined in inner block can be accessed via outer block.
+- Local vs Global variables
+  - Local
+    - those variables that are declared inside a function (or block) is termed local variable.
+    - those variables are not accessible outside of block of function
+    - those can be used and declared in loops and conditions
+  - Global
+- zero values
+  - When we declare any variable but not initialized it are known as zero value. By default zero value is assigned to those variables. Zero values are different for each data type. For example
+    - 0 is for int
+    - [blank space] is for string
+    - [blank bracket] is for array etc
+
+### String
+
+- string
+  - raw string literal
+    - when we type string inside back tick it is called "raw string literal"
+      - name := `"Muhammad Abdullah"`
+    - Using "raw string literal" we have a flexibility to create string as we want. For example multi-line, with whitespace etc
+  - string is made up of "slice of byte"
+    - []byte
+    - we can convert our string to "slice of byte"
+    - name := "hello"
+    - stringToSliceOfByte := []byte(name)
+  - Strings are immutable means we can't change the value but we can assign the new value to the variable that holds that string.
+  - All the code we write in golang in encoded in UTF-8 but that doesn't mean all of our strings is gonna be UTF8 code points. We could have bytes in there which don't corresponds to code point.
+
+### User Input
+
+- User Input
+  - Scanf
+    - this function is part of fmt package.
+    - It takes input according to variable, it's data type and format specifier.
+    - this function requires input sequentially. for example, if 1st variable is int and second is string then in function call we must keep the same sequence.
+    - variable in Scanf statement must be with & (& sign) which is a reference to make sure the actual value is being stored in variable.
+      - fmt.Scanf("%f\n", &weight)
+      - to take input from multiple lines, i.e. by pressing enter then define the syntax as below:
+        - fmt.Scanf("%s\n", &variableName)
+        - "\n" will send the cursor to next line
+    - Scanf function requires two arguments, "count" and "err"
+      - count - will return the count of successful execution
+      - err - will throw an error (if any)
+      - refer to this file [main.go](00notesexample/scanf.go)
+
+### Find data type
+
+- Find data type
+  - %T
+    - this is a format specifier that is used to find the type of variable
+    - fmt.Printf("Type of variable is %T",variable)
+  - reflect.TypeOf()
+    - this function returns the type of both value and it's variable
+
+### Constant
+
+- Constants
+  - typed
+    - when we explicitly assign a type to constant, for example const name string = "Zeeshan"
+  - untyped
+    - when the type is inferred by compiler at runtime. for example const age = 32
+  - A value cannot be changed once it is initialized with constant.
+  - We cannot declare constant without value hence Zero or null value does not apply here
+  - We cannot declare constant with shorthand syntax such that const name := "Zeeshan". It will throw an error
+
+### Operators in Golang
+
+- Operators in golang
+  - Comparison
+  - Arithmetic
+  - Assignment
+  - Logical
+  - Bitwise
+
+#### Detail about Operators
+
+- comparison
+  - == != < => <= >
+- arithmetic
+  - addition(+) subtraction(-) multiplication(*) division(/) modulus(%) increment(++) decrement(--)
+  - We can use addition operator on string.
+  - We cannot use subtraction operator on string as it will throw an error.
+  - Subtraction works well with number.
+  - division operator returns the quotient when left operand is divided by right operand. var a,b int = 24,2 (we get the quotient as 12 because 24 is divided by 12)
+  - modulus returns the "reminder" when the left operand is divided by right operand.
+  - increment operator is a unary operator. Unary operators are the operators that act upon a single operand to produce a new value. var i int = 1; i++
+- logical
+  - This checks the logic between two expressions.
+  - && (logical and), || (logical OR), ! (logical not)
+  - && returns true when both left and right side are true
+  - || returns true when one of them is true and return false when both sides are false
+  - ! reverse the results. For example if expression returns true then it will reverse it to false.
+- assignment
+  - = -> assign
+    - var number int = 10
+  - += -> add and assign
+    - it assigns left operand with the addition result.
+    - x+= y means, x = x + y
+  - -= -> subtract and assign
+    - x-= y means, x = x - y
+  - *= -> multiply and assign
+    - x*= y means, x = x*y
+  - /= -> divide and assign quotient
+    - x/= y means, x = x / y
+  - %= -> divide and assign modulus
+    - x%= y means, x = x % y
+- bitwise
+  - It is different than other operators
+  - It works at bit level
+  - It performs bit by bit operations
+    - & (bitwise AND)
+      - It takes two numbers as operand and does 'AND' operations on every bit of two numbers.
+      - In simple words, this operations performs on binary format because it works at bit level.
+      - In AND case, it checks the bit of one number and the corresponding bit of second number.
+        - We get 1 if both bit of two operands is 1.
+        - We get 0 If one of the bit of two operands is 0 or 1.
+        - Example:
+          - var num1, num2 = 10,22
+          - 0 0 0 0 1 0 1 0 -> binary representation
+          - 0 0 0 1 0 1 1 0 -> binary representation
+          - result := num1 & num2
+          - fmt.Println(result)
+          - output -> 2
+    - | (bitwise OR)
+      - It takes two numbers as operand and perform OR operations on every bit of two numbers.
+      - We get 1 with even if one bit of two operands is 1.
+      - We get 0 when both bit of two operands are 0.
+        - Example:
+          - var num1, num2 int = 10, 22
+          - 0 0 0 0 1 0 1 0
+          - 0 0 0 1 0 1 1 0
+          - bitwiseAND := num1 & num2
+          - bitwiseOR := num1 | num2
+          - fmt.Println(bitwiseOR)
+          - output -> 30
+    - ^ (bitwise XOR)
+      - It takes two numbers as operand and perform XOR operations on every bit of two numbers.
+      - We get 1 if two bits are opposite
+      - We get 0 if both of the two bits are same.
+        - Example:
+          - var num1, num2 int = 10, 22
+          - 0 0 0 0 1 0 1 0
+          - 0 0 0 1 0 1 1 0
+          - bitwiseXOR := num1 ^ num2
+          - fmt.Println(bitwiseXOR)
+          - output -> 28
+    - << (left shift)
+      - It shifts all bits towards left by a certain number of specified bits.
+        - For example, we have 212 = 11010100
+        - when we shift all bits towards left by 1 then it will be:
+          - 11010100 -> 212
+          - 110101000 -> 424
+      - The bit positions that have been vacated by the left shift operator are filled with 0.
+      - example is in the [bitwise.go](00notesexample/bitwise.go)
+      - Example:
+        - var num1, num2 int = 10, 22
+        - bitwiseXOR := num1 ^ num2
+        - fmt.Println(bitwiseXOR)
+        - bitwiseLeftShift := bitwiseXOR << 1
+        - fmt.Println(bitwiseLeftShift)
+        - output -> 56
+    - >> (right shift)
+      - It shift all bits towards right by a certain number of specified bits.
+      - excess bits shifted off to the right are discarded.
+      - Example:
+        - 0 0 0 1 0 1 1 0 -> 22
+        - bitwiseRightShift := 22 >> 2
+        - fmt.Println("bitwise right shift", bitwiseRightShift)
+        - output -> 5
 
   - if-else statement (control flow)
 
