@@ -1247,3 +1247,31 @@ Notes are written for my own understanding so these may be inappropriate (or det
 
 - What is "idiomatic Go code"?
   - An "idiom" is a pattern of speech for a certain region, people, or language. In Go programming "idiomatic" code is code that adheres to the convention of the language.
+
+
+
+
+- If you have 5 porch lights, how many messages can you encode?
+  - Answer: 32
+
+- Consult this link https://en.wikipedia.org/wiki/Transistor_count and then choose the number of transistors (aka circuits, switches, "lightbulbs" in my porch analogy) which can be found on processors today. Choose the answer below which is CLOSEST to what is presented on the wikipedia page.
+  - 50+ Billion
+  - 50+ Million
+  - 50+ Thousand
+  - 50+
+
+- rune is an alias for int32
+  - true
+
+- If you use type int, then the compiler will choose whether int32 or int64 is used. Another way to say this is that int has implementation-specific sizes.
+  - true
+
+
+Go source code is always UTF-8.
+true
+
+A string is a sequence of bytes that represent Unicode code points, called runes.
+true
+
+
+
