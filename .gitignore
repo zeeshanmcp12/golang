@@ -7,3 +7,4 @@
 **/*.mod
 **/*.sum
 coding-challenge/**
+smallProjects/auth0-oidc.go
